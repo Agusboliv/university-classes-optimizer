@@ -16,8 +16,11 @@ solo su lógica principal.
   resultados precalculados en JSON.
 
 ## Arquitectura
-- `solver/`: Python + OR-Tools CP-SAT. Paquete reutilizable (carga/validación,
-  modelo, verificación) + CLI que genera escenarios. FastAPI solo en la Fase 3.
+- `solver/`: Python + OR-Tools CP-SAT. Cuatro módulos en `solver/solver/`:
+  `datos.py` (carga, validación, `preparar_datos`, parámetros), `modelo.py`
+  (CP-SAT y `resolver`), `verificacion.py` (D1–D7 y B1–B6 sin el modelo) y
+  `generar_escenario.py` (CLI). Un solo archivo de tests: `tests/test_solver.py`.
+  FastAPI solo en la Fase 3.
 - `web/`: Next.js + TypeScript + Tailwind v4 + shadcn/ui, export estático.
 - `data/`: CSV sintéticos (creados por mí, se pueden subir y compartir) y
   `data/escenarios/*.json` con soluciones precalculadas.
@@ -32,9 +35,16 @@ Caso sintético de referencia: 1003 clases, 200 aulas, 287 docentes, 134 cohorte
 - `franjas.csv`: dia, franja, hora_inicio, hora_fin
 - `profesores.csv`: profesor_id, nombre, dedicacion, max_min_por_dia
 - `disponibilidad_profesores.csv`: profesor_id, dia, hora_desde, hora_hasta
-- Salida `solucion_horarios.csv`: Clase, Aula, Día, Inicio
+- Salida `solucion_horarios.csv`: Clase, Aula, Día, Inicio (mínimo; puede traer
+  más columnas)
 - Horas en HH:MM, múltiplos de `SLOT_DURATION` = 30 min. Binarias son 0/1.
-- Si cambia una columna, actualizar a la vez la validación Python y los tipos TS.
+- Escenario `data/escenarios/<nombre>.json` (lo leen los tipos TS de la Fase 2):
+  - `resultado`: estado, objetivo, cota_inferior, tiempo_s, tiempo_limite_s, workers
+  - `desglose`: [{id, nombre, valor, maximo, peso, puntos}] para B1–B6
+  - `verificacion`: {ok, problemas}
+  - `asignaciones`: [{clase, materia, cohorte, profesor, aula, dia, inicio, fin}]
+- Si cambia una columna o un campo del JSON, actualizar a la vez Python y los
+  tipos TS.
 
 ## Modelo
 - Variables: `y[clase,día,slot]` (horario) y `x[clase,aula,día,slot]` (horario +
@@ -55,6 +65,12 @@ Caso sintético de referencia: 1003 clases, 200 aulas, 287 docentes, 134 cohorte
   Debe pasar `verificar_solucion` (D1–D7). Los peores casos de la
   normalización son B1 50563, B2 16080, B3 1922, B4 421, B5 587, B6 800.
   (La corrida del notebook que reportó 24.45 es otra solución y no está guardada).
+- Escenario generado `data/escenarios/referencia.json` (120 s, 8 workers):
+  recalculado 22.68, solver 24.20, cota 0.00.
+- `resultado.objetivo` es lo que reporta el solver y puede quedar por encima del
+  real: en una solución no óptima, las auxiliares de B2/B3/B4/B6 solo están
+  acotadas por abajo. El objetivo real es la suma de `desglose[].puntos`;
+  mostrar ese en la web.
 - En la web NUNCA decir "óptimo": mostrar "mejor solución encontrada en X s" y la cota.
 - Con varios workers CP-SAT no es determinista aunque se fije la semilla.
   Por eso las soluciones se precalculan y se versionan; no se espera
@@ -71,9 +87,9 @@ Caso sintético de referencia: 1003 clases, 200 aulas, 287 docentes, 134 cohorte
   no prometerlo.
 
 ## Plan por fases
-1. `solver/`: extraer el notebook a módulos (datos, modelo, verificación) con
-   tests y un CLI `generar_escenario`. Exportar JSON: solución, métricas,
-   desglose B1–B6, tiempo y cota.
+1. HECHA (rama `fase1-solver`, ver `docs/plan-fase1.md`): `solver/` con los 4
+   módulos, 3 tests (factible, infactible, referencia) y el CLI
+   `generar_escenario` que exporta el JSON de escenario.
 2. `web/` estático: selector de escenario; grilla semanal por cohorte, profesor
    o aula; desglose del objetivo; subir CSV con validación en el navegador
    (Parte 1 en TS). Opcional: verificar D1–D7 y recalcular B1–B6 al mover una
@@ -98,8 +114,11 @@ Caso sintético de referencia: 1003 clases, 200 aulas, 287 docentes, 134 cohorte
   sus variables.
 
 ## Comandos
-- `cd solver && pytest`
+- `cd solver && python -m pytest` (unos 10 s)
 - `cd solver && python -m solver.generar_escenario --data ../data --tiempo 120`
+  (opciones: `--workers`, `--semilla`, `--nombre`, `--salida`, `--forzar` para
+  guardar aunque falle D1–D7). En la consola de Windows usar
+  `PYTHONIOENCODING=utf-8`.
 - `cd web && npm run dev`
 - `cd web && npm run test`
 - (Fase 3) `cd solver && uvicorn main:app --reload`
