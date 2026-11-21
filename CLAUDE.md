@@ -1,0 +1,107 @@
+# Optimizador académico de horarios (CP-SAT)
+
+Web interactiva para explorar un modelo de timetabling universitario hecho con
+OR-Tools CP-SAT: asigna cada clase a un día, una hora de inicio y un aula,
+respetando restricciones duras y minimizando penalizaciones blandas.
+El modelo original vive en un notebook de Colab (Partes 1–4). Este repo replica
+solo su lógica principal.
+
+## Alcance
+- SÍ replicar: carga y validación de CSV (Parte 1), modelo CP-SAT con D1–D7 y
+  B1–B6 (Parte 2) y la verificación independiente de la solución.
+- REEMPLAZAR: la visualización (Parte 3, matplotlib/ipywidgets) se rehace en la
+  web con ECharts. No se porta código de plots.
+- NO replicar: las pruebas de estrés de la Parte 4 (menos aulas / menos
+  profesores) ni otros análisis del notebook. Si más adelante se muestran, serán
+  resultados precalculados en JSON.
+
+## Arquitectura
+- `solver/`: Python + OR-Tools CP-SAT. Paquete reutilizable (carga/validación,
+  modelo, verificación) + CLI que genera escenarios. FastAPI solo en la Fase 3.
+- `web/`: Next.js + TypeScript + Tailwind v4 + shadcn/ui, export estático.
+- `data/`: CSV sintéticos (creados por mí, se pueden subir y compartir) y
+  `data/escenarios/*.json` con soluciones precalculadas.
+
+## Datos (contrato fijo)
+Caso sintético de referencia: 1003 clases, 200 aulas, 287 docentes, 134 cohortes
+(comisiones = grupos de alumnos). No hay tabla de alumnos: cada clase trae su
+`cantidad_alumnos`.
+- `aulas.csv`: aula_id, nombre, edificio, capacidad, tiene_proyector, es_laboratorio
+- `clases.csv`: clase_id, materia, cohorte, carrera, anio, tipo, cantidad_alumnos,
+  franja, duracion_min, profesor_id, requiere_proyector, requiere_laboratorio
+- `franjas.csv`: dia, franja, hora_inicio, hora_fin
+- `profesores.csv`: profesor_id, nombre, dedicacion, max_min_por_dia
+- `disponibilidad_profesores.csv`: profesor_id, dia, hora_desde, hora_hasta
+- Salida `solucion_horarios.csv`: Clase, Aula, Día, Inicio
+- Horas en HH:MM, múltiplos de `SLOT_DURATION` = 30 min. Binarias son 0/1.
+- Si cambia una columna, actualizar a la vez la validación Python y los tipos TS.
+
+## Modelo
+- Variables: `y[clase,día,slot]` (horario) y `x[clase,aula,día,slot]` (horario +
+  aula) con Σ_aulas x = y. Solo se crean combinaciones válidas por construcción
+  (franja, aula compatible, disponibilidad docente). `K_AULAS` = 10: cada clase
+  considera solo las 10 aulas compatibles más chicas.
+- Duras: D1 una asignación por clase dentro de su franja; D2 capacidad;
+  D3 proyector/laboratorio; D4 aula sin superposición; D5 docente sin
+  superposición y disponible; D6 cohorte sin superposición; D7 tope diario
+  `max_min_por_dia`.
+- Blandas (peso %, cada una normalizada por su peor caso; el objetivo va de 0 a
+  100 y los pesos suman 100): B1 asientos vacíos 17.5 · B2 huecos de cohorte 22.5
+  · B3 racha docente > 360 min 22.5 · B4 días extra de docentes 12 ·
+  B5 laboratorio sin necesitarlo 17.5 · B6 días con una sola materia 8.
+- Referencia (120 s, 8 workers): objetivo 24.45/100, cota inferior 0.00. Es una
+  solución factible sin garantía de óptimo. Desglose en puntos: B1 9.57,
+  B2 1.04, B3 0.00, B4 8.35, B5 0.42, B6 5.08. Debe pasar `verificar_solucion` (D1–D7).
+- En la web NUNCA decir "óptimo": mostrar "mejor solución encontrada en X s" y la cota.
+- Con varios workers CP-SAT no es determinista aunque se fije la semilla.
+  Por eso las soluciones se precalculan y se versionan; no se espera
+  reproducirlas bit a bit.
+
+## Decisión de cómputo
+- CP-SAT no corre en el navegador (no hay WASM oficial) y reescribir a MIP
+  (highs-js) cambia el modelo y rinde peor. Por eso NO se hace el paso de
+  highs-js.
+- Fases 1–2: todo estático, sin servidor ni costo. La solución del caso completo
+  se calcula en local o en Colab.
+- Resolver en vivo es opcional (Fase 3) y solo para instancias chicas. El caso
+  completo necesitó 8 workers × 120 s; un plan gratuito tiene menos CPU, así que
+  no prometerlo.
+
+## Plan por fases
+1. `solver/`: extraer el notebook a módulos (datos, modelo, verificación) con
+   tests y un CLI `generar_escenario`. Exportar JSON: solución, métricas,
+   desglose B1–B6, tiempo y cota.
+2. `web/` estático: selector de escenario; grilla semanal por cohorte, profesor
+   o aula; desglose del objetivo; subir CSV con validación en el navegador
+   (Parte 1 en TS). Opcional: verificar D1–D7 y recalcular B1–B6 al mover una
+   clase a mano, todo en el navegador y sin solver.
+3. Opcional: FastAPI + CP-SAT para instancias chicas (tope de clases, tiempo
+   máximo ~30 s, 1–2 workers, límite por usuario). Antes de elegir hosting
+   gratuito, verificar sus límites vigentes.
+4. Opcional: agente Claude que explique la solución (Vercel AI SDK; Sonnet 5.5
+   para consultas simples, Opus 5.5 para las complejas; Prompt Caching,
+   Cloudflare Turnstile y cuotas en Upstash Redis).
+- Deploy del frontend: Cloudflare Pages. Gráficos: Apache ECharts sobre Canvas.
+  Animaciones: CSS nativo y Motion; GSAP solo si hace falta.
+
+## Reglas de código
+- Python: type hints; validar los CSV con pydantic antes de armar el modelo;
+  el modelo siempre con límite de tiempo.
+- TypeScript estricto, sin `any`.
+- Tests: pytest con casos chicos de solución conocida (incluir uno infactible);
+  vitest para validación y verificación en el frontend.
+- La verificación de D1–D7 es independiente del modelo (postcondición), no reusa
+  sus variables.
+
+## Comandos
+- `cd solver && pytest`
+- `cd solver && python -m solver.generar_escenario --data ../data --tiempo 120`
+- `cd web && npm run dev`
+- `cd web && npm run test`
+- (Fase 3) `cd solver && uvicorn main:app --reload`
+
+## Cuidado
+- No bloquear el hilo principal del navegador con cálculo ni animaciones pesadas
+  (usar Web Workers para validar o verificar CSV grandes).
+- No mezclar datos reales con los sintéticos.
+- Generar JSON de escenarios de a uno, que pesan (~1000 clases por escenario).

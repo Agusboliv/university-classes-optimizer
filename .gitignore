@@ -1,0 +1,4 @@
+"""Files to ignore in the repository."""
+
+"""Directories to ignore in the repository."""
+/data
