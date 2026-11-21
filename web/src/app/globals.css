@@ -1,0 +1,278 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* =============================================================================
+   Tokens de diseño (CLAUDE.md, sección Diseño). Se ajustan solo acá.
+   ============================================================================= */
+
+:root {
+  /* Neutros cálidos: papel y grafito */
+  --papel: #f6f5f1;
+  --superficie: #ffffff;
+  --superficie-2: #eeece6;
+  --tinta: #1c1b19;
+  --tinta-2: #57544e;
+  --borde: #e3e0d8;
+
+  /* Acento único (cambiar acá si se pasa a un azul institucional) */
+  --acento: #3a47d5;
+  --acento-tinta: #ffffff;
+
+  /* Estados (reservados: siempre con ícono + texto, nunca solo color) */
+  --estado-ok: #0ca30c;
+  --estado-aviso: #fab219;
+  --estado-error: #d03b3b;
+
+  /* Paleta categórica de materias, orden fijo (validada con dataviz) */
+  --materia-1: #2a78d6;
+  --materia-2: #eb6834;
+  --materia-3: #1baf7a;
+  --materia-4: #eda100;
+  --materia-5: #e87ba4;
+  --materia-6: #008300;
+  --materia-7: #6250d6;
+  --materia-8: #e34948;
+
+  /* Movimiento */
+  --dur-salida: 150ms;
+  --dur-entrada: 220ms;
+  --dur-desplazamiento: 320ms;
+  --curva-salida: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Mapeo a las variables de shadcn/ui */
+  --background: var(--papel);
+  --foreground: var(--tinta);
+  --card: var(--superficie);
+  --card-foreground: var(--tinta);
+  --popover: var(--superficie);
+  --popover-foreground: var(--tinta);
+  --primary: var(--acento);
+  --primary-foreground: var(--acento-tinta);
+  --secondary: var(--superficie-2);
+  --secondary-foreground: var(--tinta);
+  --muted: var(--superficie-2);
+  --muted-foreground: var(--tinta-2);
+  --accent: var(--superficie-2);
+  --accent-foreground: var(--tinta);
+  --destructive: var(--estado-error);
+  --border: var(--borde);
+  --input: var(--borde);
+  --ring: var(--acento);
+  --chart-1: var(--materia-1);
+  --chart-2: var(--materia-2);
+  --chart-3: var(--materia-3);
+  --chart-4: var(--materia-4);
+  --chart-5: var(--materia-5);
+  --radius: 0.375rem;
+}
+
+.dark {
+  --papel: #131315;
+  --superficie: #1b1b1f;
+  --superficie-2: #24242a;
+  --tinta: #eceae5;
+  --tinta-2: #a9a69f;
+  --borde: #2e2e34;
+
+  --acento: #8d97ff;
+  --acento-tinta: #131315;
+
+  --materia-1: #3987e5;
+  --materia-2: #d95926;
+  --materia-3: #199e70;
+  --materia-4: #c98500;
+  --materia-5: #d55181;
+  --materia-6: #0ca30c;
+  --materia-7: #9085e9;
+  --materia-8: #e66767;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-acento: var(--acento);
+  --color-acento-tinta: var(--acento-tinta);
+  --color-tinta-2: var(--tinta-2);
+  --color-estado-ok: var(--estado-ok);
+  --color-estado-aviso: var(--estado-aviso);
+  --color-estado-error: var(--estado-error);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-sans);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+/* -----------------------------------------------------------------------------
+   Escala tipográfica. Dos escalas que no se mezclan:
+   - ed-*  editorial: portada y títulos de pantalla (fuera de los paneles)
+   - in-*  instrumento: dentro de los paneles interactivos
+   ----------------------------------------------------------------------------- */
+@theme {
+  --text-ed-display: clamp(3.5rem, 9vw, 8rem);
+  --text-ed-display--line-height: 0.95;
+  --text-ed-display--letter-spacing: -0.035em;
+  --text-ed-display--font-weight: 800;
+
+  --text-ed-titulo: clamp(2rem, 4.5vw, 3.5rem);
+  --text-ed-titulo--line-height: 1;
+  --text-ed-titulo--letter-spacing: -0.025em;
+  --text-ed-titulo--font-weight: 700;
+
+  --text-ed-apoyo: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  --text-ed-apoyo--line-height: 1.4;
+  --text-ed-apoyo--font-weight: 400;
+
+  --text-in-etiqueta: 0.75rem;
+  --text-in-etiqueta--line-height: 1rem;
+  --text-in-etiqueta--letter-spacing: 0.08em;
+  --text-in-etiqueta--font-weight: 600;
+
+  --text-in-cifra: clamp(2.5rem, 2rem + 1.5vw, 3.5rem);
+  --text-in-cifra--line-height: 1;
+  --text-in-cifra--letter-spacing: -0.02em;
+  --text-in-cifra--font-weight: 600;
+
+  --text-in-ui: 0.9375rem;
+  --text-in-ui--line-height: 1.4;
+
+  --text-in-ui-sm: 0.875rem;
+  --text-in-ui-sm--line-height: 1.35;
+
+  --text-in-tabla: 0.8125rem;
+  --text-in-tabla--line-height: 1.35;
+}
+
+/* Etiqueta de panel: siempre en mayúsculas */
+@utility etiqueta-panel {
+  font-size: var(--text-in-etiqueta);
+  line-height: var(--text-in-etiqueta--line-height);
+  letter-spacing: var(--text-in-etiqueta--letter-spacing);
+  font-weight: var(--text-in-etiqueta--font-weight);
+  text-transform: uppercase;
+  color: var(--tinta-2);
+}
+
+/* Cifra destacada: siempre tabular */
+@utility cifra {
+  font-size: var(--text-in-cifra);
+  line-height: var(--text-in-cifra--line-height);
+  letter-spacing: var(--text-in-cifra--letter-spacing);
+  font-weight: var(--text-in-cifra--font-weight);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Velo de la portada sobre el fondo generativo. Con >= 0.55 de papel encima, el
+   título y el subtítulo quedan >= 4.5:1 sobre el peor píxel del fondo (calculado
+   en claro y oscuro). Mobile: velo parejo porque el texto ocupa todo el ancho. */
+@utility velo-portada {
+  background: color-mix(in srgb, var(--papel) 70%, transparent);
+  @media (width >= 48rem) {
+    background:
+      linear-gradient(0deg, var(--papel) 0%, transparent 22%),
+      linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--papel) 86%, transparent) 0%,
+        color-mix(in srgb, var(--papel) 72%, transparent) 55%,
+        color-mix(in srgb, var(--papel) 55%, transparent) 100%
+      );
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  /* Números, horarios y tablas con cifras tabulares */
+  table,
+  time,
+  [data-numero] {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   View Transitions entre rutas (React <ViewTransition>, ver transicion-pagina.tsx)
+   Solo opacity y transform. La navegación queda fija.
+   ----------------------------------------------------------------------------- */
+::view-transition {
+  pointer-events: none;
+}
+::view-transition-old(.pagina-sale) {
+  animation: var(--dur-salida) ease-in both vt-aparecer reverse;
+}
+::view-transition-new(.pagina-entra) {
+  animation:
+    var(--dur-entrada) var(--curva-salida) var(--dur-salida) both vt-aparecer,
+    var(--dur-desplazamiento) var(--curva-salida) var(--dur-salida) both vt-subir;
+}
+::view-transition-group(navegacion) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(navegacion) {
+  display: none;
+}
+::view-transition-new(navegacion) {
+  animation: none;
+}
+@keyframes vt-aparecer {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes vt-subir {
+  from {
+    transform: translateY(8px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
