@@ -103,6 +103,40 @@ Caso sintético de referencia: 1003 clases, 200 aulas, 287 docentes, 134 cohorte
 - Deploy del frontend: Cloudflare Pages. Gráficos: Apache ECharts sobre Canvas.
   Animaciones: CSS nativo y Motion; GSAP solo si hace falta.
 
+## Diseño
+Tokens en `web/src/app/globals.css`; se ajustan solo ahí. Plan: `docs/plan-fase2.md`.
+- Tono: instrumento de medición, sobrio, números en primer plano; textos en
+  castellano rioplatense.
+- Color: neutros cálidos (papel/grafito), claro y oscuro. Un solo acento
+  `--acento` (índigo; se puede pasar a un azul institucional). Estados
+  `--estado-ok/aviso/error`, siempre con ícono y texto. Materias:
+  `--materia-1..8`, paleta categórica en orden fijo, validada con el skill
+  dataviz en los dos temas.
+- Tipografía: Inter (una sola familia, `next/font`), `tabular-nums` en números,
+  horarios y tablas. Jerarquía por tamaño y peso, con dos escalas que no se
+  mezclan:
+  - Editorial (portada y títulos de pantalla, fuera de los paneles):
+    `text-ed-display` clamp(3.5rem, 9vw, 8rem) / 800 / interlineado 0.95 /
+    tracking -0.035em; `text-ed-titulo` clamp(2rem, 4.5vw, 3.5rem) / 700;
+    `text-ed-apoyo` 1.25–1.5rem / 400.
+  - Instrumento (dentro de los paneles): `etiqueta-panel` 0.75rem MAYÚSCULAS
+    +0.08em / 600; `cifra` 2.5–3.5rem / 600 tabular; `text-in-ui` 0.9375rem y
+    `text-in-ui-sm` 0.875rem; `text-in-tabla` 0.8125rem.
+- Forma: radio 6 px, bordes de 1 px, sombras casi nulas.
+- Movimiento: View Transitions (React `<ViewTransition>` en cada `page.tsx`)
+  al cambiar de ruta; Motion con `LazyMotion` + `m` para entradas y hover. Sin
+  GSAP. Solo `transform`/`opacity`, como máximo ~30 elementos animados a la vez,
+  y respetar `prefers-reduced-motion`.
+- Pantallas (rutas del export estático, navegación compartida):
+  - `/` Portada: "Mil clases, un solo horario", subtítulo y "Explorar". De fondo,
+    una grilla semanal generativa en canvas 2D: ≤ 30 fps, se pausa oculta o
+    fuera de pantalla, queda en un cuadro fijo con reduced-motion. Encima un velo
+    de papel ≥ 55% que deja título y subtítulo ≥ 4.5:1.
+  - `/panel`: resumen, desglose B1–B6, re-ponderar pesos, grilla semanal con
+    exploración y (opcional) editor.
+  - `/datos`: explorador de los 5 CSV con los mismos nombres, columnas, orden y
+    formato.
+
 ## Reglas de código
 - Python: type hints; validar los CSV con pandas antes de armar el modelo
   (`validar` devuelve listas de errores y advertencias); el modelo siempre con
@@ -128,6 +162,11 @@ Caso sintético de referencia: 1003 clases, 200 aulas, 287 docentes, 134 cohorte
   (usar Web Workers para validar o verificar CSV grandes).
 - No mezclar datos reales con los sintéticos.
 - Generar JSON de escenarios de a uno, que pesan (~1000 clases por escenario).
+- `web/` usa Next 16: leer `web/node_modules/next/dist/docs/` antes de usar una
+  API. `cacheComponents` y `partialPrefetching` no funcionan con
+  `output: "export"` (usan PPR).
+- `web/public/escenarios/` y `web/public/data/` son copias que genera
+  `scripts/copiar-datos.mjs` (en `predev`/`prebuild`); no se editan ni se versionan.
 
 ## Filosofía
 Esto es un POC. Preferir lo simple: pocos archivos, poca abstracción,
