@@ -1,0 +1,13 @@
+[project]
+name = "solver"
+version = "0.1.0"
+description = "Timetabling universitario con OR-Tools CP-SAT (POC)"
+requires-python = ">=3.11"
+dependencies = ["ortools>=9.10", "pandas>=2.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

@@ -1,0 +1,16 @@
+dia,franja,hora_inicio,hora_fin
+LUN,mañana,08:00,13:00
+LUN,tarde,14:00,18:00
+LUN,noche,18:00,22:00
+MAR,mañana,08:00,13:00
+MAR,tarde,14:00,18:00
+MAR,noche,18:00,22:00
+MIÉ,mañana,08:00,13:00
+MIÉ,tarde,14:00,18:00
+MIÉ,noche,18:00,22:00
+JUE,mañana,08:00,13:00
+JUE,tarde,14:00,18:00
+JUE,noche,18:00,22:00
+VIE,mañana,08:00,13:00
+VIE,tarde,14:00,18:00
+VIE,noche,18:00,22:00

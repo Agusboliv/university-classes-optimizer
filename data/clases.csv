@@ -1,0 +1,1004 @@
+clase_id,materia,cohorte,carrera,anio,tipo,cantidad_alumnos,franja,duracion_min,profesor_id,requiere_proyector,requiere_laboratorio
+C001,Física I,IND-1A,Ing. Industrial,1,teórica,89,mañana,120,D231,1,0
+C002,Física I,IND-1A,Ing. Industrial,1,práctica,89,tarde,120,D231,1,0
+C003,Introducción a la Ingeniería,IND-1A,Ing. Industrial,1,teórica,89,mañana,120,D132,1,0
+C004,Introducción a la Ingeniería,IND-1A,Ing. Industrial,1,práctica,89,mañana,180,D254,1,0
+C005,Química General,IND-1A,Ing. Industrial,1,teórica,89,mañana,180,D235,0,0
+C006,Química General,IND-1A,Ing. Industrial,1,práctica,89,mañana,90,D256,1,0
+C007,Teología I,IND-1A,Ing. Industrial,1,teórica,89,mañana,90,D277,1,0
+C008,Álgebra y Geometría Analítica,IND-1A,Ing. Industrial,1,teórica,89,mañana,120,D280,1,0
+C009,Álgebra y Geometría Analítica,IND-1A,Ing. Industrial,1,práctica,89,mañana,240,D184,1,0
+C010,Física I,IND-1B,Ing. Industrial,1,teórica,89,noche,180,D235,1,0
+C011,Física I,IND-1B,Ing. Industrial,1,práctica,89,noche,180,D250,1,0
+C012,Teología I,IND-1B,Ing. Industrial,1,teórica,89,noche,120,D181,1,0
+C013,Álgebra y Geometría Analítica,IND-1B,Ing. Industrial,1,teórica,89,noche,120,D153,1,0
+C014,Álgebra y Geometría Analítica,IND-1B,Ing. Industrial,1,práctica,89,noche,180,D220,0,0
+C015,Física I,IND-1C,Ing. Industrial,1,teórica,88,tarde,180,D129,1,0
+C016,Física I,IND-1C,Ing. Industrial,1,práctica,88,tarde,180,D129,1,0
+C017,Introducción a la Ingeniería,IND-1C,Ing. Industrial,1,teórica,88,tarde,120,D254,0,0
+C018,Introducción a la Ingeniería,IND-1C,Ing. Industrial,1,práctica,88,tarde,180,D035,1,0
+C019,Sistemas de Representación,IND-1C,Ing. Industrial,1,teórica,88,mañana,120,D039,1,0
+C020,Sistemas de Representación,IND-1C,Ing. Industrial,1,práctica,88,mañana,120,D052,0,0
+C021,Teología I,IND-1C,Ing. Industrial,1,teórica,88,mañana,90,D277,1,0
+C022,Álgebra y Geometría Analítica,IND-1C,Ing. Industrial,1,teórica,88,tarde,120,D214,1,0
+C023,Álgebra y Geometría Analítica,IND-1C,Ing. Industrial,1,práctica,88,tarde,180,D081,0,0
+C024,Análisis Matemático I,IND-1D,Ing. Industrial,1,teórica,88,noche,120,D014,1,0
+C025,Análisis Matemático I,IND-1D,Ing. Industrial,1,práctica,88,noche,120,D189,0,0
+C026,Química General,IND-1D,Ing. Industrial,1,teórica,88,noche,180,D129,1,0
+C027,Química General,IND-1D,Ing. Industrial,1,práctica,88,noche,120,D028,1,0
+C028,Sistemas de Representación,IND-1D,Ing. Industrial,1,teórica,88,noche,120,D023,1,0
+C029,Sistemas de Representación,IND-1D,Ing. Industrial,1,práctica,88,noche,120,D023,0,0
+C030,Teología I,IND-1D,Ing. Industrial,1,teórica,88,noche,90,D161,1,0
+C031,Análisis Matemático II,IND-2A,Ing. Industrial,2,teórica,70,tarde,90,D244,1,0
+C032,Análisis Matemático II,IND-2A,Ing. Industrial,2,práctica,70,tarde,90,D010,1,0
+C033,Filosofía,IND-2A,Ing. Industrial,2,teórica,70,tarde,90,D002,0,0
+C034,Física II,IND-2A,Ing. Industrial,2,teórica,70,tarde,120,D194,1,0
+C035,Física II,IND-2A,Ing. Industrial,2,práctica,70,tarde,120,D020,1,0
+C036,Probabilidad y Estadística,IND-2A,Ing. Industrial,2,teórica,70,tarde,120,D005,1,0
+C037,Probabilidad y Estadística,IND-2A,Ing. Industrial,2,práctica,70,tarde,180,D092,1,0
+C038,Programación,IND-2A,Ing. Industrial,2,teórica,70,tarde,180,D066,0,0
+C039,Programación,IND-2A,Ing. Industrial,2,laboratorio,35,mañana,240,D162,1,1
+C040,Programación,IND-2A,Ing. Industrial,2,laboratorio,35,mañana,240,D162,1,1
+C041,Análisis Matemático II,IND-2B,Ing. Industrial,2,teórica,70,tarde,180,D265,0,0
+C042,Análisis Matemático II,IND-2B,Ing. Industrial,2,práctica,70,mañana,180,D265,0,0
+C043,Ciencia de los Materiales,IND-2B,Ing. Industrial,2,teórica,70,tarde,120,D020,1,0
+C044,Ciencia de los Materiales,IND-2B,Ing. Industrial,2,práctica,70,mañana,120,D194,1,0
+C045,Filosofía,IND-2B,Ing. Industrial,2,teórica,70,tarde,90,D002,1,0
+C046,Física II,IND-2B,Ing. Industrial,2,teórica,70,tarde,90,D028,1,0
+C047,Física II,IND-2B,Ing. Industrial,2,práctica,70,tarde,180,D125,1,0
+C048,Programación,IND-2B,Ing. Industrial,2,teórica,70,tarde,180,D210,1,0
+C049,Programación,IND-2B,Ing. Industrial,2,laboratorio,35,mañana,180,D123,1,1
+C050,Programación,IND-2B,Ing. Industrial,2,laboratorio,35,mañana,180,D070,1,1
+C051,Ciencia de los Materiales,IND-2C,Ing. Industrial,2,teórica,69,noche,120,D051,1,0
+C052,Ciencia de los Materiales,IND-2C,Ing. Industrial,2,práctica,69,noche,120,D051,0,0
+C053,Filosofía,IND-2C,Ing. Industrial,2,teórica,69,noche,90,D273,1,0
+C054,Física II,IND-2C,Ing. Industrial,2,teórica,69,noche,120,D051,1,0
+C055,Física II,IND-2C,Ing. Industrial,2,práctica,69,noche,90,D134,0,0
+C056,Probabilidad y Estadística,IND-2C,Ing. Industrial,2,teórica,69,noche,120,D192,0,0
+C057,Probabilidad y Estadística,IND-2C,Ing. Industrial,2,práctica,69,noche,120,D038,0,0
+C058,Economía General,IND-3A,Ing. Industrial,3,teórica,88,tarde,120,D233,0,0
+C059,Electrotecnia,IND-3A,Ing. Industrial,3,teórica,88,tarde,180,D020,1,0
+C060,Electrotecnia,IND-3A,Ing. Industrial,3,práctica,88,mañana,120,D231,0,0
+C061,Investigación Operativa,IND-3A,Ing. Industrial,3,teórica,88,tarde,180,D081,1,0
+C062,Investigación Operativa,IND-3A,Ing. Industrial,3,práctica,88,tarde,90,D003,1,0
+C063,Teología II,IND-3A,Ing. Industrial,3,teórica,88,tarde,120,D181,1,0
+C064,Termodinámica,IND-3A,Ing. Industrial,3,teórica,88,tarde,240,D235,0,0
+C065,Termodinámica,IND-3A,Ing. Industrial,3,práctica,88,mañana,120,D231,1,0
+C066,Economía General,IND-3B,Ing. Industrial,3,teórica,87,mañana,120,D135,1,0
+C067,Electrotecnia,IND-3B,Ing. Industrial,3,teórica,87,mañana,120,D146,0,0
+C068,Electrotecnia,IND-3B,Ing. Industrial,3,práctica,87,mañana,120,D146,0,0
+C069,Investigación Operativa,IND-3B,Ing. Industrial,3,teórica,87,mañana,180,D249,1,0
+C070,Investigación Operativa,IND-3B,Ing. Industrial,3,práctica,87,mañana,90,D152,0,0
+C071,Mecánica y Mecanismos,IND-3B,Ing. Industrial,3,teórica,87,mañana,120,D146,1,0
+C072,Mecánica y Mecanismos,IND-3B,Ing. Industrial,3,práctica,87,mañana,120,D146,1,0
+C073,Teología II,IND-3B,Ing. Industrial,3,teórica,87,mañana,120,D181,1,0
+C074,Costos Industriales,IND-4A,Ing. Industrial,4,teórica,72,mañana,120,D132,0,0
+C075,Costos Industriales,IND-4A,Ing. Industrial,4,práctica,72,mañana,180,D061,0,0
+C076,Gestión de la Calidad,IND-4A,Ing. Industrial,4,teórica,72,mañana,120,D039,1,0
+C077,Gestión de la Calidad,IND-4A,Ing. Industrial,4,práctica,72,tarde,120,D061,0,0
+C078,Procesos Industriales,IND-4A,Ing. Industrial,4,teórica,72,mañana,120,D132,1,0
+C079,Procesos Industriales,IND-4A,Ing. Industrial,4,práctica,72,tarde,120,D039,0,0
+C080,Simulación,IND-4A,Ing. Industrial,4,teórica,72,mañana,120,D039,1,0
+C081,Simulación,IND-4A,Ing. Industrial,4,laboratorio,24,mañana,180,D091,1,1
+C082,Simulación,IND-4A,Ing. Industrial,4,laboratorio,24,mañana,180,D091,1,1
+C083,Simulación,IND-4A,Ing. Industrial,4,laboratorio,24,mañana,180,D091,1,1
+C084,Costos Industriales,IND-4B,Ing. Industrial,4,teórica,72,tarde,240,D196,1,0
+C085,Costos Industriales,IND-4B,Ing. Industrial,4,práctica,72,mañana,120,D039,0,0
+C086,Logística,IND-4B,Ing. Industrial,4,teórica,72,tarde,90,D221,0,0
+C087,Logística,IND-4B,Ing. Industrial,4,práctica,72,mañana,120,D132,1,0
+C088,Organización Industrial,IND-4B,Ing. Industrial,4,teórica,72,tarde,180,D196,1,0
+C089,Organización Industrial,IND-4B,Ing. Industrial,4,práctica,72,tarde,180,D133,1,0
+C090,Procesos Industriales,IND-4B,Ing. Industrial,4,teórica,72,tarde,240,D035,1,0
+C091,Procesos Industriales,IND-4B,Ing. Industrial,4,práctica,72,tarde,120,D039,1,0
+C092,Evaluación de Proyectos,IND-5A,Ing. Industrial,5,teórica,67,noche,180,D133,0,0
+C093,Evaluación de Proyectos,IND-5A,Ing. Industrial,5,práctica,67,noche,120,D209,1,0
+C094,Optimización,IND-5A,Ing. Industrial,5,teórica,67,noche,120,D068,1,0
+C095,Optimización,IND-5A,Ing. Industrial,5,laboratorio,34,noche,180,D124,1,1
+C096,Optimización,IND-5A,Ing. Industrial,5,laboratorio,33,noche,180,D124,1,1
+C097,Ética Profesional,IND-5A,Ing. Industrial,5,teórica,67,noche,120,D272,0,0
+C098,Evaluación de Proyectos,IND-5B,Ing. Industrial,5,teórica,67,tarde,90,D221,1,0
+C099,Evaluación de Proyectos,IND-5B,Ing. Industrial,5,práctica,67,tarde,120,D209,0,0
+C100,Gestión Ambiental,IND-5B,Ing. Industrial,5,teórica,67,tarde,90,D221,1,0
+C101,Gestión Ambiental,IND-5B,Ing. Industrial,5,práctica,67,mañana,120,D179,1,0
+C102,Optimización,IND-5B,Ing. Industrial,5,teórica,67,tarde,120,D192,1,0
+C103,Optimización,IND-5B,Ing. Industrial,5,laboratorio,34,mañana,240,D058,1,1
+C104,Optimización,IND-5B,Ing. Industrial,5,laboratorio,33,mañana,240,D058,1,1
+C105,Planificación y Control de la Producción,IND-5B,Ing. Industrial,5,teórica,67,tarde,90,D221,0,0
+C106,Planificación y Control de la Producción,IND-5B,Ing. Industrial,5,práctica,67,tarde,120,D179,0,0
+C107,Ética Profesional,IND-5B,Ing. Industrial,5,teórica,67,tarde,90,D277,1,0
+C108,Análisis Matemático I,INF-1A,Ing. Informática,1,teórica,40,tarde,120,D033,1,0
+C109,Análisis Matemático I,INF-1A,Ing. Informática,1,práctica,40,mañana,90,D049,0,0
+C110,Introducción a la Programación,INF-1A,Ing. Informática,1,teórica,40,tarde,90,D011,1,0
+C111,Introducción a la Programación,INF-1A,Ing. Informática,1,laboratorio,20,mañana,180,D141,1,1
+C112,Introducción a la Programación,INF-1A,Ing. Informática,1,laboratorio,20,mañana,180,D173,1,1
+C113,Matemática Discreta,INF-1A,Ing. Informática,1,teórica,40,tarde,90,D010,1,0
+C114,Matemática Discreta,INF-1A,Ing. Informática,1,práctica,40,mañana,120,D271,0,0
+C115,Teología I,INF-1A,Ing. Informática,1,teórica,40,tarde,90,D087,1,0
+C116,Álgebra y Geometría Analítica,INF-1A,Ing. Informática,1,teórica,40,tarde,180,D247,1,0
+C117,Álgebra y Geometría Analítica,INF-1A,Ing. Informática,1,práctica,40,tarde,180,D062,0,0
+C118,Análisis Matemático I,INF-1B,Ing. Informática,1,teórica,40,mañana,120,D271,1,0
+C119,Análisis Matemático I,INF-1B,Ing. Informática,1,práctica,40,mañana,120,D033,0,0
+C120,Introducción a la Programación,INF-1B,Ing. Informática,1,teórica,40,mañana,120,D084,1,0
+C121,Introducción a la Programación,INF-1B,Ing. Informática,1,laboratorio,20,mañana,120,D148,1,1
+C122,Introducción a la Programación,INF-1B,Ing. Informática,1,laboratorio,20,mañana,120,D148,1,1
+C123,Matemática Discreta,INF-1B,Ing. Informática,1,teórica,40,mañana,180,D247,1,0
+C124,Matemática Discreta,INF-1B,Ing. Informática,1,práctica,40,mañana,180,D280,1,0
+C125,Teología I,INF-1B,Ing. Informática,1,teórica,40,tarde,90,D282,1,0
+C126,Álgebra y Geometría Analítica,INF-1B,Ing. Informática,1,teórica,40,mañana,240,D118,1,0
+C127,Álgebra y Geometría Analítica,INF-1B,Ing. Informática,1,práctica,40,mañana,180,D247,1,0
+C128,Análisis Matemático I,INF-1C,Ing. Informática,1,teórica,40,tarde,180,D247,1,0
+C129,Análisis Matemático I,INF-1C,Ing. Informática,1,práctica,40,tarde,180,D114,1,0
+C130,Física I,INF-1C,Ing. Informática,1,teórica,40,tarde,90,D256,1,0
+C131,Física I,INF-1C,Ing. Informática,1,práctica,40,tarde,120,D275,0,0
+C132,Introducción a la Programación,INF-1C,Ing. Informática,1,teórica,40,tarde,90,D011,1,0
+C133,Introducción a la Programación,INF-1C,Ing. Informática,1,laboratorio,20,mañana,240,D098,1,1
+C134,Introducción a la Programación,INF-1C,Ing. Informática,1,laboratorio,20,mañana,240,D147,1,1
+C135,Matemática Discreta,INF-1C,Ing. Informática,1,teórica,40,tarde,120,D010,1,0
+C136,Matemática Discreta,INF-1C,Ing. Informática,1,práctica,40,tarde,180,D280,0,0
+C137,Física I,INF-1D,Ing. Informática,1,teórica,39,mañana,120,D072,1,0
+C138,Física I,INF-1D,Ing. Informática,1,práctica,39,mañana,180,D231,1,0
+C139,Introducción a la Programación,INF-1D,Ing. Informática,1,teórica,39,mañana,120,D278,1,0
+C140,Introducción a la Programación,INF-1D,Ing. Informática,1,laboratorio,20,tarde,180,D177,1,1
+C141,Introducción a la Programación,INF-1D,Ing. Informática,1,laboratorio,19,tarde,180,D173,1,1
+C142,Matemática Discreta,INF-1D,Ing. Informática,1,teórica,39,mañana,120,D263,0,0
+C143,Matemática Discreta,INF-1D,Ing. Informática,1,práctica,39,mañana,120,D263,0,0
+C144,Teología I,INF-1D,Ing. Informática,1,teórica,39,mañana,120,D097,1,0
+C145,Álgebra y Geometría Analítica,INF-1D,Ing. Informática,1,teórica,39,mañana,180,D280,1,0
+C146,Álgebra y Geometría Analítica,INF-1D,Ing. Informática,1,práctica,39,mañana,180,D214,1,0
+C147,Análisis Matemático I,INF-1E,Ing. Informática,1,teórica,39,mañana,120,D271,0,0
+C148,Análisis Matemático I,INF-1E,Ing. Informática,1,práctica,39,tarde,120,D144,1,0
+C149,Física I,INF-1E,Ing. Informática,1,teórica,39,mañana,120,D072,1,0
+C150,Física I,INF-1E,Ing. Informática,1,práctica,39,mañana,120,D072,0,0
+C151,Matemática Discreta,INF-1E,Ing. Informática,1,teórica,39,mañana,90,D010,1,0
+C152,Matemática Discreta,INF-1E,Ing. Informática,1,práctica,39,mañana,120,D144,1,0
+C153,Teología I,INF-1E,Ing. Informática,1,teórica,39,mañana,90,D161,1,0
+C154,Álgebra y Geometría Analítica,INF-1E,Ing. Informática,1,teórica,39,mañana,240,D025,1,0
+C155,Álgebra y Geometría Analítica,INF-1E,Ing. Informática,1,práctica,39,tarde,120,D176,1,0
+C156,Análisis Matemático I,INF-1F,Ing. Informática,1,teórica,39,tarde,120,D144,1,0
+C157,Análisis Matemático I,INF-1F,Ing. Informática,1,práctica,39,tarde,120,D176,0,0
+C158,Física I,INF-1F,Ing. Informática,1,teórica,39,tarde,120,D028,0,0
+C159,Física I,INF-1F,Ing. Informática,1,práctica,39,mañana,120,D072,0,0
+C160,Matemática Discreta,INF-1F,Ing. Informática,1,teórica,39,tarde,180,D214,1,0
+C161,Matemática Discreta,INF-1F,Ing. Informática,1,práctica,39,tarde,120,D263,0,0
+C162,Teología I,INF-1F,Ing. Informática,1,teórica,39,mañana,120,D097,1,0
+C163,Álgebra y Geometría Analítica,INF-1F,Ing. Informática,1,teórica,39,tarde,240,D163,1,0
+C164,Álgebra y Geometría Analítica,INF-1F,Ing. Informática,1,práctica,39,tarde,180,D143,1,0
+C165,Introducción a la Programación,INF-1G,Ing. Informática,1,teórica,39,noche,120,D278,1,0
+C166,Introducción a la Programación,INF-1G,Ing. Informática,1,laboratorio,20,noche,120,D073,1,1
+C167,Introducción a la Programación,INF-1G,Ing. Informática,1,laboratorio,19,noche,120,D073,1,1
+C168,Teología I,INF-1G,Ing. Informática,1,teórica,39,noche,120,D097,1,0
+C169,Álgebra y Geometría Analítica,INF-1G,Ing. Informática,1,teórica,39,noche,180,D211,1,0
+C170,Álgebra y Geometría Analítica,INF-1G,Ing. Informática,1,práctica,39,noche,180,D211,0,0
+C171,Análisis Matemático II,INF-2A,Ing. Informática,2,teórica,44,noche,120,D251,1,0
+C172,Análisis Matemático II,INF-2A,Ing. Informática,2,práctica,44,noche,120,D259,1,0
+C173,Arquitectura de Computadoras,INF-2A,Ing. Informática,2,teórica,44,noche,120,D107,1,0
+C174,Arquitectura de Computadoras,INF-2A,Ing. Informática,2,práctica,44,noche,90,D127,0,0
+C175,Filosofía,INF-2A,Ing. Informática,2,teórica,44,noche,120,D104,1,0
+C176,Probabilidad y Estadística,INF-2A,Ing. Informática,2,teórica,44,noche,120,D259,1,0
+C177,Probabilidad y Estadística,INF-2A,Ing. Informática,2,práctica,44,noche,120,D082,1,0
+C178,Algoritmos y Estructuras de Datos,INF-2B,Ing. Informática,2,teórica,44,mañana,90,D011,1,0
+C179,Algoritmos y Estructuras de Datos,INF-2B,Ing. Informática,2,laboratorio,22,mañana,180,D057,1,1
+C180,Algoritmos y Estructuras de Datos,INF-2B,Ing. Informática,2,laboratorio,22,mañana,180,D057,1,1
+C181,Análisis Matemático II,INF-2B,Ing. Informática,2,teórica,44,mañana,180,D062,0,0
+C182,Análisis Matemático II,INF-2B,Ing. Informática,2,práctica,44,mañana,90,D049,1,0
+C183,Arquitectura de Computadoras,INF-2B,Ing. Informática,2,teórica,44,mañana,120,D107,1,0
+C184,Arquitectura de Computadoras,INF-2B,Ing. Informática,2,práctica,44,mañana,120,D107,0,0
+C185,Física II,INF-2B,Ing. Informática,2,teórica,44,mañana,120,D275,1,0
+C186,Física II,INF-2B,Ing. Informática,2,práctica,44,tarde,90,D028,0,0
+C187,Probabilidad y Estadística,INF-2B,Ing. Informática,2,teórica,44,mañana,120,D229,1,0
+C188,Probabilidad y Estadística,INF-2B,Ing. Informática,2,práctica,44,tarde,180,D111,0,0
+C189,Algoritmos y Estructuras de Datos,INF-2C,Ing. Informática,2,teórica,44,mañana,120,D107,1,0
+C190,Algoritmos y Estructuras de Datos,INF-2C,Ing. Informática,2,laboratorio,22,tarde,120,D053,1,1
+C191,Algoritmos y Estructuras de Datos,INF-2C,Ing. Informática,2,laboratorio,22,tarde,120,D103,1,1
+C192,Arquitectura de Computadoras,INF-2C,Ing. Informática,2,teórica,44,tarde,180,D037,1,0
+C193,Arquitectura de Computadoras,INF-2C,Ing. Informática,2,práctica,44,tarde,180,D210,0,0
+C194,Filosofía,INF-2C,Ing. Informática,2,teórica,44,mañana,120,D168,1,0
+C195,Física II,INF-2C,Ing. Informática,2,teórica,44,tarde,120,D028,0,0
+C196,Física II,INF-2C,Ing. Informática,2,práctica,44,mañana,90,D171,0,0
+C197,Probabilidad y Estadística,INF-2C,Ing. Informática,2,teórica,44,mañana,120,D229,1,0
+C198,Probabilidad y Estadística,INF-2C,Ing. Informática,2,práctica,44,tarde,180,D111,1,0
+C199,Algoritmos y Estructuras de Datos,INF-2D,Ing. Informática,2,teórica,44,mañana,180,D037,1,0
+C200,Algoritmos y Estructuras de Datos,INF-2D,Ing. Informática,2,laboratorio,22,mañana,120,D034,1,1
+C201,Algoritmos y Estructuras de Datos,INF-2D,Ing. Informática,2,laboratorio,22,mañana,120,D034,1,1
+C202,Análisis Matemático II,INF-2D,Ing. Informática,2,teórica,44,mañana,180,D062,1,0
+C203,Análisis Matemático II,INF-2D,Ing. Informática,2,práctica,44,mañana,180,D062,0,0
+C204,Arquitectura de Computadoras,INF-2D,Ing. Informática,2,teórica,44,mañana,120,D037,0,0
+C205,Arquitectura de Computadoras,INF-2D,Ing. Informática,2,práctica,44,tarde,90,D127,1,0
+C206,Física II,INF-2D,Ing. Informática,2,teórica,44,mañana,120,D275,1,0
+C207,Física II,INF-2D,Ing. Informática,2,práctica,44,mañana,90,D256,1,0
+C208,Probabilidad y Estadística,INF-2D,Ing. Informática,2,teórica,44,mañana,180,D255,1,0
+C209,Probabilidad y Estadística,INF-2D,Ing. Informática,2,práctica,44,mañana,120,D038,1,0
+C210,Ingeniería de Software I,INF-3A,Ing. Informática,3,teórica,36,tarde,180,D252,1,0
+C211,Ingeniería de Software I,INF-3A,Ing. Informática,3,práctica,36,mañana,180,D252,0,0
+C212,Paradigmas de Programación,INF-3A,Ing. Informática,3,teórica,36,tarde,180,D107,1,0
+C213,Paradigmas de Programación,INF-3A,Ing. Informática,3,laboratorio,18,mañana,180,D053,1,1
+C214,Paradigmas de Programación,INF-3A,Ing. Informática,3,laboratorio,18,mañana,180,D086,1,1
+C215,Redes de Computadoras,INF-3A,Ing. Informática,3,teórica,36,tarde,180,D140,1,0
+C216,Redes de Computadoras,INF-3A,Ing. Informática,3,laboratorio,18,mañana,180,D034,1,1
+C217,Redes de Computadoras,INF-3A,Ing. Informática,3,laboratorio,18,mañana,180,D113,1,1
+C218,Ingeniería de Software I,INF-3B,Ing. Informática,3,teórica,36,noche,120,D234,1,0
+C219,Ingeniería de Software I,INF-3B,Ing. Informática,3,práctica,36,noche,90,D227,1,0
+C220,Sistemas Operativos,INF-3B,Ing. Informática,3,teórica,36,noche,120,D216,1,0
+C221,Sistemas Operativos,INF-3B,Ing. Informática,3,laboratorio,18,noche,180,D016,1,1
+C222,Sistemas Operativos,INF-3B,Ing. Informática,3,laboratorio,18,noche,180,D177,1,1
+C223,Teología II,INF-3B,Ing. Informática,3,teórica,36,noche,90,D218,0,0
+C224,Bases de Datos,INF-3C,Ing. Informática,3,teórica,36,noche,90,D262,1,0
+C225,Bases de Datos,INF-3C,Ing. Informática,3,laboratorio,18,noche,180,D113,1,1
+C226,Bases de Datos,INF-3C,Ing. Informática,3,laboratorio,18,noche,180,D085,1,1
+C227,Ingeniería de Software I,INF-3C,Ing. Informática,3,teórica,36,noche,120,D234,1,0
+C228,Ingeniería de Software I,INF-3C,Ing. Informática,3,práctica,36,noche,120,D234,0,0
+C229,Teología II,INF-3C,Ing. Informática,3,teórica,36,noche,120,D002,1,0
+C230,Ingeniería de Software I,INF-3D,Ing. Informática,3,teórica,36,mañana,120,D223,0,0
+C231,Ingeniería de Software I,INF-3D,Ing. Informática,3,práctica,36,mañana,120,D228,0,0
+C232,Redes de Computadoras,INF-3D,Ing. Informática,3,teórica,36,mañana,120,D241,1,0
+C233,Redes de Computadoras,INF-3D,Ing. Informática,3,laboratorio,18,mañana,120,D066,1,1
+C234,Redes de Computadoras,INF-3D,Ing. Informática,3,laboratorio,18,mañana,120,D073,1,1
+C235,Sistemas Operativos,INF-3D,Ing. Informática,3,teórica,36,mañana,120,D278,1,0
+C236,Sistemas Operativos,INF-3D,Ing. Informática,3,laboratorio,18,tarde,180,D086,1,1
+C237,Sistemas Operativos,INF-3D,Ing. Informática,3,laboratorio,18,tarde,180,D149,1,1
+C238,Teología II,INF-3D,Ing. Informática,3,teórica,36,mañana,120,D087,1,0
+C239,Compiladores,INF-4A,Ing. Informática,4,teórica,40,mañana,90,D193,1,0
+C240,Compiladores,INF-4A,Ing. Informática,4,laboratorio,20,mañana,120,D148,1,1
+C241,Compiladores,INF-4A,Ing. Informática,4,laboratorio,20,mañana,120,D063,1,1
+C242,Inteligencia Artificial,INF-4A,Ing. Informática,4,teórica,40,mañana,120,D197,1,0
+C243,Inteligencia Artificial,INF-4A,Ing. Informática,4,laboratorio,20,mañana,120,D225,1,1
+C244,Inteligencia Artificial,INF-4A,Ing. Informática,4,laboratorio,20,mañana,120,D260,1,1
+C245,Investigación Operativa,INF-4A,Ing. Informática,4,teórica,40,mañana,90,D088,1,0
+C246,Investigación Operativa,INF-4A,Ing. Informática,4,práctica,40,mañana,120,D271,1,0
+C247,Sistemas Distribuidos,INF-4A,Ing. Informática,4,teórica,40,mañana,90,D193,0,0
+C248,Sistemas Distribuidos,INF-4A,Ing. Informática,4,laboratorio,20,tarde,180,D173,1,1
+C249,Sistemas Distribuidos,INF-4A,Ing. Informática,4,laboratorio,20,tarde,180,D141,1,1
+C250,Compiladores,INF-4B,Ing. Informática,4,teórica,40,mañana,120,D216,1,0
+C251,Compiladores,INF-4B,Ing. Informática,4,laboratorio,20,mañana,240,D170,1,1
+C252,Compiladores,INF-4B,Ing. Informática,4,laboratorio,20,mañana,240,D123,1,1
+C253,Inteligencia Artificial,INF-4B,Ing. Informática,4,teórica,40,mañana,180,D019,1,0
+C254,Inteligencia Artificial,INF-4B,Ing. Informática,4,laboratorio,20,tarde,120,D225,1,1
+C255,Inteligencia Artificial,INF-4B,Ing. Informática,4,laboratorio,20,tarde,120,D225,1,1
+C256,Investigación Operativa,INF-4B,Ing. Informática,4,teórica,40,mañana,120,D033,1,0
+C257,Investigación Operativa,INF-4B,Ing. Informática,4,práctica,40,mañana,180,D280,0,0
+C258,Inteligencia Artificial,INF-4C,Ing. Informática,4,teórica,39,tarde,120,D082,0,0
+C259,Inteligencia Artificial,INF-4C,Ing. Informática,4,laboratorio,20,tarde,240,D199,1,1
+C260,Inteligencia Artificial,INF-4C,Ing. Informática,4,laboratorio,19,tarde,240,D164,1,1
+C261,Investigación Operativa,INF-4C,Ing. Informática,4,teórica,39,mañana,120,D263,1,0
+C262,Investigación Operativa,INF-4C,Ing. Informática,4,práctica,39,mañana,120,D263,0,0
+C263,Seguridad Informática,INF-4C,Ing. Informática,4,teórica,39,mañana,120,D241,1,0
+C264,Seguridad Informática,INF-4C,Ing. Informática,4,laboratorio,20,tarde,240,D123,1,1
+C265,Seguridad Informática,INF-4C,Ing. Informática,4,laboratorio,19,tarde,240,D098,1,1
+C266,Computación en la Nube,INF-5A,Ing. Informática,5,teórica,36,mañana,120,D216,1,0
+C267,Computación en la Nube,INF-5A,Ing. Informática,5,laboratorio,18,tarde,180,D085,1,1
+C268,Computación en la Nube,INF-5A,Ing. Informática,5,laboratorio,18,tarde,180,D053,1,1
+C269,Machine Learning,INF-5A,Ing. Informática,5,teórica,36,tarde,240,D019,0,0
+C270,Machine Learning,INF-5A,Ing. Informática,5,laboratorio,18,tarde,240,D164,1,1
+C271,Machine Learning,INF-5A,Ing. Informática,5,laboratorio,18,tarde,240,D164,1,1
+C272,Proyecto Final,INF-5A,Ing. Informática,5,práctica,36,mañana,90,D232,0,0
+C273,Ética Profesional,INF-5A,Ing. Informática,5,teórica,36,mañana,90,D122,1,0
+C274,Arquitectura de Software,INF-5B,Ing. Informática,5,teórica,36,mañana,180,D202,1,0
+C275,Arquitectura de Software,INF-5B,Ing. Informática,5,práctica,36,tarde,120,D234,0,0
+C276,Computación en la Nube,INF-5B,Ing. Informática,5,teórica,36,mañana,120,D216,1,0
+C277,Computación en la Nube,INF-5B,Ing. Informática,5,laboratorio,18,tarde,120,D210,1,1
+C278,Computación en la Nube,INF-5B,Ing. Informática,5,laboratorio,18,tarde,120,D149,1,1
+C279,Machine Learning,INF-5B,Ing. Informática,5,teórica,36,mañana,120,D197,1,0
+C280,Machine Learning,INF-5B,Ing. Informática,5,laboratorio,18,mañana,180,D240,1,1
+C281,Machine Learning,INF-5B,Ing. Informática,5,laboratorio,18,mañana,180,D240,1,1
+C282,Proyecto Final,INF-5B,Ing. Informática,5,práctica,36,tarde,180,D202,0,0
+C283,Ética Profesional,INF-5B,Ing. Informática,5,teórica,36,mañana,90,D168,1,0
+C284,Computación en la Nube,INF-5C,Ing. Informática,5,teórica,36,mañana,120,D216,1,0
+C285,Computación en la Nube,INF-5C,Ing. Informática,5,laboratorio,18,tarde,240,D098,1,1
+C286,Computación en la Nube,INF-5C,Ing. Informática,5,laboratorio,18,tarde,240,D070,1,1
+C287,Gestión de Proyectos,INF-5C,Ing. Informática,5,teórica,36,tarde,120,D223,0,0
+C288,Gestión de Proyectos,INF-5C,Ing. Informática,5,práctica,36,mañana,180,D202,0,0
+C289,Machine Learning,INF-5C,Ing. Informática,5,teórica,36,tarde,180,D246,1,0
+C290,Machine Learning,INF-5C,Ing. Informática,5,laboratorio,18,tarde,120,D266,1,1
+C291,Machine Learning,INF-5C,Ing. Informática,5,laboratorio,18,tarde,120,D266,1,1
+C292,Ética Profesional,INF-5C,Ing. Informática,5,teórica,36,mañana,90,D168,1,0
+C293,Inglés Técnico I,LSI-1A,Lic. Sistemas,1,práctica,41,noche,120,D104,0,0
+C294,Matemática I,LSI-1A,Lic. Sistemas,1,teórica,41,noche,180,D114,1,0
+C295,Matemática I,LSI-1A,Lic. Sistemas,1,práctica,41,noche,120,D038,0,0
+C296,Sistemas y Organizaciones,LSI-1A,Lic. Sistemas,1,teórica,41,noche,180,D047,1,0
+C297,Sistemas y Organizaciones,LSI-1A,Lic. Sistemas,1,práctica,41,noche,120,D105,1,0
+C298,Teología I,LSI-1A,Lic. Sistemas,1,teórica,41,noche,90,D012,1,0
+C299,Inglés Técnico I,LSI-1B,Lic. Sistemas,1,práctica,41,noche,120,D104,1,0
+C300,Matemática I,LSI-1B,Lic. Sistemas,1,teórica,41,noche,120,D100,1,0
+C301,Matemática I,LSI-1B,Lic. Sistemas,1,práctica,41,noche,120,D038,0,0
+C302,Sistemas y Organizaciones,LSI-1B,Lic. Sistemas,1,teórica,41,noche,240,D276,1,0
+C303,Sistemas y Organizaciones,LSI-1B,Lic. Sistemas,1,práctica,41,noche,180,D195,0,0
+C304,Teología I,LSI-1B,Lic. Sistemas,1,teórica,41,noche,120,D104,1,0
+C305,Inglés Técnico I,LSI-1C,Lic. Sistemas,1,práctica,40,mañana,120,D097,0,0
+C306,Introducción a la Programación,LSI-1C,Lic. Sistemas,1,teórica,40,mañana,120,D084,1,0
+C307,Introducción a la Programación,LSI-1C,Lic. Sistemas,1,laboratorio,20,mañana,120,D063,1,1
+C308,Introducción a la Programación,LSI-1C,Lic. Sistemas,1,laboratorio,20,mañana,120,D148,1,1
+C309,Matemática I,LSI-1C,Lic. Sistemas,1,teórica,40,mañana,120,D100,1,0
+C310,Matemática I,LSI-1C,Lic. Sistemas,1,práctica,40,mañana,120,D100,1,0
+C311,Sistemas y Organizaciones,LSI-1C,Lic. Sistemas,1,teórica,40,mañana,120,D137,1,0
+C312,Sistemas y Organizaciones,LSI-1C,Lic. Sistemas,1,práctica,40,tarde,120,D105,0,0
+C313,Teología I,LSI-1C,Lic. Sistemas,1,teórica,40,mañana,90,D282,1,0
+C314,Inglés Técnico I,LSI-1D,Lic. Sistemas,1,práctica,40,mañana,120,D097,1,0
+C315,Introducción a la Programación,LSI-1D,Lic. Sistemas,1,teórica,40,tarde,180,D060,1,0
+C316,Introducción a la Programación,LSI-1D,Lic. Sistemas,1,laboratorio,20,tarde,180,D141,1,1
+C317,Introducción a la Programación,LSI-1D,Lic. Sistemas,1,laboratorio,20,tarde,180,D141,1,1
+C318,Matemática I,LSI-1D,Lic. Sistemas,1,teórica,40,tarde,180,D074,0,0
+C319,Matemática I,LSI-1D,Lic. Sistemas,1,práctica,40,mañana,90,D010,0,0
+C320,Sistemas y Organizaciones,LSI-1D,Lic. Sistemas,1,teórica,40,tarde,180,D215,1,0
+C321,Sistemas y Organizaciones,LSI-1D,Lic. Sistemas,1,práctica,40,mañana,120,D137,1,0
+C322,Teología I,LSI-1D,Lic. Sistemas,1,teórica,40,mañana,120,D097,1,0
+C323,Análisis de Sistemas,LSI-2A,Lic. Sistemas,2,teórica,33,mañana,180,D047,0,0
+C324,Análisis de Sistemas,LSI-2A,Lic. Sistemas,2,práctica,33,tarde,120,D099,0,0
+C325,Bases de Datos,LSI-2A,Lic. Sistemas,2,teórica,33,mañana,120,D083,1,0
+C326,Bases de Datos,LSI-2A,Lic. Sistemas,2,laboratorio,33,mañana,120,D086,1,1
+C327,Estadística,LSI-2A,Lic. Sistemas,2,teórica,33,mañana,120,D152,1,0
+C328,Estadística,LSI-2A,Lic. Sistemas,2,práctica,33,mañana,120,D108,0,0
+C329,Matemática II,LSI-2A,Lic. Sistemas,2,teórica,33,mañana,240,D264,1,0
+C330,Matemática II,LSI-2A,Lic. Sistemas,2,práctica,33,mañana,180,D089,1,0
+C331,Programación Orientada a Objetos,LSI-2A,Lic. Sistemas,2,teórica,33,mañana,120,D083,1,0
+C332,Programación Orientada a Objetos,LSI-2A,Lic. Sistemas,2,laboratorio,33,tarde,120,D173,1,1
+C333,Bases de Datos,LSI-2B,Lic. Sistemas,2,teórica,33,tarde,120,D216,1,0
+C334,Bases de Datos,LSI-2B,Lic. Sistemas,2,laboratorio,33,tarde,180,D070,1,1
+C335,Estadística,LSI-2B,Lic. Sistemas,2,teórica,33,tarde,180,D189,1,0
+C336,Estadística,LSI-2B,Lic. Sistemas,2,práctica,33,tarde,180,D189,1,0
+C337,Filosofía,LSI-2B,Lic. Sistemas,2,teórica,33,tarde,90,D218,0,0
+C338,Matemática II,LSI-2B,Lic. Sistemas,2,teórica,33,tarde,120,D169,1,0
+C339,Matemática II,LSI-2B,Lic. Sistemas,2,práctica,33,mañana,120,D003,0,0
+C340,Programación Orientada a Objetos,LSI-2B,Lic. Sistemas,2,teórica,33,tarde,120,D083,1,0
+C341,Programación Orientada a Objetos,LSI-2B,Lic. Sistemas,2,laboratorio,33,mañana,240,D224,1,1
+C342,Bases de Datos,LSI-2C,Lic. Sistemas,2,teórica,33,noche,120,D216,1,0
+C343,Bases de Datos,LSI-2C,Lic. Sistemas,2,laboratorio,33,noche,120,D057,1,1
+C344,Estadística,LSI-2C,Lic. Sistemas,2,teórica,33,noche,120,D152,1,0
+C345,Estadística,LSI-2C,Lic. Sistemas,2,práctica,33,noche,120,D244,1,0
+C346,Matemática II,LSI-2C,Lic. Sistemas,2,teórica,33,noche,240,D264,1,0
+C347,Matemática II,LSI-2C,Lic. Sistemas,2,práctica,33,noche,120,D169,1,0
+C348,Diseño de Sistemas,LSI-3A,Lic. Sistemas,3,teórica,37,tarde,120,D223,1,0
+C349,Diseño de Sistemas,LSI-3A,Lic. Sistemas,3,práctica,37,tarde,180,D215,1,0
+C350,Inglés Técnico II,LSI-3A,Lic. Sistemas,3,práctica,37,tarde,120,D097,0,0
+C351,Redes y Comunicaciones,LSI-3A,Lic. Sistemas,3,teórica,37,tarde,120,D278,1,0
+C352,Redes y Comunicaciones,LSI-3A,Lic. Sistemas,3,laboratorio,19,tarde,180,D173,1,1
+C353,Redes y Comunicaciones,LSI-3A,Lic. Sistemas,3,laboratorio,18,tarde,180,D085,1,1
+C354,Teología II,LSI-3A,Lic. Sistemas,3,teórica,37,tarde,90,D282,1,0
+C355,Desarrollo Web,LSI-3B,Lic. Sistemas,3,teórica,36,noche,90,D193,1,0
+C356,Desarrollo Web,LSI-3B,Lic. Sistemas,3,laboratorio,18,noche,120,D066,1,1
+C357,Desarrollo Web,LSI-3B,Lic. Sistemas,3,laboratorio,18,noche,120,D073,1,1
+C358,Diseño de Sistemas,LSI-3B,Lic. Sistemas,3,teórica,36,noche,120,D187,1,0
+C359,Diseño de Sistemas,LSI-3B,Lic. Sistemas,3,práctica,36,noche,180,D202,0,0
+C360,Inglés Técnico II,LSI-3B,Lic. Sistemas,3,práctica,36,noche,90,D161,0,0
+C361,Teología II,LSI-3B,Lic. Sistemas,3,teórica,36,noche,90,D281,1,0
+C362,Auditoría de Sistemas,LSI-4A,Lic. Sistemas,4,teórica,34,mañana,180,D137,1,0
+C363,Auditoría de Sistemas,LSI-4A,Lic. Sistemas,4,práctica,34,mañana,120,D099,1,0
+C364,Gestión de Proyectos,LSI-4A,Lic. Sistemas,4,teórica,34,tarde,120,D187,1,0
+C365,Gestión de Proyectos,LSI-4A,Lic. Sistemas,4,práctica,34,mañana,180,D252,1,0
+C366,Seminario de Integración,LSI-4A,Lic. Sistemas,4,práctica,34,mañana,180,D047,1,0
+C367,Sistemas de Información Gerencial,LSI-4A,Lic. Sistemas,4,teórica,34,mañana,120,D099,1,0
+C368,Sistemas de Información Gerencial,LSI-4A,Lic. Sistemas,4,práctica,34,mañana,240,D165,0,0
+C369,Ética Profesional,LSI-4A,Lic. Sistemas,4,teórica,34,mañana,120,D282,1,0
+C370,Auditoría de Sistemas,LSI-4B,Lic. Sistemas,4,teórica,33,tarde,180,D105,1,0
+C371,Auditoría de Sistemas,LSI-4B,Lic. Sistemas,4,práctica,33,tarde,180,D137,0,0
+C372,Gestión de Proyectos,LSI-4B,Lic. Sistemas,4,teórica,33,tarde,120,D099,0,0
+C373,Gestión de Proyectos,LSI-4B,Lic. Sistemas,4,práctica,33,mañana,120,D099,1,0
+C374,Seminario de Integración,LSI-4B,Lic. Sistemas,4,práctica,33,tarde,180,D137,0,0
+C375,Sistemas de Información Gerencial,LSI-4B,Lic. Sistemas,4,teórica,33,tarde,180,D047,1,0
+C376,Sistemas de Información Gerencial,LSI-4B,Lic. Sistemas,4,práctica,33,mañana,120,D099,1,0
+C377,Ética Profesional,LSI-4B,Lic. Sistemas,4,teórica,33,mañana,90,D168,1,0
+C378,Introducción a la Programación,CDD-1A,Ciencia de Datos,1,teórica,37,noche,120,D278,1,0
+C379,Introducción a la Programación,CDD-1A,Ciencia de Datos,1,laboratorio,19,noche,120,D073,1,1
+C380,Introducción a la Programación,CDD-1A,Ciencia de Datos,1,laboratorio,18,noche,120,D066,1,1
+C381,Teología I,CDD-1A,Ciencia de Datos,1,teórica,37,noche,90,D161,0,0
+C382,Álgebra Lineal,CDD-1A,Ciencia de Datos,1,teórica,37,noche,180,D211,1,0
+C383,Álgebra Lineal,CDD-1A,Ciencia de Datos,1,práctica,37,noche,120,D169,0,0
+C384,Introducción a la Programación,CDD-1B,Ciencia de Datos,1,teórica,36,tarde,240,D276,0,0
+C385,Introducción a la Programación,CDD-1B,Ciencia de Datos,1,laboratorio,18,tarde,180,D053,1,1
+C386,Introducción a la Programación,CDD-1B,Ciencia de Datos,1,laboratorio,18,tarde,180,D053,1,1
+C387,Probabilidad,CDD-1B,Ciencia de Datos,1,teórica,36,tarde,180,D189,0,0
+C388,Probabilidad,CDD-1B,Ciencia de Datos,1,práctica,36,mañana,120,D100,1,0
+C389,Teología I,CDD-1B,Ciencia de Datos,1,teórica,36,mañana,90,D206,1,0
+C390,Álgebra Lineal,CDD-1B,Ciencia de Datos,1,teórica,36,tarde,240,D264,0,0
+C391,Álgebra Lineal,CDD-1B,Ciencia de Datos,1,práctica,36,mañana,120,D003,0,0
+C392,Análisis Matemático I,CDD-1C,Ciencia de Datos,1,teórica,36,tarde,180,D089,0,0
+C393,Análisis Matemático I,CDD-1C,Ciencia de Datos,1,práctica,36,tarde,120,D169,1,0
+C394,Introducción a la Ciencia de Datos,CDD-1C,Ciencia de Datos,1,teórica,36,tarde,120,D197,1,0
+C395,Introducción a la Ciencia de Datos,CDD-1C,Ciencia de Datos,1,laboratorio,18,mañana,240,D213,1,1
+C396,Introducción a la Ciencia de Datos,CDD-1C,Ciencia de Datos,1,laboratorio,18,mañana,240,D260,1,1
+C397,Probabilidad,CDD-1C,Ciencia de Datos,1,teórica,36,tarde,180,D005,0,0
+C398,Probabilidad,CDD-1C,Ciencia de Datos,1,práctica,36,tarde,120,D108,0,0
+C399,Teología I,CDD-1C,Ciencia de Datos,1,teórica,36,tarde,90,D161,1,0
+C400,Análisis Matemático I,CDD-1D,Ciencia de Datos,1,teórica,36,mañana,90,D182,1,0
+C401,Análisis Matemático I,CDD-1D,Ciencia de Datos,1,práctica,36,tarde,240,D025,0,0
+C402,Introducción a la Ciencia de Datos,CDD-1D,Ciencia de Datos,1,teórica,36,mañana,120,D197,1,0
+C403,Introducción a la Ciencia de Datos,CDD-1D,Ciencia de Datos,1,laboratorio,18,mañana,120,D059,1,1
+C404,Introducción a la Ciencia de Datos,CDD-1D,Ciencia de Datos,1,laboratorio,18,mañana,120,D225,1,1
+C405,Probabilidad,CDD-1D,Ciencia de Datos,1,teórica,36,mañana,120,D108,1,0
+C406,Probabilidad,CDD-1D,Ciencia de Datos,1,práctica,36,mañana,120,D100,0,0
+C407,Teología I,CDD-1D,Ciencia de Datos,1,teórica,36,mañana,120,D087,1,0
+C408,Álgebra Lineal,CDD-1D,Ciencia de Datos,1,teórica,36,mañana,120,D144,1,0
+C409,Álgebra Lineal,CDD-1D,Ciencia de Datos,1,práctica,36,mañana,120,D003,1,0
+C410,Análisis Matemático I,CDD-1E,Ciencia de Datos,1,teórica,36,tarde,120,D169,1,0
+C411,Análisis Matemático I,CDD-1E,Ciencia de Datos,1,práctica,36,tarde,90,D010,1,0
+C412,Introducción a la Ciencia de Datos,CDD-1E,Ciencia de Datos,1,teórica,36,tarde,180,D019,1,0
+C413,Introducción a la Ciencia de Datos,CDD-1E,Ciencia de Datos,1,laboratorio,18,mañana,120,D225,1,1
+C414,Introducción a la Ciencia de Datos,CDD-1E,Ciencia de Datos,1,laboratorio,18,mañana,120,D059,1,1
+C415,Introducción a la Programación,CDD-1E,Ciencia de Datos,1,teórica,36,tarde,180,D183,1,0
+C416,Introducción a la Programación,CDD-1E,Ciencia de Datos,1,laboratorio,18,tarde,120,D066,1,1
+C417,Introducción a la Programación,CDD-1E,Ciencia de Datos,1,laboratorio,18,tarde,120,D149,1,1
+C418,Teología I,CDD-1E,Ciencia de Datos,1,teórica,36,tarde,120,D104,1,0
+C419,Álgebra Lineal,CDD-1E,Ciencia de Datos,1,teórica,36,mañana,90,D010,1,0
+C420,Álgebra Lineal,CDD-1E,Ciencia de Datos,1,práctica,36,tarde,120,D169,1,0
+C421,Análisis Matemático II,CDD-2A,Ciencia de Datos,2,teórica,43,mañana,120,D160,1,0
+C422,Análisis Matemático II,CDD-2A,Ciencia de Datos,2,práctica,43,mañana,120,D160,0,0
+C423,Bases de Datos,CDD-2A,Ciencia de Datos,2,teórica,43,mañana,120,D060,1,0
+C424,Bases de Datos,CDD-2A,Ciencia de Datos,2,laboratorio,22,mañana,120,D162,1,1
+C425,Bases de Datos,CDD-2A,Ciencia de Datos,2,laboratorio,21,mañana,120,D063,1,1
+C426,Estadística Inferencial,CDD-2A,Ciencia de Datos,2,teórica,43,mañana,240,D128,1,0
+C427,Estadística Inferencial,CDD-2A,Ciencia de Datos,2,práctica,43,mañana,120,D108,1,0
+C428,Filosofía,CDD-2A,Ciencia de Datos,2,teórica,43,mañana,90,D282,0,0
+C429,Optimización,CDD-2A,Ciencia de Datos,2,teórica,43,mañana,90,D108,1,0
+C430,Optimización,CDD-2A,Ciencia de Datos,2,laboratorio,22,tarde,120,D029,1,1
+C431,Optimización,CDD-2A,Ciencia de Datos,2,laboratorio,21,tarde,120,D124,1,1
+C432,Algoritmos y Estructuras de Datos,CDD-2B,Ciencia de Datos,2,teórica,42,tarde,120,D287,1,0
+C433,Algoritmos y Estructuras de Datos,CDD-2B,Ciencia de Datos,2,laboratorio,21,mañana,180,D057,1,1
+C434,Algoritmos y Estructuras de Datos,CDD-2B,Ciencia de Datos,2,laboratorio,21,mañana,180,D141,1,1
+C435,Análisis Matemático II,CDD-2B,Ciencia de Datos,2,teórica,42,tarde,240,D163,1,0
+C436,Análisis Matemático II,CDD-2B,Ciencia de Datos,2,práctica,42,tarde,120,D192,0,0
+C437,Filosofía,CDD-2B,Ciencia de Datos,2,teórica,42,tarde,90,D273,1,0
+C438,Optimización,CDD-2B,Ciencia de Datos,2,teórica,42,tarde,240,D014,1,0
+C439,Optimización,CDD-2B,Ciencia de Datos,2,laboratorio,21,tarde,120,D124,1,1
+C440,Optimización,CDD-2B,Ciencia de Datos,2,laboratorio,21,tarde,120,D124,1,1
+C441,Bases de Datos,CDD-2C,Ciencia de Datos,2,teórica,42,mañana,180,D140,1,0
+C442,Bases de Datos,CDD-2C,Ciencia de Datos,2,laboratorio,21,mañana,120,D063,1,1
+C443,Bases de Datos,CDD-2C,Ciencia de Datos,2,laboratorio,21,mañana,120,D063,1,1
+C444,Estadística Inferencial,CDD-2C,Ciencia de Datos,2,teórica,42,tarde,90,D001,1,0
+C445,Estadística Inferencial,CDD-2C,Ciencia de Datos,2,práctica,42,mañana,240,D109,1,0
+C446,Filosofía,CDD-2C,Ciencia de Datos,2,teórica,42,tarde,90,D273,1,0
+C447,Optimización,CDD-2C,Ciencia de Datos,2,teórica,42,mañana,120,D033,1,0
+C448,Optimización,CDD-2C,Ciencia de Datos,2,laboratorio,21,mañana,180,D058,1,1
+C449,Optimización,CDD-2C,Ciencia de Datos,2,laboratorio,21,mañana,180,D029,1,1
+C450,Minería de Datos,CDD-3A,Ciencia de Datos,3,teórica,43,tarde,90,D082,1,0
+C451,Minería de Datos,CDD-3A,Ciencia de Datos,3,laboratorio,22,mañana,180,D213,1,1
+C452,Minería de Datos,CDD-3A,Ciencia de Datos,3,laboratorio,21,tarde,180,D188,1,1
+C453,Modelos Lineales,CDD-3A,Ciencia de Datos,3,teórica,43,tarde,90,D054,1,0
+C454,Modelos Lineales,CDD-3A,Ciencia de Datos,3,laboratorio,22,mañana,180,D048,1,1
+C455,Modelos Lineales,CDD-3A,Ciencia de Datos,3,laboratorio,21,mañana,180,D112,1,1
+C456,Visualización de Datos,CDD-3A,Ciencia de Datos,3,teórica,43,mañana,120,D197,1,0
+C457,Visualización de Datos,CDD-3A,Ciencia de Datos,3,laboratorio,22,mañana,240,D188,1,1
+C458,Visualización de Datos,CDD-3A,Ciencia de Datos,3,laboratorio,21,mañana,240,D199,1,1
+C459,Aprendizaje Automático,CDD-3B,Ciencia de Datos,3,teórica,43,tarde,120,D059,1,0
+C460,Aprendizaje Automático,CDD-3B,Ciencia de Datos,3,laboratorio,22,mañana,180,D260,1,1
+C461,Aprendizaje Automático,CDD-3B,Ciencia de Datos,3,laboratorio,21,mañana,180,D260,1,1
+C462,Modelos Lineales,CDD-3B,Ciencia de Datos,3,teórica,43,tarde,180,D245,0,0
+C463,Modelos Lineales,CDD-3B,Ciencia de Datos,3,laboratorio,22,mañana,180,D112,1,1
+C464,Modelos Lineales,CDD-3B,Ciencia de Datos,3,laboratorio,21,mañana,180,D180,1,1
+C465,Series de Tiempo,CDD-3B,Ciencia de Datos,3,teórica,43,tarde,120,D054,1,0
+C466,Series de Tiempo,CDD-3B,Ciencia de Datos,3,laboratorio,22,tarde,120,D112,1,1
+C467,Series de Tiempo,CDD-3B,Ciencia de Datos,3,laboratorio,21,tarde,120,D167,1,1
+C468,Teología II,CDD-3B,Ciencia de Datos,3,teórica,43,tarde,120,D104,1,0
+C469,Aprendizaje Profundo,CDD-4A,Ciencia de Datos,4,teórica,42,noche,120,D082,1,0
+C470,Aprendizaje Profundo,CDD-4A,Ciencia de Datos,4,laboratorio,21,noche,120,D266,1,1
+C471,Aprendizaje Profundo,CDD-4A,Ciencia de Datos,4,laboratorio,21,noche,120,D240,1,1
+C472,Big Data,CDD-4A,Ciencia de Datos,4,teórica,42,noche,120,D216,0,0
+C473,Big Data,CDD-4A,Ciencia de Datos,4,laboratorio,21,noche,180,D240,1,1
+C474,Big Data,CDD-4A,Ciencia de Datos,4,laboratorio,21,noche,180,D266,1,1
+C475,Aprendizaje Profundo,CDD-4B,Ciencia de Datos,4,teórica,42,mañana,90,D082,1,0
+C476,Aprendizaje Profundo,CDD-4B,Ciencia de Datos,4,laboratorio,21,tarde,120,D266,1,1
+C477,Aprendizaje Profundo,CDD-4B,Ciencia de Datos,4,laboratorio,21,tarde,120,D240,1,1
+C478,Procesamiento del Lenguaje Natural,CDD-4B,Ciencia de Datos,4,teórica,42,mañana,120,D059,0,0
+C479,Procesamiento del Lenguaje Natural,CDD-4B,Ciencia de Datos,4,laboratorio,21,mañana,180,D240,1,1
+C480,Procesamiento del Lenguaje Natural,CDD-4B,Ciencia de Datos,4,laboratorio,21,mañana,180,D260,1,1
+C481,Proyecto Final,CDD-4B,Ciencia de Datos,4,práctica,42,tarde,120,D137,0,0
+C482,Simulación,CDD-4B,Ciencia de Datos,4,teórica,42,mañana,90,D186,1,0
+C483,Simulación,CDD-4B,Ciencia de Datos,4,laboratorio,21,mañana,180,D091,1,1
+C484,Simulación,CDD-4B,Ciencia de Datos,4,laboratorio,21,mañana,180,D052,1,1
+C485,Introducción a la Economía,ECO-1A,Economía,1,teórica,73,noche,120,D190,1,0
+C486,Matemática I,ECO-1A,Economía,1,teórica,73,noche,180,D286,1,0
+C487,Matemática I,ECO-1A,Economía,1,práctica,73,noche,120,D159,0,0
+C488,Sociología,ECO-1A,Economía,1,teórica,73,noche,180,D270,1,0
+C489,Teología I,ECO-1A,Economía,1,teórica,73,noche,120,D079,1,0
+C490,Historia Económica,ECO-1B,Economía,1,teórica,72,tarde,180,D075,0,0
+C491,Introducción a la Economía,ECO-1B,Economía,1,teórica,72,tarde,90,D030,1,0
+C492,Matemática I,ECO-1B,Economía,1,teórica,72,tarde,240,D014,1,0
+C493,Matemática I,ECO-1B,Economía,1,práctica,72,mañana,120,D269,0,0
+C494,Sociología,ECO-1B,Economía,1,teórica,72,tarde,120,D157,0,0
+C495,Teología I,ECO-1B,Economía,1,teórica,72,tarde,120,D079,1,0
+C496,Historia Económica,ECO-1C,Economía,1,teórica,72,mañana,120,D135,1,0
+C497,Introducción a la Economía,ECO-1C,Economía,1,teórica,72,mañana,120,D050,0,0
+C498,Matemática I,ECO-1C,Economía,1,teórica,72,mañana,120,D269,1,0
+C499,Matemática I,ECO-1C,Economía,1,práctica,72,mañana,240,D118,0,0
+C500,Sociología,ECO-1C,Economía,1,teórica,72,mañana,90,D030,1,0
+C501,Teología I,ECO-1C,Economía,1,teórica,72,mañana,120,D079,1,0
+C502,Contabilidad Básica,ECO-1D,Economía,1,teórica,72,mañana,120,D077,1,0
+C503,Contabilidad Básica,ECO-1D,Economía,1,práctica,72,tarde,120,D230,0,0
+C504,Historia Económica,ECO-1D,Economía,1,teórica,72,mañana,120,D050,1,0
+C505,Matemática I,ECO-1D,Economía,1,teórica,72,mañana,120,D269,1,0
+C506,Matemática I,ECO-1D,Economía,1,práctica,72,tarde,120,D009,1,0
+C507,Sociología,ECO-1D,Economía,1,teórica,72,mañana,120,D157,1,0
+C508,Teología I,ECO-1D,Economía,1,teórica,72,mañana,120,D079,1,0
+C509,Derecho Constitucional,ECO-2A,Economía,2,teórica,66,mañana,120,D248,1,0
+C510,Estadística I,ECO-2A,Economía,2,teórica,66,mañana,120,D068,1,0
+C511,Estadística I,ECO-2A,Economía,2,práctica,66,tarde,180,D092,0,0
+C512,Filosofía,ECO-2A,Economía,2,teórica,66,mañana,90,D168,1,0
+C513,Matemática II,ECO-2A,Economía,2,teórica,66,mañana,120,D259,0,0
+C514,Matemática II,ECO-2A,Economía,2,práctica,66,mañana,180,D265,1,0
+C515,Microeconomía I,ECO-2A,Economía,2,teórica,66,mañana,120,D004,1,0
+C516,Microeconomía I,ECO-2A,Economía,2,práctica,66,mañana,120,D238,1,0
+C517,Derecho Constitucional,ECO-2B,Economía,2,teórica,66,noche,120,D285,1,0
+C518,Estadística I,ECO-2B,Economía,2,teórica,66,noche,120,D068,1,0
+C519,Estadística I,ECO-2B,Economía,2,práctica,66,noche,120,D192,0,0
+C520,Macroeconomía I,ECO-2B,Economía,2,teórica,66,noche,120,D076,1,0
+C521,Macroeconomía I,ECO-2B,Economía,2,práctica,66,noche,120,D094,0,0
+C522,Matemática II,ECO-2B,Economía,2,teórica,66,noche,90,D108,0,0
+C523,Matemática II,ECO-2B,Economía,2,práctica,66,noche,180,D114,1,0
+C524,Estadística I,ECO-2C,Economía,2,teórica,66,noche,90,D197,1,0
+C525,Estadística I,ECO-2C,Economía,2,práctica,66,noche,120,D192,0,0
+C526,Macroeconomía I,ECO-2C,Economía,2,teórica,66,noche,180,D219,1,0
+C527,Macroeconomía I,ECO-2C,Economía,2,práctica,66,noche,120,D076,0,0
+C528,Microeconomía I,ECO-2C,Economía,2,teórica,66,noche,180,D042,1,0
+C529,Microeconomía I,ECO-2C,Economía,2,práctica,66,noche,180,D042,1,0
+C530,Econometría I,ECO-3A,Economía,3,teórica,76,noche,90,D003,1,0
+C531,Econometría I,ECO-3A,Economía,3,laboratorio,26,noche,180,D251,1,1
+C532,Econometría I,ECO-3A,Economía,3,laboratorio,25,noche,180,D251,1,1
+C533,Econometría I,ECO-3A,Economía,3,laboratorio,25,noche,180,D167,1,1
+C534,Microeconomía II,ECO-3A,Economía,3,teórica,76,noche,120,D219,1,0
+C535,Microeconomía II,ECO-3A,Economía,3,práctica,76,noche,120,D219,0,0
+C536,Econometría I,ECO-3B,Economía,3,teórica,75,noche,120,D166,1,0
+C537,Econometría I,ECO-3B,Economía,3,laboratorio,25,noche,180,D117,1,1
+C538,Econometría I,ECO-3B,Economía,3,laboratorio,25,noche,180,D167,1,1
+C539,Econometría I,ECO-3B,Economía,3,laboratorio,25,noche,180,D117,1,1
+C540,Microeconomía II,ECO-3B,Economía,3,teórica,75,noche,120,D268,0,0
+C541,Microeconomía II,ECO-3B,Economía,3,práctica,75,noche,120,D268,0,0
+C542,Desarrollo Económico,ECO-4A,Economía,4,teórica,68,tarde,90,D201,1,0
+C543,Economía Monetaria,ECO-4A,Economía,4,teórica,68,tarde,120,D043,1,0
+C544,Organización Industrial,ECO-4A,Economía,4,teórica,68,tarde,120,D132,1,0
+C545,Organización Industrial,ECO-4A,Economía,4,práctica,68,mañana,180,D061,0,0
+C546,Seminario de Tesis,ECO-4A,Economía,4,práctica,68,mañana,120,D004,0,0
+C547,Ética Profesional,ECO-4A,Economía,4,teórica,68,tarde,120,D236,0,0
+C548,Desarrollo Económico,ECO-4B,Economía,4,teórica,67,noche,180,D075,1,0
+C549,Organización Industrial,ECO-4B,Economía,4,teórica,67,noche,120,D221,1,0
+C550,Organización Industrial,ECO-4B,Economía,4,práctica,67,noche,120,D221,0,0
+C551,Seminario de Tesis,ECO-4B,Economía,4,práctica,67,noche,90,D030,0,0
+C552,Ética Profesional,ECO-4B,Economía,4,teórica,67,noche,120,D071,1,0
+C553,Administración General,ADM-1A,Administración,1,teórica,90,mañana,120,D258,1,0
+C554,Introducción a la Economía,ADM-1A,Administración,1,teórica,90,mañana,120,D042,1,0
+C555,Matemática I,ADM-1A,Administración,1,teórica,90,mañana,90,D003,0,0
+C556,Matemática I,ADM-1A,Administración,1,práctica,90,mañana,90,D003,1,0
+C557,Sociología de las Organizaciones,ADM-1A,Administración,1,teórica,90,mañana,120,D139,1,0
+C558,Teología I,ADM-1A,Administración,1,teórica,90,mañana,90,D277,1,0
+C559,Contabilidad Básica,ADM-1B,Administración,1,teórica,90,mañana,180,D056,1,0
+C560,Contabilidad Básica,ADM-1B,Administración,1,práctica,90,mañana,180,D204,0,0
+C561,Introducción a la Economía,ADM-1B,Administración,1,teórica,90,mañana,120,D042,1,0
+C562,Matemática I,ADM-1B,Administración,1,teórica,90,mañana,180,D116,0,0
+C563,Matemática I,ADM-1B,Administración,1,práctica,90,mañana,90,D003,1,0
+C564,Sociología de las Organizaciones,ADM-1B,Administración,1,teórica,90,mañana,120,D139,1,0
+C565,Teología I,ADM-1B,Administración,1,teórica,90,mañana,90,D277,1,0
+C566,Contabilidad Básica,ADM-1C,Administración,1,teórica,89,noche,180,D274,1,0
+C567,Contabilidad Básica,ADM-1C,Administración,1,práctica,89,noche,90,D248,1,0
+C568,Introducción a la Economía,ADM-1C,Administración,1,teórica,89,noche,180,D190,0,0
+C569,Sociología de las Organizaciones,ADM-1C,Administración,1,teórica,89,noche,240,D040,1,0
+C570,Teología I,ADM-1C,Administración,1,teórica,89,noche,90,D161,1,0
+C571,Administración General,ADM-1D,Administración,1,teórica,89,tarde,240,D040,1,0
+C572,Contabilidad Básica,ADM-1D,Administración,1,teórica,89,tarde,120,D041,1,0
+C573,Contabilidad Básica,ADM-1D,Administración,1,práctica,89,tarde,90,D242,0,0
+C574,Matemática I,ADM-1D,Administración,1,teórica,89,tarde,180,D220,1,0
+C575,Matemática I,ADM-1D,Administración,1,práctica,89,tarde,120,D116,0,0
+C576,Sociología de las Organizaciones,ADM-1D,Administración,1,teórica,89,tarde,240,D121,1,0
+C577,Teología I,ADM-1D,Administración,1,teórica,89,tarde,120,D093,1,0
+C578,Contabilidad Básica,ADM-1E,Administración,1,teórica,89,mañana,120,D253,1,0
+C579,Contabilidad Básica,ADM-1E,Administración,1,práctica,89,mañana,120,D096,1,0
+C580,Introducción a la Economía,ADM-1E,Administración,1,teórica,89,mañana,120,D135,1,0
+C581,Matemática I,ADM-1E,Administración,1,teórica,89,mañana,90,D003,1,0
+C582,Matemática I,ADM-1E,Administración,1,práctica,89,tarde,120,D220,1,0
+C583,Sociología de las Organizaciones,ADM-1E,Administración,1,teórica,89,mañana,240,D040,1,0
+C584,Teología I,ADM-1E,Administración,1,teórica,89,mañana,120,D093,1,0
+C585,Comportamiento Organizacional,ADM-2A,Administración,2,teórica,79,noche,180,D044,1,0
+C586,Filosofía,ADM-2A,Administración,2,teórica,79,noche,120,D261,1,0
+C587,Marketing I,ADM-2A,Administración,2,teórica,79,noche,240,D120,1,0
+C588,Marketing I,ADM-2A,Administración,2,práctica,79,noche,180,D258,0,0
+C589,Microeconomía,ADM-2A,Administración,2,teórica,79,noche,120,D219,1,0
+C590,Comportamiento Organizacional,ADM-2B,Administración,2,teórica,78,mañana,120,D155,1,0
+C591,Costos,ADM-2B,Administración,2,teórica,78,mañana,180,D253,1,0
+C592,Costos,ADM-2B,Administración,2,práctica,78,mañana,90,D077,1,0
+C593,Filosofía,ADM-2B,Administración,2,teórica,78,mañana,120,D279,1,0
+C594,Marketing I,ADM-2B,Administración,2,teórica,78,mañana,180,D154,1,0
+C595,Marketing I,ADM-2B,Administración,2,práctica,78,tarde,180,D044,1,0
+C596,Microeconomía,ADM-2B,Administración,2,teórica,78,mañana,180,D135,0,0
+C597,Comportamiento Organizacional,ADM-2C,Administración,2,teórica,78,tarde,90,D191,1,0
+C598,Costos,ADM-2C,Administración,2,teórica,78,tarde,120,D041,1,0
+C599,Costos,ADM-2C,Administración,2,práctica,78,tarde,120,D242,1,0
+C600,Filosofía,ADM-2C,Administración,2,teórica,78,tarde,120,D261,1,0
+C601,Marketing I,ADM-2C,Administración,2,teórica,78,tarde,180,D044,1,0
+C602,Marketing I,ADM-2C,Administración,2,práctica,78,tarde,120,D155,1,0
+C603,Microeconomía,ADM-2C,Administración,2,teórica,78,tarde,180,D075,1,0
+C604,Comportamiento Organizacional,ADM-2D,Administración,2,teórica,78,tarde,120,D155,1,0
+C605,Costos,ADM-2D,Administración,2,teórica,78,tarde,120,D207,1,0
+C606,Costos,ADM-2D,Administración,2,práctica,78,tarde,180,D253,1,0
+C607,Filosofía,ADM-2D,Administración,2,teórica,78,tarde,120,D261,0,0
+C608,Marketing I,ADM-2D,Administración,2,teórica,78,tarde,120,D155,0,0
+C609,Marketing I,ADM-2D,Administración,2,práctica,78,tarde,90,D201,1,0
+C610,Microeconomía,ADM-2D,Administración,2,teórica,78,tarde,120,D219,1,0
+C611,Derecho Comercial,ADM-3A,Administración,3,teórica,76,noche,90,D077,1,0
+C612,Finanzas Corporativas,ADM-3A,Administración,3,teórica,76,noche,180,D065,1,0
+C613,Finanzas Corporativas,ADM-3A,Administración,3,práctica,76,noche,120,D151,0,0
+C614,Recursos Humanos,ADM-3A,Administración,3,teórica,76,noche,120,D151,1,0
+C615,Teología II,ADM-3A,Administración,3,teórica,76,noche,90,D002,1,0
+C616,Derecho Comercial,ADM-3B,Administración,3,teórica,76,noche,120,D024,0,0
+C617,Finanzas Corporativas,ADM-3B,Administración,3,teórica,76,noche,180,D065,1,0
+C618,Finanzas Corporativas,ADM-3B,Administración,3,práctica,76,noche,180,D270,0,0
+C619,Marketing II,ADM-3B,Administración,3,teórica,76,noche,120,D151,1,0
+C620,Teología II,ADM-3B,Administración,3,teórica,76,noche,90,D002,1,0
+C621,Derecho Comercial,ADM-3C,Administración,3,teórica,75,tarde,180,D237,1,0
+C622,Marketing II,ADM-3C,Administración,3,teórica,75,mañana,120,D157,1,0
+C623,Recursos Humanos,ADM-3C,Administración,3,teórica,75,tarde,240,D121,1,0
+C624,Sistemas de Información,ADM-3C,Administración,3,teórica,75,mañana,180,D215,0,0
+C625,Sistemas de Información,ADM-3C,Administración,3,laboratorio,25,tarde,180,D165,1,1
+C626,Sistemas de Información,ADM-3C,Administración,3,laboratorio,25,tarde,180,D165,1,1
+C627,Sistemas de Información,ADM-3C,Administración,3,laboratorio,25,tarde,180,D165,1,1
+C628,Teología II,ADM-3C,Administración,3,teórica,75,mañana,120,D178,1,0
+C629,Comercio Internacional,ADM-4A,Administración,4,teórica,65,noche,120,D094,1,0
+C630,Dirección Estratégica,ADM-4A,Administración,4,teórica,65,noche,90,D030,1,0
+C631,Seminario Final,ADM-4A,Administración,4,práctica,65,noche,180,D172,1,0
+C632,Ética Profesional,ADM-4A,Administración,4,teórica,65,noche,90,D273,1,0
+C633,Administración de Operaciones,ADM-4B,Administración,4,teórica,65,noche,180,D172,1,0
+C634,Comercio Internacional,ADM-4B,Administración,4,teórica,65,noche,120,D094,1,0
+C635,Emprendedorismo,ADM-4B,Administración,4,teórica,65,noche,180,D172,1,0
+C636,Seminario Final,ADM-4B,Administración,4,práctica,65,noche,120,D094,0,0
+C637,Administración de Operaciones,ADM-4C,Administración,4,teórica,65,noche,180,D139,1,0
+C638,Comercio Internacional,ADM-4C,Administración,4,teórica,65,noche,90,D030,1,0
+C639,Emprendedorismo,ADM-4C,Administración,4,teórica,65,noche,120,D026,1,0
+C640,Seminario Final,ADM-4C,Administración,4,práctica,65,noche,90,D030,0,0
+C641,Administración General,CPN-1A,Contador Público,1,teórica,86,tarde,180,D120,1,0
+C642,Derecho Privado I,CPN-1A,Contador Público,1,teórica,86,tarde,120,D207,1,0
+C643,Introducción a la Economía,CPN-1A,Contador Público,1,teórica,86,tarde,180,D185,0,0
+C644,Matemática I,CPN-1A,Contador Público,1,teórica,86,tarde,240,D220,1,0
+C645,Matemática I,CPN-1A,Contador Público,1,práctica,86,tarde,120,D249,1,0
+C646,Teología I,CPN-1A,Contador Público,1,teórica,86,tarde,120,D181,1,0
+C647,Administración General,CPN-1B,Contador Público,1,teórica,86,noche,180,D120,1,0
+C648,Contabilidad I,CPN-1B,Contador Público,1,teórica,86,noche,90,D191,1,0
+C649,Contabilidad I,CPN-1B,Contador Público,1,práctica,86,noche,120,D139,0,0
+C650,Matemática I,CPN-1B,Contador Público,1,teórica,86,noche,120,D159,1,0
+C651,Matemática I,CPN-1B,Contador Público,1,práctica,86,noche,180,D249,1,0
+C652,Teología I,CPN-1B,Contador Público,1,teórica,86,noche,120,D261,1,0
+C653,Contabilidad I,CPN-1C,Contador Público,1,teórica,86,noche,90,D198,1,0
+C654,Contabilidad I,CPN-1C,Contador Público,1,práctica,86,noche,90,D198,0,0
+C655,Derecho Privado I,CPN-1C,Contador Público,1,teórica,86,noche,180,D024,1,0
+C656,Matemática I,CPN-1C,Contador Público,1,teórica,86,noche,120,D211,1,0
+C657,Matemática I,CPN-1C,Contador Público,1,práctica,86,noche,180,D286,0,0
+C658,Teología I,CPN-1C,Contador Público,1,teórica,86,noche,90,D273,1,0
+C659,Contabilidad I,CPN-1D,Contador Público,1,teórica,86,noche,120,D139,1,0
+C660,Contabilidad I,CPN-1D,Contador Público,1,práctica,86,noche,120,D158,1,0
+C661,Derecho Privado I,CPN-1D,Contador Público,1,teórica,86,noche,120,D285,1,0
+C662,Matemática I,CPN-1D,Contador Público,1,teórica,86,noche,120,D166,0,0
+C663,Matemática I,CPN-1D,Contador Público,1,práctica,86,noche,120,D136,0,0
+C664,Teología I,CPN-1D,Contador Público,1,teórica,86,noche,120,D181,1,0
+C665,Contabilidad II,CPN-2A,Contador Público,2,teórica,83,noche,120,D155,1,0
+C666,Contabilidad II,CPN-2A,Contador Público,2,práctica,83,noche,120,D139,0,0
+C667,Derecho Privado II,CPN-2A,Contador Público,2,teórica,83,noche,90,D242,1,0
+C668,Estadística I,CPN-2A,Contador Público,2,teórica,83,noche,180,D109,1,0
+C669,Estadística I,CPN-2A,Contador Público,2,práctica,83,noche,180,D167,0,0
+C670,Filosofía,CPN-2A,Contador Público,2,teórica,83,noche,90,D002,1,0
+C671,Derecho Privado II,CPN-2B,Contador Público,2,teórica,82,tarde,90,D243,1,0
+C672,Estadística I,CPN-2B,Contador Público,2,teórica,82,tarde,120,D111,1,0
+C673,Estadística I,CPN-2B,Contador Público,2,práctica,82,tarde,180,D128,0,0
+C674,Filosofía,CPN-2B,Contador Público,2,teórica,82,mañana,90,D168,0,0
+C675,Matemática II,CPN-2B,Contador Público,2,teórica,82,tarde,180,D286,1,0
+C676,Matemática II,CPN-2B,Contador Público,2,práctica,82,tarde,120,D007,1,0
+C677,Microeconomía,CPN-2B,Contador Público,2,teórica,82,tarde,240,D185,1,0
+C678,Contabilidad II,CPN-2C,Contador Público,2,teórica,82,noche,120,D155,1,0
+C679,Contabilidad II,CPN-2C,Contador Público,2,práctica,82,noche,120,D155,0,0
+C680,Estadística I,CPN-2C,Contador Público,2,teórica,82,noche,90,D244,1,0
+C681,Estadística I,CPN-2C,Contador Público,2,práctica,82,noche,120,D267,0,0
+C682,Matemática II,CPN-2C,Contador Público,2,teórica,82,noche,180,D286,1,0
+C683,Matemática II,CPN-2C,Contador Público,2,práctica,82,noche,90,D244,0,0
+C684,Microeconomía,CPN-2C,Contador Público,2,teórica,82,noche,180,D233,1,0
+C685,Contabilidad de Costos,CPN-3A,Contador Público,3,teórica,90,noche,180,D274,1,0
+C686,Contabilidad de Costos,CPN-3A,Contador Público,3,práctica,90,noche,120,D284,1,0
+C687,Derecho Comercial,CPN-3A,Contador Público,3,teórica,90,noche,180,D024,0,0
+C688,Macroeconomía,CPN-3A,Contador Público,3,teórica,90,noche,180,D190,0,0
+C689,Teología II,CPN-3A,Contador Público,3,teórica,90,noche,120,D017,1,0
+C690,Derecho Comercial,CPN-3B,Contador Público,3,teórica,90,noche,120,D222,1,0
+C691,Macroeconomía,CPN-3B,Contador Público,3,teórica,90,noche,90,D191,1,0
+C692,Sistemas de Información Contable,CPN-3B,Contador Público,3,teórica,90,noche,180,D056,1,0
+C693,Sistemas de Información Contable,CPN-3B,Contador Público,3,laboratorio,30,noche,120,D126,1,1
+C694,Sistemas de Información Contable,CPN-3B,Contador Público,3,laboratorio,30,noche,120,D204,1,1
+C695,Sistemas de Información Contable,CPN-3B,Contador Público,3,laboratorio,30,noche,120,D204,1,1
+C696,Teología II,CPN-3B,Contador Público,3,teórica,90,noche,120,D017,1,0
+C697,Auditoría I,CPN-4A,Contador Público,4,teórica,87,mañana,90,D077,1,0
+C698,Auditoría I,CPN-4A,Contador Público,4,práctica,87,tarde,240,D126,0,0
+C699,Contabilidad Superior,CPN-4A,Contador Público,4,teórica,87,tarde,240,D284,1,0
+C700,Contabilidad Superior,CPN-4A,Contador Público,4,práctica,87,tarde,120,D145,0,0
+C701,Finanzas,CPN-4A,Contador Público,4,teórica,87,tarde,180,D040,1,0
+C702,Impuestos II,CPN-4A,Contador Público,4,teórica,87,tarde,180,D056,1,0
+C703,Impuestos II,CPN-4A,Contador Público,4,práctica,87,mañana,120,D145,0,0
+C704,Ética Profesional,CPN-4A,Contador Público,4,teórica,87,tarde,120,D178,1,0
+C705,Auditoría I,CPN-4B,Contador Público,4,teórica,86,mañana,180,D096,1,0
+C706,Auditoría I,CPN-4B,Contador Público,4,práctica,86,mañana,240,D204,0,0
+C707,Derecho Laboral,CPN-4B,Contador Público,4,teórica,86,mañana,120,D158,0,0
+C708,Finanzas,CPN-4B,Contador Público,4,teórica,86,mañana,180,D121,0,0
+C709,Impuestos II,CPN-4B,Contador Público,4,teórica,86,mañana,180,D056,1,0
+C710,Impuestos II,CPN-4B,Contador Público,4,práctica,86,tarde,120,D158,1,0
+C711,Ética Profesional,CPN-4B,Contador Público,4,teórica,86,mañana,90,D277,1,0
+C712,Actuación Judicial,CPN-5A,Contador Público,5,teórica,70,noche,180,D130,1,0
+C713,Actuación Judicial,CPN-5A,Contador Público,5,práctica,70,noche,120,D285,1,0
+C714,Administración Financiera,CPN-5A,Contador Público,5,teórica,70,noche,90,D077,1,0
+C715,Análisis de Estados Contables,CPN-5A,Contador Público,5,teórica,70,noche,180,D130,1,0
+C716,Análisis de Estados Contables,CPN-5A,Contador Público,5,práctica,70,noche,90,D201,0,0
+C717,Práctica Profesional,CPN-5A,Contador Público,5,práctica,70,noche,180,D130,1,0
+C718,Actuación Judicial,CPN-5B,Contador Público,5,teórica,70,noche,120,D157,1,0
+C719,Actuación Judicial,CPN-5B,Contador Público,5,práctica,70,noche,120,D285,0,0
+C720,Administración Financiera,CPN-5B,Contador Público,5,teórica,70,noche,120,D268,1,0
+C721,Análisis de Estados Contables,CPN-5B,Contador Público,5,teórica,70,noche,120,D237,1,0
+C722,Análisis de Estados Contables,CPN-5B,Contador Público,5,práctica,70,noche,120,D157,0,0
+C723,Práctica Profesional,CPN-5B,Contador Público,5,práctica,70,noche,120,D237,1,0
+C724,Análisis Matemático I,CIV-1A,Ing. Civil,1,teórica,89,noche,180,D095,1,0
+C725,Análisis Matemático I,CIV-1A,Ing. Civil,1,práctica,89,noche,120,D124,0,0
+C726,Sistemas de Representación,CIV-1A,Ing. Civil,1,teórica,89,noche,240,D091,1,0
+C727,Sistemas de Representación,CIV-1A,Ing. Civil,1,práctica,89,noche,180,D133,0,0
+C728,Teología I,CIV-1A,Ing. Civil,1,teórica,89,noche,120,D093,1,0
+C729,Análisis Matemático I,CIV-1B,Ing. Civil,1,teórica,89,noche,180,D095,1,0
+C730,Análisis Matemático I,CIV-1B,Ing. Civil,1,práctica,89,noche,90,D244,0,0
+C731,Física I,CIV-1B,Ing. Civil,1,teórica,89,noche,120,D031,1,0
+C732,Física I,CIV-1B,Ing. Civil,1,práctica,89,noche,180,D235,1,0
+C733,Química General,CIV-1B,Ing. Civil,1,teórica,89,noche,90,D072,0,0
+C734,Química General,CIV-1B,Ing. Civil,1,práctica,89,noche,90,D072,1,0
+C735,Teología I,CIV-1B,Ing. Civil,1,teórica,89,noche,120,D181,1,0
+C736,Física I,CIV-1C,Ing. Civil,1,teórica,89,mañana,120,D231,1,0
+C737,Física I,CIV-1C,Ing. Civil,1,práctica,89,mañana,90,D171,1,0
+C738,Química General,CIV-1C,Ing. Civil,1,teórica,89,tarde,180,D235,0,0
+C739,Química General,CIV-1C,Ing. Civil,1,práctica,89,tarde,120,D194,0,0
+C740,Sistemas de Representación,CIV-1C,Ing. Civil,1,teórica,89,tarde,180,D254,1,0
+C741,Sistemas de Representación,CIV-1C,Ing. Civil,1,práctica,89,mañana,180,D061,0,0
+C742,Teología I,CIV-1C,Ing. Civil,1,teórica,89,tarde,120,D093,1,0
+C743,Álgebra y Geometría Analítica,CIV-1C,Ing. Civil,1,teórica,89,tarde,240,D136,1,0
+C744,Álgebra y Geometría Analítica,CIV-1C,Ing. Civil,1,práctica,89,tarde,180,D116,0,0
+C745,Estabilidad I,CIV-2A,Ing. Civil,2,teórica,86,noche,180,D055,0,0
+C746,Estabilidad I,CIV-2A,Ing. Civil,2,práctica,86,noche,120,D101,1,0
+C747,Probabilidad y Estadística,CIV-2A,Ing. Civil,2,teórica,86,noche,120,D267,1,0
+C748,Probabilidad y Estadística,CIV-2A,Ing. Civil,2,práctica,86,noche,180,D180,0,0
+C749,Tecnología de los Materiales,CIV-2A,Ing. Civil,2,teórica,86,noche,180,D055,1,0
+C750,Tecnología de los Materiales,CIV-2A,Ing. Civil,2,práctica,86,noche,120,D101,0,0
+C751,Análisis Matemático II,CIV-2B,Ing. Civil,2,teórica,85,tarde,240,D212,0,0
+C752,Análisis Matemático II,CIV-2B,Ing. Civil,2,práctica,85,mañana,120,D153,1,0
+C753,Estabilidad I,CIV-2B,Ing. Civil,2,teórica,85,tarde,180,D055,1,0
+C754,Estabilidad I,CIV-2B,Ing. Civil,2,práctica,85,mañana,90,D257,1,0
+C755,Filosofía,CIV-2B,Ing. Civil,2,teórica,85,tarde,120,D181,1,0
+C756,Probabilidad y Estadística,CIV-2B,Ing. Civil,2,teórica,85,tarde,240,D180,1,0
+C757,Probabilidad y Estadística,CIV-2B,Ing. Civil,2,práctica,85,tarde,120,D005,1,0
+C758,Tecnología de los Materiales,CIV-2B,Ing. Civil,2,teórica,85,tarde,120,D101,1,0
+C759,Tecnología de los Materiales,CIV-2B,Ing. Civil,2,práctica,85,mañana,120,D203,0,0
+C760,Estabilidad II,CIV-3A,Ing. Civil,3,teórica,70,mañana,120,D110,1,0
+C761,Estabilidad II,CIV-3A,Ing. Civil,3,práctica,70,mañana,120,D142,0,0
+C762,Geotecnia I,CIV-3A,Ing. Civil,3,teórica,70,mañana,180,D174,1,0
+C763,Geotecnia I,CIV-3A,Ing. Civil,3,práctica,70,tarde,120,D064,0,0
+C764,Hidráulica General,CIV-3A,Ing. Civil,3,teórica,70,mañana,240,D013,1,0
+C765,Hidráulica General,CIV-3A,Ing. Civil,3,práctica,70,mañana,120,D142,1,0
+C766,Tecnología de la Construcción,CIV-3A,Ing. Civil,3,teórica,70,mañana,180,D205,1,0
+C767,Tecnología de la Construcción,CIV-3A,Ing. Civil,3,práctica,70,mañana,180,D064,0,0
+C768,Topografía,CIV-3A,Ing. Civil,3,teórica,70,tarde,120,D175,1,0
+C769,Topografía,CIV-3A,Ing. Civil,3,práctica,70,mañana,120,D142,0,0
+C770,Estabilidad II,CIV-3B,Ing. Civil,3,teórica,70,noche,90,D186,0,0
+C771,Estabilidad II,CIV-3B,Ing. Civil,3,práctica,70,noche,120,D175,0,0
+C772,Hidráulica General,CIV-3B,Ing. Civil,3,teórica,70,noche,90,D008,1,0
+C773,Hidráulica General,CIV-3B,Ing. Civil,3,práctica,70,noche,120,D175,1,0
+C774,Tecnología de la Construcción,CIV-3B,Ing. Civil,3,teórica,70,noche,120,D175,1,0
+C775,Tecnología de la Construcción,CIV-3B,Ing. Civil,3,práctica,70,noche,120,D022,1,0
+C776,Teología II,CIV-3B,Ing. Civil,3,teórica,70,noche,90,D273,1,0
+C777,Estructuras Metálicas,CIV-4A,Ing. Civil,4,teórica,53,tarde,120,D036,1,0
+C778,Estructuras Metálicas,CIV-4A,Ing. Civil,4,práctica,53,mañana,180,D205,0,0
+C779,Geotecnia II,CIV-4A,Ing. Civil,4,teórica,53,tarde,180,D203,0,0
+C780,Geotecnia II,CIV-4A,Ing. Civil,4,práctica,53,tarde,180,D203,0,0
+C781,Hormigón Armado I,CIV-4A,Ing. Civil,4,teórica,53,tarde,180,D022,1,0
+C782,Hormigón Armado I,CIV-4A,Ing. Civil,4,práctica,53,tarde,120,D008,0,0
+C783,Instalaciones Sanitarias,CIV-4A,Ing. Civil,4,teórica,53,tarde,180,D101,1,0
+C784,Instalaciones Sanitarias,CIV-4A,Ing. Civil,4,práctica,53,mañana,120,D106,0,0
+C785,Estructuras Metálicas,CIV-4B,Ing. Civil,4,teórica,53,mañana,240,D138,0,0
+C786,Estructuras Metálicas,CIV-4B,Ing. Civil,4,práctica,53,mañana,120,D027,1,0
+C787,Hidrología,CIV-4B,Ing. Civil,4,teórica,53,mañana,120,D036,1,0
+C788,Hidrología,CIV-4B,Ing. Civil,4,práctica,53,mañana,120,D027,1,0
+C789,Hormigón Armado I,CIV-4B,Ing. Civil,4,teórica,53,mañana,90,D186,1,0
+C790,Hormigón Armado I,CIV-4B,Ing. Civil,4,práctica,53,tarde,90,D186,0,0
+C791,Instalaciones Sanitarias,CIV-4B,Ing. Civil,4,teórica,53,mañana,180,D174,1,0
+C792,Instalaciones Sanitarias,CIV-4B,Ing. Civil,4,práctica,53,mañana,120,D027,0,0
+C793,Vías de Comunicación,CIV-4B,Ing. Civil,4,teórica,53,mañana,120,D106,1,0
+C794,Vías de Comunicación,CIV-4B,Ing. Civil,4,práctica,53,tarde,180,D203,1,0
+C795,Dirección de Obras,CIV-5A,Ing. Civil,5,teórica,54,tarde,120,D036,0,0
+C796,Dirección de Obras,CIV-5A,Ing. Civil,5,práctica,54,tarde,180,D055,0,0
+C797,Hormigón Armado II,CIV-5A,Ing. Civil,5,teórica,54,tarde,90,D257,0,0
+C798,Hormigón Armado II,CIV-5A,Ing. Civil,5,práctica,54,tarde,120,D036,1,0
+C799,Planeamiento Urbano,CIV-5A,Ing. Civil,5,teórica,54,tarde,240,D013,0,0
+C800,Planeamiento Urbano,CIV-5A,Ing. Civil,5,práctica,54,mañana,90,D257,1,0
+C801,Proyecto Final,CIV-5A,Ing. Civil,5,práctica,54,mañana,120,D252,1,0
+C802,Puentes,CIV-5A,Ing. Civil,5,teórica,54,tarde,120,D036,1,0
+C803,Puentes,CIV-5A,Ing. Civil,5,práctica,54,tarde,240,D013,0,0
+C804,Dirección de Obras,CIV-5B,Ing. Civil,5,teórica,53,mañana,180,D174,1,0
+C805,Dirección de Obras,CIV-5B,Ing. Civil,5,práctica,53,tarde,180,D203,0,0
+C806,Planeamiento Urbano,CIV-5B,Ing. Civil,5,teórica,53,mañana,120,D257,0,0
+C807,Planeamiento Urbano,CIV-5B,Ing. Civil,5,práctica,53,mañana,120,D027,0,0
+C808,Proyecto Final,CIV-5B,Ing. Civil,5,práctica,53,tarde,180,D195,0,0
+C809,Puentes,CIV-5B,Ing. Civil,5,teórica,53,mañana,90,D186,1,0
+C810,Puentes,CIV-5B,Ing. Civil,5,práctica,53,tarde,120,D186,0,0
+C811,Ética Profesional,CIV-5B,Ing. Civil,5,teórica,53,mañana,120,D272,0,0
+C812,Física I,ELE-1A,Ing. Electrónica,1,teórica,71,mañana,120,D067,1,0
+C813,Física I,ELE-1A,Ing. Electrónica,1,práctica,71,mañana,120,D146,0,0
+C814,Introducción a la Programación,ELE-1A,Ing. Electrónica,1,teórica,71,mañana,90,D083,0,0
+C815,Introducción a la Programación,ELE-1A,Ing. Electrónica,1,laboratorio,24,tarde,240,D103,1,1
+C816,Introducción a la Programación,ELE-1A,Ing. Electrónica,1,laboratorio,24,tarde,240,D103,1,1
+C817,Introducción a la Programación,ELE-1A,Ing. Electrónica,1,laboratorio,23,tarde,240,D103,1,1
+C818,Teología I,ELE-1A,Ing. Electrónica,1,teórica,71,mañana,90,D273,1,0
+C819,Álgebra y Geometría Analítica,ELE-1A,Ing. Electrónica,1,teórica,71,mañana,180,D006,1,0
+C820,Álgebra y Geometría Analítica,ELE-1A,Ing. Electrónica,1,práctica,71,mañana,90,D049,1,0
+C821,Análisis Matemático I,ELE-1B,Ing. Electrónica,1,teórica,70,tarde,180,D156,0,0
+C822,Análisis Matemático I,ELE-1B,Ing. Electrónica,1,práctica,70,mañana,90,D049,0,0
+C823,Física I,ELE-1B,Ing. Electrónica,1,teórica,70,tarde,180,D125,1,0
+C824,Física I,ELE-1B,Ing. Electrónica,1,práctica,70,mañana,120,D067,0,0
+C825,Química General,ELE-1B,Ing. Electrónica,1,teórica,70,tarde,180,D194,0,0
+C826,Química General,ELE-1B,Ing. Electrónica,1,práctica,70,mañana,120,D194,1,0
+C827,Teología I,ELE-1B,Ing. Electrónica,1,teórica,70,mañana,120,D178,0,0
+C828,Álgebra y Geometría Analítica,ELE-1B,Ing. Electrónica,1,teórica,70,tarde,180,D247,0,0
+C829,Álgebra y Geometría Analítica,ELE-1B,Ing. Electrónica,1,práctica,70,tarde,180,D156,1,0
+C830,Análisis Matemático I,ELE-1C,Ing. Electrónica,1,teórica,70,mañana,120,D160,1,0
+C831,Análisis Matemático I,ELE-1C,Ing. Electrónica,1,práctica,70,tarde,120,D038,0,0
+C832,Física I,ELE-1C,Ing. Electrónica,1,teórica,70,mañana,180,D231,1,0
+C833,Física I,ELE-1C,Ing. Electrónica,1,práctica,70,mañana,120,D067,1,0
+C834,Química General,ELE-1C,Ing. Electrónica,1,teórica,70,mañana,180,D125,1,0
+C835,Química General,ELE-1C,Ing. Electrónica,1,práctica,70,mañana,120,D275,1,0
+C836,Teología I,ELE-1C,Ing. Electrónica,1,teórica,70,mañana,120,D178,1,0
+C837,Álgebra y Geometría Analítica,ELE-1C,Ing. Electrónica,1,teórica,70,mañana,120,D068,1,0
+C838,Álgebra y Geometría Analítica,ELE-1C,Ing. Electrónica,1,práctica,70,mañana,120,D068,0,0
+C839,Análisis Matemático II,ELE-2A,Ing. Electrónica,2,teórica,65,tarde,180,D265,0,0
+C840,Análisis Matemático II,ELE-2A,Ing. Electrónica,2,práctica,65,mañana,120,D068,0,0
+C841,Filosofía,ELE-2A,Ing. Electrónica,2,teórica,65,mañana,90,D168,1,0
+C842,Física II,ELE-2A,Ing. Electrónica,2,teórica,65,tarde,120,D110,0,0
+C843,Física II,ELE-2A,Ing. Electrónica,2,práctica,65,mañana,90,D171,0,0
+C844,Probabilidad y Estadística,ELE-2A,Ing. Electrónica,2,teórica,65,tarde,180,D111,1,0
+C845,Probabilidad y Estadística,ELE-2A,Ing. Electrónica,2,práctica,65,tarde,240,D128,0,0
+C846,Teoría de Circuitos I,ELE-2A,Ing. Electrónica,2,teórica,65,tarde,180,D119,1,0
+C847,Teoría de Circuitos I,ELE-2A,Ing. Electrónica,2,práctica,65,tarde,120,D200,0,0
+C848,Electrotecnia,ELE-2B,Ing. Electrónica,2,teórica,64,noche,180,D078,1,0
+C849,Electrotecnia,ELE-2B,Ing. Electrónica,2,práctica,64,noche,180,D078,1,0
+C850,Probabilidad y Estadística,ELE-2B,Ing. Electrónica,2,teórica,64,noche,120,D192,1,0
+C851,Probabilidad y Estadística,ELE-2B,Ing. Electrónica,2,práctica,64,noche,120,D246,1,0
+C852,Teoría de Circuitos I,ELE-2B,Ing. Electrónica,2,teórica,64,noche,180,D015,1,0
+C853,Teoría de Circuitos I,ELE-2B,Ing. Electrónica,2,práctica,64,noche,120,D107,0,0
+C854,Electrónica Analógica I,ELE-3A,Ing. Electrónica,3,teórica,58,mañana,240,D283,1,0
+C855,Electrónica Analógica I,ELE-3A,Ing. Electrónica,3,práctica,58,mañana,240,D018,0,0
+C856,Medidas Electrónicas,ELE-3A,Ing. Electrónica,3,teórica,58,tarde,120,D015,1,0
+C857,Medidas Electrónicas,ELE-3A,Ing. Electrónica,3,práctica,58,tarde,180,D031,1,0
+C858,Teoría de Circuitos II,ELE-3A,Ing. Electrónica,3,teórica,58,mañana,180,D031,1,0
+C859,Teoría de Circuitos II,ELE-3A,Ing. Electrónica,3,práctica,58,mañana,120,D119,0,0
+C860,Técnicas Digitales I,ELE-3A,Ing. Electrónica,3,teórica,58,mañana,180,D090,1,0
+C861,Técnicas Digitales I,ELE-3A,Ing. Electrónica,3,laboratorio,29,mañana,120,D131,1,1
+C862,Técnicas Digitales I,ELE-3A,Ing. Electrónica,3,laboratorio,29,mañana,120,D131,1,1
+C863,Electrónica Analógica I,ELE-3B,Ing. Electrónica,3,teórica,57,tarde,120,D015,1,0
+C864,Electrónica Analógica I,ELE-3B,Ing. Electrónica,3,práctica,57,mañana,180,D090,0,0
+C865,Medidas Electrónicas,ELE-3B,Ing. Electrónica,3,teórica,57,tarde,180,D031,1,0
+C866,Medidas Electrónicas,ELE-3B,Ing. Electrónica,3,práctica,57,tarde,90,D200,0,0
+C867,Señales y Sistemas,ELE-3B,Ing. Electrónica,3,teórica,57,tarde,180,D031,1,0
+C868,Señales y Sistemas,ELE-3B,Ing. Electrónica,3,práctica,57,mañana,120,D239,0,0
+C869,Teología II,ELE-3B,Ing. Electrónica,3,teórica,57,tarde,120,D071,1,0
+C870,Teoría de Circuitos II,ELE-3B,Ing. Electrónica,3,teórica,57,tarde,90,D200,0,0
+C871,Teoría de Circuitos II,ELE-3B,Ing. Electrónica,3,práctica,57,tarde,90,D200,1,0
+C872,Arquitectura de Computadoras,ELE-4,Ing. Electrónica,4,teórica,84,tarde,120,D107,1,0
+C873,Arquitectura de Computadoras,ELE-4,Ing. Electrónica,4,práctica,84,mañana,120,D140,0,0
+C874,Comunicaciones I,ELE-4,Ing. Electrónica,4,teórica,84,mañana,180,D283,1,0
+C875,Comunicaciones I,ELE-4,Ing. Electrónica,4,práctica,84,mañana,120,D090,1,0
+C876,Sistemas de Control,ELE-4,Ing. Electrónica,4,teórica,84,mañana,120,D287,0,0
+C877,Sistemas de Control,ELE-4,Ing. Electrónica,4,práctica,84,mañana,240,D131,0,0
+C878,Técnicas Digitales II,ELE-4,Ing. Electrónica,4,teórica,84,mañana,120,D090,1,0
+C879,Técnicas Digitales II,ELE-4,Ing. Electrónica,4,laboratorio,28,mañana,120,D131,1,1
+C880,Técnicas Digitales II,ELE-4,Ing. Electrónica,4,laboratorio,28,mañana,120,D131,1,1
+C881,Técnicas Digitales II,ELE-4,Ing. Electrónica,4,laboratorio,28,mañana,120,D131,1,1
+C882,Comunicaciones II,ELE-5,Ing. Electrónica,5,teórica,70,noche,90,D193,1,0
+C883,Comunicaciones II,ELE-5,Ing. Electrónica,5,práctica,70,noche,90,D127,1,0
+C884,Instrumentación,ELE-5,Ing. Electrónica,5,teórica,70,noche,120,D090,1,0
+C885,Instrumentación,ELE-5,Ing. Electrónica,5,práctica,70,noche,180,D283,0,0
+C886,Proyecto Final,ELE-5,Ing. Electrónica,5,práctica,70,noche,120,D195,0,0
+C887,Ética Profesional,ELE-5,Ing. Electrónica,5,teórica,70,noche,120,D236,0,0
+C888,Administración General,MKT-1A,Lic. Marketing,1,teórica,84,tarde,90,D191,1,0
+C889,Comunicación,MKT-1A,Lic. Marketing,1,teórica,84,tarde,120,D261,0,0
+C890,Matemática I,MKT-1A,Lic. Marketing,1,teórica,84,tarde,180,D249,0,0
+C891,Matemática I,MKT-1A,Lic. Marketing,1,práctica,84,mañana,120,D153,0,0
+C892,Sociología,MKT-1A,Lic. Marketing,1,teórica,84,tarde,120,D270,0,0
+C893,Teología I,MKT-1A,Lic. Marketing,1,teórica,84,tarde,90,D087,1,0
+C894,Administración General,MKT-1B,Lic. Marketing,1,teórica,83,mañana,180,D258,0,0
+C895,Comunicación,MKT-1B,Lic. Marketing,1,teórica,83,mañana,120,D279,1,0
+C896,Introducción al Marketing,MKT-1B,Lic. Marketing,1,teórica,83,mañana,120,D021,1,0
+C897,Matemática I,MKT-1B,Lic. Marketing,1,teórica,83,mañana,120,D007,1,0
+C898,Matemática I,MKT-1B,Lic. Marketing,1,práctica,83,mañana,180,D006,0,0
+C899,Teología I,MKT-1B,Lic. Marketing,1,teórica,83,mañana,120,D279,1,0
+C900,Administración General,MKT-1C,Lic. Marketing,1,teórica,83,tarde,120,D154,1,0
+C901,Comunicación,MKT-1C,Lic. Marketing,1,teórica,83,tarde,120,D261,0,0
+C902,Introducción al Marketing,MKT-1C,Lic. Marketing,1,teórica,83,tarde,90,D045,1,0
+C903,Matemática I,MKT-1C,Lic. Marketing,1,teórica,83,tarde,180,D286,0,0
+C904,Matemática I,MKT-1C,Lic. Marketing,1,práctica,83,tarde,120,D153,1,0
+C905,Sociología,MKT-1C,Lic. Marketing,1,teórica,83,tarde,120,D120,1,0
+C906,Comportamiento del Consumidor,MKT-2A,Lic. Marketing,2,teórica,80,noche,120,D026,1,0
+C907,Filosofía,MKT-2A,Lic. Marketing,2,teórica,80,noche,90,D002,1,0
+C908,Investigación de Mercados I,MKT-2A,Lic. Marketing,2,teórica,80,noche,120,D026,1,0
+C909,Investigación de Mercados I,MKT-2A,Lic. Marketing,2,práctica,80,noche,120,D150,0,0
+C910,Microeconomía,MKT-2A,Lic. Marketing,2,teórica,80,noche,180,D233,1,0
+C911,Comportamiento del Consumidor,MKT-2B,Lic. Marketing,2,teórica,80,mañana,120,D021,1,0
+C912,Costos,MKT-2B,Lic. Marketing,2,teórica,80,mañana,180,D253,1,0
+C913,Costos,MKT-2B,Lic. Marketing,2,práctica,80,mañana,120,D158,0,0
+C914,Estadística I,MKT-2B,Lic. Marketing,2,teórica,80,mañana,240,D180,1,0
+C915,Estadística I,MKT-2B,Lic. Marketing,2,práctica,80,tarde,120,D267,1,0
+C916,Investigación de Mercados I,MKT-2B,Lic. Marketing,2,teórica,80,mañana,90,D045,1,0
+C917,Investigación de Mercados I,MKT-2B,Lic. Marketing,2,práctica,80,mañana,180,D021,0,0
+C918,Microeconomía,MKT-2B,Lic. Marketing,2,teórica,80,mañana,120,D135,1,0
+C919,Canales de Distribución,MKT-3A,Lic. Marketing,3,teórica,61,noche,120,D043,1,0
+C920,Investigación de Mercados II,MKT-3A,Lic. Marketing,3,teórica,61,noche,120,D021,1,0
+C921,Investigación de Mercados II,MKT-3A,Lic. Marketing,3,práctica,61,noche,120,D080,1,0
+C922,Marketing Digital,MKT-3A,Lic. Marketing,3,teórica,61,noche,120,D021,0,0
+C923,Marketing Digital,MKT-3A,Lic. Marketing,3,laboratorio,31,noche,120,D150,1,1
+C924,Marketing Digital,MKT-3A,Lic. Marketing,3,laboratorio,30,noche,120,D150,1,1
+C925,Teología II,MKT-3A,Lic. Marketing,3,teórica,61,noche,120,D071,1,0
+C926,Canales de Distribución,MKT-3B,Lic. Marketing,3,teórica,61,noche,240,D046,1,0
+C927,Investigación de Mercados II,MKT-3B,Lic. Marketing,3,teórica,61,noche,180,D046,1,0
+C928,Investigación de Mercados II,MKT-3B,Lic. Marketing,3,práctica,61,noche,90,D045,1,0
+C929,Publicidad,MKT-3B,Lic. Marketing,3,teórica,61,noche,120,D238,0,0
+C930,Teología II,MKT-3B,Lic. Marketing,3,teórica,61,noche,90,D218,1,0
+C931,Analítica de Marketing,MKT-4A,Lic. Marketing,4,teórica,49,noche,120,D191,1,0
+C932,Analítica de Marketing,MKT-4A,Lic. Marketing,4,laboratorio,25,noche,120,D150,1,1
+C933,Analítica de Marketing,MKT-4A,Lic. Marketing,4,laboratorio,24,noche,120,D150,1,1
+C934,Marketing Internacional,MKT-4A,Lic. Marketing,4,teórica,49,noche,120,D021,1,0
+C935,Planeamiento Comercial,MKT-4A,Lic. Marketing,4,teórica,49,noche,120,D191,1,0
+C936,Ética Profesional,MKT-4A,Lic. Marketing,4,teórica,49,noche,120,D272,0,0
+C937,Analítica de Marketing,MKT-4B,Lic. Marketing,4,teórica,49,tarde,120,D045,1,0
+C938,Analítica de Marketing,MKT-4B,Lic. Marketing,4,laboratorio,25,tarde,120,D226,1,1
+C939,Analítica de Marketing,MKT-4B,Lic. Marketing,4,laboratorio,24,tarde,120,D226,1,1
+C940,Marketing Internacional,MKT-4B,Lic. Marketing,4,teórica,49,tarde,120,D045,1,0
+C941,Planeamiento Comercial,MKT-4B,Lic. Marketing,4,teórica,49,tarde,180,D226,1,0
+C942,Seminario Final,MKT-4B,Lic. Marketing,4,práctica,49,mañana,120,D030,0,0
+C943,Ética Profesional,MKT-4B,Lic. Marketing,4,teórica,49,tarde,120,D272,1,0
+C944,Administración General,FIN-1A,Lic. Finanzas,1,teórica,75,tarde,120,D157,1,0
+C945,Contabilidad Básica,FIN-1A,Lic. Finanzas,1,teórica,75,tarde,120,D230,1,0
+C946,Contabilidad Básica,FIN-1A,Lic. Finanzas,1,práctica,75,mañana,180,D230,1,0
+C947,Matemática Financiera,FIN-1A,Lic. Finanzas,1,teórica,75,tarde,120,D102,0,0
+C948,Matemática Financiera,FIN-1A,Lic. Finanzas,1,práctica,75,tarde,120,D115,1,0
+C949,Matemática I,FIN-1A,Lic. Finanzas,1,teórica,75,tarde,120,D166,1,0
+C950,Matemática I,FIN-1A,Lic. Finanzas,1,práctica,75,tarde,120,D009,0,0
+C951,Teología I,FIN-1A,Lic. Finanzas,1,teórica,75,tarde,120,D079,0,0
+C952,Administración General,FIN-1B,Lic. Finanzas,1,teórica,75,noche,120,D026,1,0
+C953,Contabilidad Básica,FIN-1B,Lic. Finanzas,1,teórica,75,noche,120,D041,1,0
+C954,Contabilidad Básica,FIN-1B,Lic. Finanzas,1,práctica,75,noche,120,D151,1,0
+C955,Matemática Financiera,FIN-1B,Lic. Finanzas,1,teórica,75,noche,90,D201,1,0
+C956,Matemática Financiera,FIN-1B,Lic. Finanzas,1,práctica,75,noche,180,D102,0,0
+C957,Teología I,FIN-1B,Lic. Finanzas,1,teórica,75,noche,120,D079,1,0
+C958,Administración General,FIN-1C,Lic. Finanzas,1,teórica,75,tarde,120,D157,1,0
+C959,Introducción a la Economía,FIN-1C,Lic. Finanzas,1,teórica,75,tarde,180,D075,1,0
+C960,Matemática Financiera,FIN-1C,Lic. Finanzas,1,teórica,75,tarde,120,D217,1,0
+C961,Matemática Financiera,FIN-1C,Lic. Finanzas,1,práctica,75,mañana,90,D030,0,0
+C962,Matemática I,FIN-1C,Lic. Finanzas,1,teórica,75,tarde,90,D244,0,0
+C963,Matemática I,FIN-1C,Lic. Finanzas,1,práctica,75,mañana,120,D269,0,0
+C964,Teología I,FIN-1C,Lic. Finanzas,1,teórica,75,tarde,120,D279,1,0
+C965,Derecho Comercial,FIN-2A,Lic. Finanzas,2,teórica,70,mañana,120,D248,0,0
+C966,Estadística I,FIN-2A,Lic. Finanzas,2,teórica,70,tarde,120,D005,1,0
+C967,Estadística I,FIN-2A,Lic. Finanzas,2,práctica,70,tarde,180,D092,0,0
+C968,Filosofía,FIN-2A,Lic. Finanzas,2,teórica,70,tarde,120,D079,1,0
+C969,Matemática II,FIN-2A,Lic. Finanzas,2,teórica,70,tarde,120,D009,1,0
+C970,Matemática II,FIN-2A,Lic. Finanzas,2,práctica,70,tarde,120,D259,0,0
+C971,Microeconomía I,FIN-2A,Lic. Finanzas,2,teórica,70,tarde,120,D032,1,0
+C972,Microeconomía I,FIN-2A,Lic. Finanzas,2,práctica,70,tarde,180,D075,0,0
+C973,Derecho Comercial,FIN-2B,Lic. Finanzas,2,teórica,69,noche,180,D222,1,0
+C974,Filosofía,FIN-2B,Lic. Finanzas,2,teórica,69,noche,120,D236,1,0
+C975,Matemática II,FIN-2B,Lic. Finanzas,2,teórica,69,noche,120,D159,1,0
+C976,Matemática II,FIN-2B,Lic. Finanzas,2,práctica,69,noche,120,D192,0,0
+C977,Finanzas Corporativas,FIN-3A,Lic. Finanzas,3,teórica,52,noche,120,D080,1,0
+C978,Finanzas Corporativas,FIN-3A,Lic. Finanzas,3,práctica,52,noche,180,D139,0,0
+C979,Macroeconomía I,FIN-3A,Lic. Finanzas,3,teórica,52,noche,90,D069,1,0
+C980,Macroeconomía I,FIN-3A,Lic. Finanzas,3,práctica,52,noche,90,D030,1,0
+C981,Mercado de Capitales,FIN-3A,Lic. Finanzas,3,teórica,52,noche,180,D032,1,0
+C982,Mercado de Capitales,FIN-3A,Lic. Finanzas,3,práctica,52,noche,180,D032,0,0
+C983,Econometría I,FIN-3B,Lic. Finanzas,3,teórica,52,tarde,120,D259,1,0
+C984,Econometría I,FIN-3B,Lic. Finanzas,3,laboratorio,26,tarde,180,D048,1,1
+C985,Econometría I,FIN-3B,Lic. Finanzas,3,laboratorio,26,tarde,180,D048,1,1
+C986,Finanzas Corporativas,FIN-3B,Lic. Finanzas,3,teórica,52,mañana,120,D080,1,0
+C987,Finanzas Corporativas,FIN-3B,Lic. Finanzas,3,práctica,52,mañana,90,D208,0,0
+C988,Macroeconomía I,FIN-3B,Lic. Finanzas,3,teórica,52,tarde,120,D094,1,0
+C989,Macroeconomía I,FIN-3B,Lic. Finanzas,3,práctica,52,tarde,120,D201,0,0
+C990,Mercado de Capitales,FIN-3B,Lic. Finanzas,3,teórica,52,tarde,180,D102,1,0
+C991,Mercado de Capitales,FIN-3B,Lic. Finanzas,3,práctica,52,mañana,120,D080,0,0
+C992,Teología II,FIN-3B,Lic. Finanzas,3,teórica,52,mañana,120,D272,1,0
+C993,Instrumentos Derivados,FIN-4A,Lic. Finanzas,4,teórica,48,noche,180,D217,1,0
+C994,Instrumentos Derivados,FIN-4A,Lic. Finanzas,4,laboratorio,24,noche,180,D102,1,1
+C995,Instrumentos Derivados,FIN-4A,Lic. Finanzas,4,laboratorio,24,noche,180,D115,1,1
+C996,Seminario de Tesis,FIN-4A,Lic. Finanzas,4,práctica,48,noche,120,D191,0,0
+C997,Ética Profesional,FIN-4A,Lic. Finanzas,4,teórica,48,noche,120,D272,1,0
+C998,Finanzas Internacionales,FIN-4B,Lic. Finanzas,4,teórica,48,noche,180,D217,1,0
+C999,Finanzas Internacionales,FIN-4B,Lic. Finanzas,4,práctica,48,noche,120,D191,0,0
+C1000,Gestión de Riesgos,FIN-4B,Lic. Finanzas,4,teórica,48,noche,90,D208,1,0
+C1001,Gestión de Riesgos,FIN-4B,Lic. Finanzas,4,laboratorio,24,noche,180,D102,1,1
+C1002,Gestión de Riesgos,FIN-4B,Lic. Finanzas,4,laboratorio,24,noche,180,D115,1,1
+C1003,Ética Profesional,FIN-4B,Lic. Finanzas,4,teórica,48,noche,120,D272,1,0

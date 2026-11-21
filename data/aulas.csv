@@ -1,0 +1,201 @@
+aula_id,nombre,edificio,capacidad,tiene_proyector,es_laboratorio
+A001,Aula AN-101,Anexo,120,1,0
+A002,Aula AN-102,Anexo,110,1,0
+A003,Aula AN-103,Anexo,100,1,0
+A004,Aula AN-104,Anexo,100,1,0
+A005,Aula AN-105,Anexo,100,1,0
+A006,Aula AN-106,Anexo,75,1,0
+A007,Aula AN-107,Anexo,60,1,0
+A008,Aula AN-108,Anexo,55,1,0
+A009,Aula AN-201,Anexo,55,1,0
+A010,Aula AN-202,Anexo,50,1,0
+A011,Aula AN-203,Anexo,50,0,0
+A012,Aula AN-204,Anexo,35,0,0
+A013,Aula AN-205,Anexo,35,1,0
+A014,Aula AN-206,Anexo,30,1,0
+A015,Aula AN-207,Anexo,25,0,0
+A016,Aula AN-208,Anexo,25,1,0
+A017,Aula AN-301,Anexo,25,0,0
+A018,Aula AN-302,Anexo,25,1,0
+A019,Aula AN-303,Anexo,25,1,0
+A020,Aula AN-304,Anexo,25,1,0
+A021,Aula AN-305,Anexo,20,1,0
+A022,Aula AN-306,Anexo,20,1,0
+A023,Aula AN-307,Anexo,20,1,0
+A024,Auditorio Central,Central,280,1,0
+A025,Aula C-101,Central,180,1,0
+A026,Aula C-102,Central,175,1,0
+A027,Aula C-103,Central,165,1,0
+A028,Aula C-104,Central,155,1,0
+A029,Aula C-105,Central,130,1,0
+A030,Aula C-106,Central,125,1,0
+A031,Aula C-107,Central,125,1,0
+A032,Aula C-108,Central,120,1,0
+A033,Aula C-109,Central,105,1,0
+A034,Aula C-110,Central,90,1,0
+A035,Aula C-111,Central,85,1,0
+A036,Aula C-112,Central,85,1,0
+A037,Aula C-201,Central,80,1,0
+A038,Aula C-202,Central,80,1,0
+A039,Aula C-203,Central,75,0,0
+A040,Aula C-204,Central,75,1,0
+A041,Aula C-205,Central,75,1,0
+A042,Aula C-206,Central,75,1,0
+A043,Aula C-207,Central,60,1,0
+A044,Aula C-208,Central,60,1,0
+A045,Aula C-209,Central,60,1,0
+A046,Aula C-210,Central,60,1,0
+A047,Aula C-211,Central,60,1,0
+A048,Aula C-212,Central,60,1,0
+A049,Aula C-301,Central,55,1,0
+A050,Aula C-302,Central,55,1,0
+A051,Aula C-303,Central,55,1,0
+A052,Aula C-304,Central,55,1,0
+A053,Aula C-305,Central,50,1,0
+A054,Aula C-306,Central,50,1,0
+A055,Aula C-307,Central,50,1,0
+A056,Aula C-308,Central,50,1,0
+A057,Aula C-309,Central,45,1,0
+A058,Aula C-310,Central,45,1,0
+A059,Aula C-311,Central,45,0,0
+A060,Aula C-312,Central,45,1,0
+A061,Aula C-401,Central,40,0,0
+A062,Aula C-402,Central,40,1,0
+A063,Aula C-403,Central,40,1,0
+A064,Aula C-404,Central,40,1,0
+A065,Aula C-405,Central,40,1,0
+A066,Aula C-406,Central,40,1,0
+A067,Aula C-407,Central,40,1,0
+A068,Aula C-408,Central,40,1,0
+A069,Aula C-409,Central,40,1,0
+A070,Aula C-410,Central,35,1,0
+A071,Aula C-411,Central,35,1,0
+A072,Aula C-412,Central,35,1,0
+A073,Aula C-501,Central,35,0,0
+A074,Aula C-502,Central,30,0,0
+A075,Aula C-503,Central,30,1,0
+A076,Aula C-504,Central,30,0,0
+A077,Aula C-505,Central,25,0,0
+A078,Aula C-506,Central,25,1,0
+A079,Aula C-507,Central,25,1,0
+A080,Aula C-508,Central,20,1,0
+A081,Aula C-509,Central,20,1,0
+A082,Aula C-510,Central,20,1,0
+A083,Aula C-511,Central,20,1,0
+A084,Aula C-512,Central,20,1,0
+A085,Aula Magna,Central,350,1,0
+A086,Auditorio Norte,Norte,240,1,0
+A087,Aula N-101,Norte,200,1,0
+A088,Aula N-102,Norte,175,1,0
+A089,Aula N-103,Norte,80,1,0
+A090,Aula N-104,Norte,80,1,0
+A091,Aula N-105,Norte,75,1,0
+A092,Aula N-106,Norte,70,1,0
+A093,Aula N-107,Norte,60,1,0
+A094,Aula N-108,Norte,60,1,0
+A095,Aula N-109,Norte,60,1,0
+A096,Aula N-110,Norte,55,1,0
+A097,Aula N-111,Norte,55,0,0
+A098,Aula N-112,Norte,55,0,0
+A099,Aula N-201,Norte,50,1,0
+A100,Aula N-202,Norte,50,1,0
+A101,Aula N-203,Norte,50,1,0
+A102,Aula N-204,Norte,50,1,0
+A103,Aula N-205,Norte,45,1,0
+A104,Aula N-206,Norte,45,0,0
+A105,Aula N-207,Norte,45,1,0
+A106,Aula N-208,Norte,45,1,0
+A107,Aula N-209,Norte,45,1,0
+A108,Aula N-210,Norte,45,1,0
+A109,Aula N-211,Norte,45,0,0
+A110,Aula N-212,Norte,45,1,0
+A111,Aula N-301,Norte,40,1,0
+A112,Aula N-302,Norte,40,1,0
+A113,Aula N-303,Norte,40,1,0
+A114,Aula N-304,Norte,40,1,0
+A115,Aula N-305,Norte,40,1,0
+A116,Aula N-306,Norte,40,1,0
+A117,Aula N-307,Norte,40,1,0
+A118,Aula N-308,Norte,35,1,0
+A119,Aula N-309,Norte,35,1,0
+A120,Aula N-310,Norte,35,0,0
+A121,Aula N-311,Norte,35,1,0
+A122,Aula N-312,Norte,35,1,0
+A123,Aula N-401,Norte,35,1,0
+A124,Aula N-402,Norte,30,1,0
+A125,Aula N-403,Norte,30,1,0
+A126,Aula N-404,Norte,25,1,0
+A127,Aula N-405,Norte,25,1,0
+A128,Aula N-406,Norte,25,1,0
+A129,Aula N-407,Norte,25,1,0
+A130,Aula N-408,Norte,25,1,0
+A131,Aula N-409,Norte,25,1,0
+A132,Aula N-410,Norte,20,1,0
+A133,Aula S-101,Sur,185,1,0
+A134,Aula S-102,Sur,130,1,0
+A135,Aula S-103,Sur,120,1,0
+A136,Aula S-104,Sur,120,1,0
+A137,Aula S-105,Sur,85,1,0
+A138,Aula S-106,Sur,85,1,0
+A139,Aula S-107,Sur,80,1,0
+A140,Aula S-108,Sur,75,1,0
+A141,Aula S-109,Sur,75,0,0
+A142,Aula S-110,Sur,75,1,0
+A143,Aula S-201,Sur,75,1,0
+A144,Aula S-202,Sur,75,0,0
+A145,Aula S-203,Sur,70,1,0
+A146,Aula S-204,Sur,70,0,0
+A147,Aula S-205,Sur,60,0,0
+A148,Aula S-206,Sur,55,1,0
+A149,Aula S-207,Sur,55,1,0
+A150,Aula S-208,Sur,55,1,0
+A151,Aula S-209,Sur,55,1,0
+A152,Aula S-210,Sur,50,1,0
+A153,Aula S-301,Sur,50,1,0
+A154,Aula S-302,Sur,45,1,0
+A155,Aula S-303,Sur,45,1,0
+A156,Aula S-304,Sur,45,1,0
+A157,Aula S-305,Sur,45,1,0
+A158,Aula S-306,Sur,40,1,0
+A159,Aula S-307,Sur,40,1,0
+A160,Aula S-308,Sur,35,1,0
+A161,Aula S-309,Sur,35,0,0
+A162,Aula S-310,Sur,35,0,0
+A163,Aula S-401,Sur,35,0,0
+A164,Aula S-402,Sur,25,1,0
+A165,Aula S-403,Sur,25,1,0
+A166,Aula S-404,Sur,25,0,0
+A167,Aula S-405,Sur,25,1,0
+A168,Aula S-406,Sur,25,0,0
+A169,Aula S-407,Sur,20,1,0
+A170,Salón de Actos Sur,Sur,220,1,0
+L01,Lab Ciencia de Datos 1,Central,35,1,1
+L02,Lab Ciencia de Datos 3,Central,40,1,1
+L03,Lab Computación 10,Central,40,1,1
+L04,Lab Computación 16,Central,30,1,1
+L05,Lab Computación 5,Central,40,1,1
+L06,Lab Computación 8,Central,40,1,1
+L07,Lab Desarrollo de Software 1,Central,35,1,1
+L08,Lab Desarrollo de Software 2,Central,40,1,1
+L09,Lab Redes 1,Central,40,1,1
+L10,Lab Redes 3,Central,40,1,1
+L11,Lab Simulación 2,Central,35,1,1
+L12,Lab Simulación 3,Central,30,1,1
+L13,Lab Ciencia de Datos 4,Norte,40,1,1
+L14,Lab Ciencia de Datos 5,Norte,40,1,1
+L15,Lab Computación 1,Norte,40,1,1
+L16,Lab Computación 13,Norte,40,1,1
+L17,Lab Computación 15,Norte,35,1,1
+L18,Lab Computación 3,Norte,30,1,1
+L19,Lab Computación 7,Norte,40,1,1
+L20,Lab Redes 2,Norte,35,1,1
+L21,Lab Simulación 1,Norte,35,1,1
+L22,Lab Ciencia de Datos 2,Sur,25,1,1
+L23,Lab Computación 11,Sur,30,1,1
+L24,Lab Computación 12,Sur,30,1,1
+L25,Lab Computación 14,Sur,35,1,1
+L26,Lab Computación 2,Sur,30,1,1
+L27,Lab Computación 4,Sur,30,1,1
+L28,Lab Computación 6,Sur,30,1,1
+L29,Lab Computación 9,Sur,25,1,1
+L30,Lab Desarrollo de Software 3,Sur,30,1,1

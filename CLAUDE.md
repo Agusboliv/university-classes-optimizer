@@ -49,9 +49,12 @@ Caso sintético de referencia: 1003 clases, 200 aulas, 287 docentes, 134 cohorte
   100 y los pesos suman 100): B1 asientos vacíos 17.5 · B2 huecos de cohorte 22.5
   · B3 racha docente > 360 min 22.5 · B4 días extra de docentes 12 ·
   B5 laboratorio sin necesitarlo 17.5 · B6 días con una sola materia 8.
-- Referencia (120 s, 8 workers): objetivo 24.45/100, cota inferior 0.00. Es una
-  solución factible sin garantía de óptimo. Desglose en puntos: B1 9.57,
-  B2 1.04, B3 0.00, B4 8.35, B5 0.42, B6 5.08. Debe pasar `verificar_solucion` (D1–D7).
+- Referencia: `solver/tests/fixtures/solucion_horarios.csv` (factible, sin
+  garantía de óptimo). Objetivo 21.37/100 recalculado con `evaluar_blandas`.
+  Desglose en puntos: B1 8.70, B2 0.25, B3 0.05, B4 7.72, B5 0.00, B6 4.65.
+  Debe pasar `verificar_solucion` (D1–D7). Los peores casos de la
+  normalización son B1 50563, B2 16080, B3 1922, B4 421, B5 587, B6 800.
+  (La corrida del notebook que reportó 24.45 es otra solución y no está guardada).
 - En la web NUNCA decir "óptimo": mostrar "mejor solución encontrada en X s" y la cota.
 - Con varios workers CP-SAT no es determinista aunque se fije la semilla.
   Por eso las soluciones se precalculan y se versionan; no se espera
@@ -85,8 +88,9 @@ Caso sintético de referencia: 1003 clases, 200 aulas, 287 docentes, 134 cohorte
   Animaciones: CSS nativo y Motion; GSAP solo si hace falta.
 
 ## Reglas de código
-- Python: type hints; validar los CSV con pydantic antes de armar el modelo;
-  el modelo siempre con límite de tiempo.
+- Python: type hints; validar los CSV con pandas antes de armar el modelo
+  (`validar` devuelve listas de errores y advertencias); el modelo siempre con
+  límite de tiempo.
 - TypeScript estricto, sin `any`.
 - Tests: pytest con casos chicos de solución conocida (incluir uno infactible);
   vitest para validación y verificación en el frontend.
@@ -105,3 +109,7 @@ Caso sintético de referencia: 1003 clases, 200 aulas, 287 docentes, 134 cohorte
   (usar Web Workers para validar o verificar CSV grandes).
 - No mezclar datos reales con los sintéticos.
 - Generar JSON de escenarios de a uno, que pesan (~1000 clases por escenario).
+
+## Filosofía
+Esto es un POC. Preferir lo simple: pocos archivos, poca abstracción,
+tests solo donde validan el modelo. No aplicar objetivo de 80% de cobertura.

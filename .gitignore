@@ -1,4 +1,6 @@
-"""Files to ignore in the repository."""
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
 
-"""Directories to ignore in the repository."""
-/data
+docs/plan-fase1.md
