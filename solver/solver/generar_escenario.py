@@ -41,6 +41,8 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--semilla", type=int, default=0)
     p.add_argument("--nombre", default="referencia", help="nombre del escenario (archivo .json)")
     p.add_argument("--salida", type=Path, default=None, help="carpeta de salida (por defecto <data>/escenarios)")
+    p.add_argument("--forzar", action="store_true",
+                   help="guarda el escenario aunque la solución no pase la verificación D1-D7 (para depurar)")
     args = p.parse_args(argv)
 
     dfs = cargar_csvs(args.data)
@@ -61,6 +63,11 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     problemas = verificar_solucion(datos, resultado.solucion)
+    if problemas and not args.forzar:
+        print(f"Verificación D1-D7: {len(problemas)} problemas, no se guarda el escenario (usar --forzar):")
+        for pr in problemas[:10]:
+            print("  ", pr)
+        return 1
     desglose = evaluar_blandas(datos, resultado.solucion) if not problemas else []
     escenario = armar_escenario(resultado, desglose, problemas, args.tiempo, args.workers)
 

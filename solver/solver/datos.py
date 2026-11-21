@@ -57,10 +57,10 @@ def time_to_mins(t_str: object) -> int:
     """'HH:MM' -> minutos desde las 00:00. Lanza ValueError si el formato no es válido."""
     t_str = str(t_str)
     if not re.fullmatch(r"\d{2}:\d{2}", t_str):
-        raise ValueError(f"hora inválida: {t_str!r}")
+        raise ValueError(f"hora inválida: {t_str!r} (formato HH:MM con dos dígitos, ej. '08:00')")
     h, m = map(int, t_str.split(":"))
     if h > 23 or m > 59:
-        raise ValueError(f"hora inválida: {t_str!r}")
+        raise ValueError(f"hora inválida: {t_str!r} (formato HH:MM con dos dígitos, ej. '08:00')")
     return h * 60 + m
 
 
