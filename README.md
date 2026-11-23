@@ -1,4 +1,9 @@
 # Optimizador de clases de universidad
+Integrantes:
+- Bolivar, Agustin
+- Degiussepe, Gonzalo
+- Guerrero, Brian
+- Moreno, Mateo
 
 Prototipo para planificar horarios y aulas universitarias (University Course
 Timetabling Problem) con programación por restricciones y el solver CP-SAT de
