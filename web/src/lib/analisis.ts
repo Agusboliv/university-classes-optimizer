@@ -1,4 +1,4 @@
-// Análisis de la solución base para quien organiza las clases: capacidad ociosa por día,
+// Análisis de la solución base: capacidad ociosa por día,
 // presión horaria y calidad del encaje (B1–B6). Funciones puras; B1–B6 salen del
 // evaluador de modelo.ts (mismas fórmulas que el solver), no se reimplementan acá.
 

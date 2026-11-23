@@ -341,7 +341,7 @@ export function maximosDe(desglose: readonly TerminoDesglose[]): ValoresBlandas 
 }
 
 /**
- * Peor caso de cada blanda, recalculado con las mismas fórmulas que maximos_blandas en Python.
+ * Peor caso de cada blanda, con las mismas fórmulas que maximos_blandas en Python.
  * B1–B4 y B6 coinciden; B5 puede no coincidir: en Python las 10 aulas candidatas salen de
  * sort_values (quicksort, no estable) y, con empates de capacidad, a veces entra un laboratorio.
  * Acá el orden es estable. Para normalizar, usar maximosDe(desglose) del escenario.
@@ -418,7 +418,7 @@ export interface Movimiento {
   readonly aula: string;
 }
 
-/** Copia de las asignaciones con una clase movida (fin recalculado). No modifica la original. */
+/** Copia de las asignaciones con una clase movida (con su nuevo fin). No modifica la original. */
 export function moverClase(datos: Datos, asignaciones: readonly Asignacion[], claseId: string, m: Movimiento): Asignacion[] {
   const duracion = datos.clases.get(claseId)?.duracion ?? 0;
   const inicio = aMinutos(m.inicio) ?? 0;

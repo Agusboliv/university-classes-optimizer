@@ -12,10 +12,7 @@ export default function PaginaAnalisis() {
     <TransicionPagina>
       <main className="mx-auto w-full max-w-7xl px-5 py-14">
         <Entrada>
-          <EncabezadoPantalla
-            titulo="Análisis"
-            apoyo="Para quien organiza las clases: cuánta capacidad sobra, cuándo hay presión y dónde se podría reorganizar."
-          />
+          <EncabezadoPantalla titulo="Análisis" />
         </Entrada>
         <div className="mt-12">
           <AnalisisCliente />

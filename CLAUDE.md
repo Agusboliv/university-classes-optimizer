@@ -135,9 +135,10 @@ Tokens en `web/src/app/globals.css`; se ajustan solo ahí. Plan: `docs/plan-fase
     una grilla semanal generativa en canvas 2D: ≤ 30 fps, se pausa oculta o
     fuera de pantalla, queda en un cuadro fijo con reduced-motion. Encima un velo
     de papel ≥ 55% que deja título y subtítulo ≥ 4.5:1.
-  - `/panel`: resumen, desglose B1–B6, re-ponderar pesos, grilla semanal con
-    exploración y (opcional) editor.
-  - `/analisis`: para quien organiza las clases. Calcula todo en el navegador
+  - `/panel`: resumen, desglose B1–B6 con los pesos fijos del JSON (sin
+    re-ponderar), grilla semanal con exploración y editor. El editor pide los
+    CSV completos recién al fijar la primera clase, no al entrar a `/panel`.
+  - `/analisis`: calcula todo en el navegador
     (`web/src/lib/analisis.ts`) sobre `referencia.csv` y los 5 CSV, con la
     solución base (sin las ediciones del editor). Tres bloques, LUN a VIE:
     capacidad ociosa (aulas, laboratorios y docentes sin clases), presión
@@ -150,8 +151,11 @@ Tokens en `web/src/app/globals.css`; se ajustan solo ahí. Plan: `docs/plan-fase
     - Docente sin clases un día: "disponible" (tiene disponibilidad ese día,
       holgura real) o "no disponible" (no tiene disponibilidad ese día).
     - Aula ocupada en una hora: tiene clase en algún momento de esa hora.
-  - `/datos`: explorador de los 5 CSV con los mismos nombres, columnas, orden y
-    formato.
+  - `/datos`: vista previa de 10 filas por tabla de entrada (nombre del archivo,
+    "10 de N filas", columnas en su orden original y valores tal cual: HH:MM,
+    0/1). Lee solo `public/data/manifest.json` y, al abrir cada pestaña,
+    `public/data/<tabla>.head.csv`; nunca descarga los CSV completos (esos los
+    piden `/analisis` y el editor). Sin búsqueda, orden ni paginación.
 
 ## Reglas de código
 - Python: type hints; validar los CSV con pandas antes de armar el modelo
@@ -184,8 +188,11 @@ Tokens en `web/src/app/globals.css`; se ajustan solo ahí. Plan: `docs/plan-fase
   API. `cacheComponents` y `partialPrefetching` no funcionan con
   `output: "export"` (usan PPR).
 - `web/public/escenarios/` y `web/public/data/` son copias que genera
-  `scripts/copiar-datos.mjs` (en `predev`/`prebuild`; también lleva
-  `data/escenarios/*.csv` a `public/data/`); no se editan ni se versionan.
+  `scripts/copiar-datos.mjs` (en `predev`/`prebuild`); no se editan ni se
+  versionan. El script copia los CSV completos (también `data/escenarios/*.csv`),
+  genera por tabla de entrada `<tabla>.head.csv` (encabezado + 10 filas, mismos
+  bytes) y `manifest.json` (columnas y total de filas), y en la copia del JSON
+  deja en `resultado` solo los campos que usa la web.
 - `web/src/lib/modelo.ts` es un port de `verificacion.py`: si cambia una fórmula
   en Python, cambiarla en los dos (los tests comparan contra el JSON). Para
   normalizar B1–B6 usar `maximosDe(desglose)` del escenario: el peor caso de B5

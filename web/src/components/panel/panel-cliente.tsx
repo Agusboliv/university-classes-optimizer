@@ -1,7 +1,7 @@
 "use client";
 
 import { CircleAlert } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Entrada } from "@/components/entrada";
 import { Barra } from "@/components/esqueleto";
@@ -9,11 +9,9 @@ import { Cambios } from "@/components/panel/cambios";
 import { Desglose } from "@/components/panel/desglose";
 import { Exploracion } from "@/components/panel/exploracion";
 import { Marco } from "@/components/panel/marco";
-import { Pesos } from "@/components/panel/pesos";
 import { Resumen } from "@/components/panel/resumen";
 import { useEdicion } from "@/components/panel/use-edicion";
-import { cargarEscenario, objetivoReal, type Escenario, type IdBlanda } from "@/lib/escenario";
-import { mismosPesos, pesosDe, repartirPesos, reponderar } from "@/lib/ponderacion";
+import { cargarEscenario, type Escenario } from "@/lib/escenario";
 
 type EstadoCarga =
   | { tipo: "cargando" }
@@ -37,53 +35,36 @@ function useEscenario(nombre: string): EstadoCarga {
 
 function PanelCargando() {
   return (
-    <div className="grid gap-4 lg:grid-cols-3" aria-busy="true">
-      <div className="lg:col-span-3"><Marco etiqueta="Resumen"><Barra className="h-24" /></Marco></div>
-      <div className="lg:col-span-2"><Marco etiqueta="Desglose del objetivo · B1–B6"><Barra className="h-72" /></Marco></div>
-      <Marco etiqueta="Re-ponderar"><Barra className="h-72" /></Marco>
+    <div className="grid gap-4" aria-busy="true">
+      <Marco etiqueta="Resumen"><Barra className="h-24" /></Marco>
+      <Marco etiqueta="Desglose del objetivo · B1–B6"><Barra className="h-72" /></Marco>
     </div>
   );
 }
 
 function PanelListo({ escenario }: { escenario: Escenario }) {
-  const originales = useMemo(() => pesosDe(escenario.desglose), [escenario]);
-  const [pesos, setPesos] = useState(originales);
-  const filas = useMemo(() => reponderar(escenario.desglose, pesos), [escenario, pesos]);
-  const cambiado = !mismosPesos(pesos, originales);
-  const total = filas.reduce((s, f) => s + f.puntos, 0);
-  const totalOriginal = objetivoReal(escenario.desglose);
-  const cambiarPeso = (id: IdBlanda, valor: number) => setPesos((actual) => repartirPesos(actual, id, valor));
   const edicion = useEdicion(escenario);
 
   return (
-    <div className="grid gap-4 lg:grid-cols-3 [&>*]:min-w-0">
-      <Entrada orden={1} className="lg:col-span-3">
+    <div className="grid gap-4 [&>*]:min-w-0">
+      <Entrada orden={1}>
         <Resumen escenario={escenario} />
       </Entrada>
-      <Entrada orden={2} className="lg:col-span-2">
-        <Desglose filas={filas} total={total} totalOriginal={totalOriginal} cambiado={cambiado} />
+      <Entrada orden={2}>
+        <Desglose desglose={escenario.desglose} />
       </Entrada>
       <Entrada orden={3}>
-        <Pesos
-          pesos={pesos}
-          cambiado={cambiado}
-          total={total}
-          totalOriginal={totalOriginal}
-          onCambiar={cambiarPeso}
-          onRestaurar={() => setPesos(originales)}
-        />
-      </Entrada>
-      <Entrada orden={4} className="lg:col-span-3">
         <Exploracion
           asignaciones={edicion.actuales}
           edicion={{
             datos: edicion.modelo.tipo === "listo" ? edicion.modelo.datos : null,
             movidas: edicion.movidas,
             onMover: edicion.mover,
+            onIniciar: edicion.iniciar,
           }}
         />
       </Entrada>
-      <Entrada orden={5} className="lg:col-span-3">
+      <Entrada orden={4}>
         <Cambios edicion={edicion} />
       </Entrada>
     </div>

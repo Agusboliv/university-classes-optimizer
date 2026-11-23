@@ -43,6 +43,8 @@ interface EdicionGrilla {
   readonly datos: Datos | null;
   readonly movidas: ReadonlySet<string>;
   readonly onMover: (claseId: string, m: Movimiento) => void;
+  /** Se llama al fijar una clase: recién ahí se piden los CSV para editar. */
+  readonly onIniciar: () => void;
 }
 
 interface ExploracionProps {
@@ -164,7 +166,10 @@ export function Exploracion({ asignaciones, edicion }: ExploracionProps) {
             seleccion={elegida?.clase ?? null}
             movidas={edicion?.movidas}
             resaltado={resaltadoPrevio ?? resaltado}
-            onSeleccionar={(c) => setElegida((e) => (e === c.clase ? null : c.clase))}
+            onSeleccionar={(c) => {
+              edicion?.onIniciar();
+              setElegida((e) => (e === c.clase ? null : c.clase));
+            }}
             onPrevisualizar={setPrevia}
           />
         </ViewTransition>

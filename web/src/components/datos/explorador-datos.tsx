@@ -3,38 +3,76 @@
 import { CircleAlert } from "lucide-react";
 import { startTransition, useEffect, useRef, useState, ViewTransition, type KeyboardEvent } from "react";
 
-import { TablaCsvVista } from "@/components/datos/tabla-csv";
+import { TablaHead } from "@/components/datos/tabla-csv";
 import { Barra } from "@/components/esqueleto";
-import { cargarCsvs, type ArchivoCargado } from "@/lib/csv";
+import { parsearCsv, type TablaCsv } from "@/lib/csv";
 import { ARCHIVOS, type ArchivoCsv } from "@/lib/esquema";
 import { numero } from "@/lib/formato";
 import { cn } from "@/lib/utils";
 
-type EstadoCarga =
-  | { tipo: "cargando" }
-  | { tipo: "error"; mensaje: string }
-  | { tipo: "listo"; archivos: Readonly<Record<ArchivoCsv, ArchivoCargado>> };
+/** Lo que genera scripts/copiar-datos.mjs en public/data/manifest.json, por tabla. */
+interface InfoTabla {
+  readonly columnas: readonly string[];
+  readonly filas: number;
+}
+type Manifest = Readonly<Record<ArchivoCsv, InfoTabla>>;
 
-function useArchivos(): EstadoCarga {
-  const [estado, setEstado] = useState<EstadoCarga>({ tipo: "cargando" });
+type Estado<T> = { tipo: "cargando" } | { tipo: "error"; mensaje: string } | { tipo: "listo"; valor: T };
+
+const esObjeto = (v: unknown): v is Record<string, unknown> => typeof v === "object" && v !== null;
+const mensajeDe = (e: unknown) => (e instanceof Error ? e.message : "error desconocido");
+/** aulas.csv -> /data/aulas.head.csv (encabezado + 10 filas, ver copiar-datos.mjs). */
+const urlHead = (archivo: ArchivoCsv) => `/data/${archivo.replace(/\.csv$/, ".head.csv")}`;
+
+function validarManifest(datos: unknown): Manifest {
+  if (!esObjeto(datos)) throw new Error("el manifest no es un objeto JSON");
+  for (const archivo of ARCHIVOS) {
+    const info = datos[archivo];
+    if (!esObjeto(info) || !Array.isArray(info.columnas) || typeof info.filas !== "number") {
+      throw new Error(`el manifest no describe ${archivo}`);
+    }
+  }
+  return datos as unknown as Manifest;
+}
+
+async function leerTexto(url: string, signal?: AbortSignal): Promise<string> {
+  const respuesta = await fetch(url, { signal });
+  if (!respuesta.ok) throw new Error(`no se pudo leer ${url} (HTTP ${respuesta.status})`);
+  return respuesta.text();
+}
+
+/**
+ * Vista previa de las tablas de entrada: una pestaña por archivo (patrón ARIA de pestañas).
+ * Solo lee el manifest y, al abrir cada pestaña, su .head.csv; nunca los CSV completos.
+ */
+export function ExploradorDatos() {
+  const [manifest, setManifest] = useState<Estado<Manifest>>({ tipo: "cargando" });
+  const [heads, setHeads] = useState<Partial<Record<ArchivoCsv, Estado<TablaCsv>>>>({});
+  const [archivo, setArchivo] = useState<ArchivoCsv>(ARCHIVOS[0]);
+  const pedidos = useRef(new Set<ArchivoCsv>());
+  const pestanas = useRef<(HTMLButtonElement | null)[]>([]);
+
   useEffect(() => {
     const control = new AbortController();
-    cargarCsvs(control.signal)
-      .then((archivos) => setEstado({ tipo: "listo", archivos }))
-      .catch((error: unknown) => {
-        if (control.signal.aborted) return;
-        setEstado({ tipo: "error", mensaje: error instanceof Error ? error.message : "error desconocido" });
+    leerTexto("/data/manifest.json", control.signal)
+      .then((texto) => setManifest({ tipo: "listo", valor: validarManifest(JSON.parse(texto)) }))
+      .catch((e: unknown) => {
+        if (!control.signal.aborted) setManifest({ tipo: "error", mensaje: mensajeDe(e) });
       });
     return () => control.abort();
   }, []);
-  return estado;
-}
 
-/** Explorador de las tablas de entrada: una pestaña por archivo (patrón ARIA de pestañas). */
-export function ExploradorDatos() {
-  const estado = useArchivos();
-  const [archivo, setArchivo] = useState<ArchivoCsv>(ARCHIVOS[0]);
-  const pestanas = useRef<(HTMLButtonElement | null)[]>([]);
+  // Cada pestaña pide su head la primera vez que se abre (después queda en memoria)
+  useEffect(() => {
+    if (pedidos.current.has(archivo)) return;
+    pedidos.current.add(archivo);
+    leerTexto(urlHead(archivo))
+      .then((texto) => setHeads((h) => ({ ...h, [archivo]: { tipo: "listo", valor: parsearCsv(texto) } })))
+      .catch((e: unknown) => {
+        pedidos.current.delete(archivo);
+        setHeads((h) => ({ ...h, [archivo]: { tipo: "error", mensaje: mensajeDe(e) } }));
+      });
+  }, [archivo]);
 
   const elegir = (nombre: ArchivoCsv) => startTransition(() => setArchivo(nombre));
 
@@ -46,6 +84,9 @@ export function ExploradorDatos() {
     pestanas.current[j]?.focus();
     elegir(ARCHIVOS[j]);
   };
+
+  const head = heads[archivo] ?? { tipo: "cargando" };
+  const error = manifest.tipo === "error" ? manifest.mensaje : head.tipo === "error" ? head.mensaje : null;
 
   return (
     <section className="rounded-lg border bg-card">
@@ -69,35 +110,32 @@ export function ExploradorDatos() {
             )}
           >
             {nombre}
-            {estado.tipo === "listo" && (
-              <span className="text-in-tabla text-tinta-2 tabular-nums">{numero(estado.archivos[nombre].tabla.filas.length)}</span>
+            {manifest.tipo === "listo" && (
+              <span className="text-in-tabla text-tinta-2 tabular-nums">{numero(manifest.valor[nombre].filas)}</span>
             )}
           </button>
         ))}
       </div>
 
       <div id="panel-archivo" role="tabpanel" aria-labelledby={`pestana-${ARCHIVOS.indexOf(archivo)}`} className="p-5">
-        {estado.tipo === "cargando" && (
+        {error ? (
+          <p role="alert" className="flex gap-2 text-in-ui">
+            <CircleAlert className="mt-0.5 size-4 shrink-0 text-estado-error" aria-hidden="true" />
+            <span>
+              {error}. Volvé a correr <code>npm run dev</code> o <code>npm run build</code> (generan las vistas previas).
+            </span>
+          </p>
+        ) : manifest.tipo === "listo" && head.tipo === "listo" ? (
+          <ViewTransition key={archivo} enter="grilla-entra" exit="grilla-sale" default="none">
+            <TablaHead archivo={archivo} tabla={head.valor} total={manifest.valor[archivo].filas} />
+          </ViewTransition>
+        ) : (
           <div className="space-y-2" aria-busy="true">
             <Barra className="h-6 w-64" />
             {Array.from({ length: 8 }, (_, i) => (
               <Barra key={i} className="h-4" />
             ))}
           </div>
-        )}
-        {estado.tipo === "error" && (
-          <p role="alert" className="flex gap-2 text-in-ui">
-            <CircleAlert className="mt-0.5 size-4 shrink-0 text-estado-error" aria-hidden="true" />
-            <span>
-              {estado.mensaje}. Revisá que estén los CSV en <code>data/</code> y volvé a correr <code>npm run dev</code> o{" "}
-              <code>npm run build</code>.
-            </span>
-          </p>
-        )}
-        {estado.tipo === "listo" && (
-          <ViewTransition key={archivo} enter="grilla-entra" exit="grilla-sale" default="none">
-            <TablaCsvVista archivo={archivo} tabla={estado.archivos[archivo].tabla} texto={estado.archivos[archivo].texto} />
-          </ViewTransition>
         )}
       </div>
     </section>

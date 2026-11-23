@@ -73,9 +73,7 @@ export function BloquePresion({ a }: { a: Analisis }) {
 
   return (
     <section aria-labelledby="bloque-presion">
-      <EncabezadoBloque id="bloque-presion" titulo="Presión horaria">
-        Cuándo se llenan las aulas: los momentos con poca holgura son los más difíciles de reorganizar.
-      </EncabezadoBloque>
+      <EncabezadoBloque id="bloque-presion" titulo="Presión horaria" />
       <div className="mt-4">
         <Marco
           estatico

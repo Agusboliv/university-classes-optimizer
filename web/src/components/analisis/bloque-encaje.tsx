@@ -102,9 +102,7 @@ export function BloqueEncaje({ a, solver }: { a: Analisis; solver: readonly Term
 
   return (
     <section aria-labelledby="bloque-encaje">
-      <EncabezadoBloque id="bloque-encaje" titulo="Calidad del encaje">
-        Dónde se podría reorganizar: cada panel corresponde a una penalización del objetivo (B1–B6).
-      </EncabezadoBloque>
+      <EncabezadoBloque id="bloque-encaje" titulo="Calidad del encaje" />
       <Consistencia desglose={a.desglose} solver={solver} />
 
       <div className="mt-4 grid gap-4 lg:grid-cols-2">

@@ -11,11 +11,11 @@ import type { Colores } from "@/lib/echarts";
 import { numero, porcentaje } from "@/lib/formato";
 
 /** Encabezado de un bloque del análisis (escala de instrumento, fuera de los paneles). */
-export function EncabezadoBloque({ id, titulo, children }: { id: string; titulo: string; children: ReactNode }) {
+export function EncabezadoBloque({ id, titulo, children }: { id: string; titulo: string; children?: ReactNode }) {
   return (
     <header className="max-w-3xl">
       <h2 id={id} className="text-in-ui font-semibold">{titulo}</h2>
-      <p className="mt-1 text-in-ui-sm text-tinta-2">{children}</p>
+      {children && <p className="mt-1 text-in-ui-sm text-tinta-2">{children}</p>}
     </header>
   );
 }

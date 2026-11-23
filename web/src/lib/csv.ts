@@ -62,36 +62,3 @@ export function parsearCsv(texto: string): TablaCsv {
   const [encabezado, ...resto] = lineas;
   return { columnas: partirLinea(encabezado), filas: resto.map(partirLinea) };
 }
-
-export type TipoColumna = "numero" | "texto";
-
-const NUMERO = /^-?\d+(\.\d+)?$/;
-
-export function tipoColumna(filas: TablaCsv["filas"], indice: number): TipoColumna {
-  return filas.length > 0 && filas.every((f) => NUMERO.test(f[indice] ?? "")) ? "numero" : "texto";
-}
-
-const normalizar = (s: string): string => s.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
-
-/** Filas que contienen el texto en alguna columna (sin distinguir mayúsculas ni acentos). */
-export function filtrarFilas(filas: TablaCsv["filas"], consulta: string): TablaCsv["filas"] {
-  const q = normalizar(consulta.trim());
-  if (!q) return filas;
-  return filas.filter((f) => f.some((v) => normalizar(v).includes(q)));
-}
-
-export type Direccion = "asc" | "desc";
-
-const comparar = new Intl.Collator("es", { numeric: true }).compare;
-
-/** Copia ordenada por una columna (numérica o de texto). No modifica la original. */
-export function ordenarFilas(
-  filas: TablaCsv["filas"], indice: number, direccion: Direccion, tipo: TipoColumna,
-): TablaCsv["filas"] {
-  const signo = direccion === "asc" ? 1 : -1;
-  return [...filas].sort((a, b) => {
-    const x = a[indice] ?? "";
-    const y = b[indice] ?? "";
-    return signo * (tipo === "numero" ? Number(x) - Number(y) : comparar(x, y));
-  });
-}

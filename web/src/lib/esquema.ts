@@ -23,10 +23,3 @@ export const DESCRIPCION: Readonly<Record<ArchivoCsv, string>> = {
   "profesores.csv": "Docentes y su tope de minutos por día.",
   "disponibilidad_profesores.csv": "Intervalos en los que cada docente puede dar clase.",
 };
-
-/** Columnas cuyos valores llevan a la grilla del panel filtrada por esa entidad. */
-export const ENLACE_A_VISTA: Readonly<Record<string, "cohorte" | "profesor" | "aula">> = {
-  profesor_id: "profesor",
-  aula_id: "aula",
-  cohorte: "cohorte",
-};

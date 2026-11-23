@@ -22,7 +22,7 @@ export function Cambios({ edicion }: { edicion: Edicion }) {
   const { modelo, cambios, movidas, problemas, desglose, desgloseBase, deshacer, restaurar } = edicion;
   const totalBase = objetivoReal(desgloseBase);
   const total = desglose ? objetivoReal(desglose) : totalBase;
-  // Igual que en Python, un choque se reporta una vez por slot de 30 min: acá se agrupan
+  // Igual que en Python, un choque aparece una vez por slot de 30 min: acá se agrupan
   const agrupados = [...(problemas ?? []).reduce((m, p) => m.set(p, (m.get(p) ?? 0) + 1), new Map<string, number>())];
 
   return (
@@ -44,7 +44,7 @@ export function Cambios({ edicion }: { edicion: Edicion }) {
         <Info className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
         <span>
           Tocá una clase en la grilla y movela desde su detalle. Se verifica D1–D7 y se recalcula B1–B6 en el navegador,
-          con las mismas fórmulas del solver; no vuelve a optimizar.
+          con las mismas fórmulas del solver.
         </span>
       </p>
 

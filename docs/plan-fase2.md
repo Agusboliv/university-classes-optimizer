@@ -1,8 +1,9 @@
 # Plan Fase 2: `web/` interactiva (POC)
 
 Web estática (Next.js `output: "export"`) para explorar un escenario
-precalculado. Se prioriza la interacción: explorar la grilla, re-ponderar
-B1–B6 y mover clases a mano con verificación en vivo. Sin backend, sin agente
+precalculado. Se prioriza la interacción: explorar la grilla y mover clases a
+mano con verificación en vivo (la re-ponderación de B1–B6 se quitó en el cierre,
+ver tramo 7). Sin backend, sin agente
 y sin subir CSV. Rama `fase2-web`. Los archivos se agregan de forma explícita
 (nunca `git add -A`) y `CLAUDE.md` queda fuera de los commits.
 
@@ -66,12 +67,11 @@ el `fetch` falla).
   ~30 fps, se pausa con la pestaña oculta o fuera de pantalla, se queda en un
   cuadro fijo con reduced-motion y tiene un degradado encima para que el
   contraste sea ≥ 4.5:1.
-- `/panel`: resumen, desglose, re-ponderar, grilla semanal y (más adelante)
+- `/panel`: resumen, desglose con los pesos fijos del JSON, grilla semanal y
   editor.
 - `/analisis`: capacidad ociosa, presión horaria y calidad del encaje de la
   solución base (ver tramo 6).
-- `/datos`: una pestaña por CSV con los mismos nombres, columnas, orden y
-  formato. Búsqueda, orden y paginación.
+- `/datos`: vista previa de 10 filas por tabla (ver tramo 7).
 - Navegación compartida con View Transitions al cambiar de ruta.
 
 ## Tramos (parar después de cada uno)
@@ -90,7 +90,7 @@ el `fetch` falla).
   y en oscuro. Con reduced-motion el fondo queda fijo. Medir el contraste del
   título sobre el degradado. `grep -ri "óptim" web/src` no encuentra nada.
 
-### Tramo 2: /panel I, resumen, desglose y re-ponderar
+### Tramo 2: /panel I, resumen, desglose y re-ponderar (re-ponderar se quitó en el tramo 7)
 1. `src/lib/escenario.ts`: tipos del contrato, `cargarEscenario()` y chequeo de
    claves.
 2. Resumen (objetivo 22.68, tiempo, cota, verificación) y desglose: tabla +
@@ -110,7 +110,7 @@ el `fetch` falla).
 - **Validar**: capturas de las tres vistas; la cantidad de clases coincide con
   el JSON.
 
-### Tramo 4: /datos, explorador de tablas
+### Tramo 4: /datos, explorador de tablas (reemplazado en el tramo 7 por una vista previa de 10 filas)
 1. Pestañas por archivo, esquema (filas × columnas, columnas en orden),
    búsqueda, orden por columna y paginación. Parseo en un Web Worker si hace
    falta.
@@ -167,6 +167,22 @@ dónde se podría reorganizar.
   3 docentes, 5 clases) con conteos conocidos para a)–d); con los archivos
   reales, 1003 clases, misma corrida que el JSON, B1–B6 iguales al desglose y
   parciales por día que suman el total.
+
+### Tramo 7: cierre de la fase (HECHO)
+- **/panel**: sin re-ponderación (se borraron sliders, estado, `ponderacion.ts` y
+  sus tests). El desglose usa los pesos fijos del JSON (columnas Peso y Puntos).
+  Se quitaron las notas del resumen (límite y workers, texto bajo la cota y bajo
+  la verificación OK, la nota del objetivo del solver). El editor sigue igual,
+  pero pide los CSV completos recién al fijar la primera clase.
+- **/analisis**: se quitaron el texto de apoyo de la pantalla y las
+  descripciones de "Presión horaria" y "Calidad del encaje".
+- **/datos**: vista previa de 10 filas por tabla. `copiar-datos.mjs` genera
+  `public/data/<tabla>.head.csv` (encabezado + 10 filas tal cual) y
+  `public/data/manifest.json` (columnas y total de filas). La página lee el
+  manifest y, al abrir cada pestaña, solo su head; no descarga los CSV
+  completos. Se quitaron búsqueda, orden, paginación, vista cruda, enlaces al
+  panel y sus tests. Muestra "10 de N filas", las columnas en su orden y los
+  valores con el formato original.
 
 ## Riesgos
 

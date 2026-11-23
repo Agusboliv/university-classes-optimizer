@@ -14,7 +14,7 @@ export default function PaginaDatos() {
         <Entrada>
           <EncabezadoPantalla
             titulo="Datos de entrada"
-            apoyo="Las cinco tablas que recibe el modelo, tal como están en los CSV: mismos nombres, columnas y formato. Tocá un docente, un aula o una cohorte para ver su semana."
+            apoyo="Las cinco tablas que recibe el modelo, tal como están en los CSV: mismos nombres, columnas y formato."
           />
         </Entrada>
         <Entrada orden={1} className="mt-12">

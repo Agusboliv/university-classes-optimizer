@@ -1,7 +1,7 @@
 # web
 
 Web estática (Next.js 16, `output: "export"`) para explorar el escenario
-precalculado. Ver `../CLAUDE.md` (secciones Diseño y Comandos) y
+calculado de antemano. Ver `../CLAUDE.md` (secciones Diseño y Comandos) y
 `../docs/plan-fase2.md`.
 
 ```bash

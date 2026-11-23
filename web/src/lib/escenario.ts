@@ -4,13 +4,12 @@
 export const IDS_BLANDAS = ["B1", "B2", "B3", "B4", "B5", "B6"] as const;
 export type IdBlanda = (typeof IDS_BLANDAS)[number];
 
+/** Campos de `resultado` que usa la web (el JSON trae alguno más). */
 export interface Resultado {
   estado: string;
   objetivo: number | null; // el del solver: puede quedar por encima del real
   cota_inferior: number | null;
   tiempo_s: number;
-  tiempo_limite_s: number;
-  workers: number;
 }
 
 export interface TerminoDesglose {

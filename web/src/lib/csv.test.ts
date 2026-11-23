@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 
 import { describe, expect, test } from "vitest";
 
-import { filtrarFilas, ordenarFilas, parsearCsv, tipoColumna } from "@/lib/csv";
+import { parsearCsv } from "@/lib/csv";
 import { ARCHIVOS, ESQUEMA } from "@/lib/esquema";
 
 const leer = (archivo: string) =>
@@ -41,29 +41,5 @@ describe("parsearCsv con casos borde", () => {
 
   test("un texto vacío da una tabla vacía", () => {
     expect(parsearCsv("")).toEqual({ columnas: [], filas: [] });
-  });
-});
-
-describe("filtrar y ordenar", () => {
-  const { filas } = leer("aulas.csv");
-
-  test("la búsqueda no distingue mayúsculas ni acentos", () => {
-    const conAcento = filtrarFilas(filas, "Química");
-    expect(filtrarFilas(filas, "quimica")).toEqual(conAcento);
-    expect(filtrarFilas(filas, "  ")).toBe(filas);
-  });
-
-  test("ordena la capacidad como número, sin modificar la original", () => {
-    const indice = ESQUEMA["aulas.csv"].indexOf("capacidad");
-    expect(tipoColumna(filas, indice)).toBe("numero");
-
-    const desc = ordenarFilas(filas, indice, "desc", "numero").map((f) => Number(f[indice]));
-    expect(desc).toEqual([...desc].sort((a, b) => b - a));
-    expect(filas[0][0]).toBe("A001");
-  });
-
-  test("los IDs se ordenan como texto con números naturales", () => {
-    const ids = ordenarFilas([["A10"], ["A2"], ["A1"]], 0, "asc", "texto").map((f) => f[0]);
-    expect(ids).toEqual(["A1", "A2", "A10"]);
   });
 });

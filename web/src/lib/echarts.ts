@@ -13,7 +13,7 @@ export function cargarEcharts(): Promise<Echarts> {
     import("echarts/renderers"),
   ]).then(([core, charts, componentes, renderers]) => {
     core.use([
-      charts.BarChart, charts.ScatterChart, charts.HeatmapChart,
+      charts.BarChart, charts.HeatmapChart,
       componentes.GridComponent, componentes.TooltipComponent, componentes.LegendComponent,
       componentes.AriaComponent, componentes.VisualMapComponent, renderers.CanvasRenderer,
     ]);

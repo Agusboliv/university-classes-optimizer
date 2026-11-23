@@ -9,6 +9,7 @@ import {
 } from "@/lib/modelo";
 
 export type EstadoModelo =
+  | { tipo: "inactivo" } // todavía no se fijó ninguna clase: no se piden los CSV
   | { tipo: "cargando" }
   | { tipo: "error"; mensaje: string }
   | { tipo: "listo"; datos: Datos };
@@ -22,14 +23,18 @@ export interface Edicion {
   readonly problemas: readonly string[] | null;
   readonly desglose: readonly TerminoDesglose[] | null;
   readonly desgloseBase: readonly TerminoDesglose[];
+  /** Pide los CSV completos (se llama al fijar la primera clase). */
+  iniciar: () => void;
   mover: (claseId: string, m: Movimiento) => void;
   deshacer: () => void;
   restaurar: () => void;
 }
 
-function useModelo(): EstadoModelo {
+/** Los CSV completos se piden solo cuando `activo` (al empezar a editar), no al entrar a /panel. */
+function useModelo(activo: boolean): EstadoModelo {
   const [estado, setEstado] = useState<EstadoModelo>({ tipo: "cargando" });
   useEffect(() => {
+    if (!activo) return;
     const control = new AbortController();
     cargarCsvs(control.signal)
       .then((archivos) => {
@@ -41,16 +46,17 @@ function useModelo(): EstadoModelo {
         setEstado({ tipo: "error", mensaje: error instanceof Error ? error.message : "error desconocido" });
       });
     return () => control.abort();
-  }, []);
-  return estado;
+  }, [activo]);
+  return activo ? estado : { tipo: "inactivo" };
 }
 
 /**
  * Edición manual de la solución base: historial inmutable (cada movimiento agrega una copia),
- * verificación D1–D7 y B1–B6 recalculados en el navegador. Los peores casos salen del JSON.
+ * verificación D1–D7 y cálculo de B1–B6 en el navegador. Los peores casos salen del JSON.
  */
 export function useEdicion(escenario: Escenario): Edicion {
-  const modelo = useModelo();
+  const [activo, setActivo] = useState(false);
+  const modelo = useModelo(activo);
   const [historial, setHistorial] = useState<readonly (readonly Asignacion[])[]>([escenario.asignaciones]);
   const actuales = historial[historial.length - 1];
   const datos = modelo.tipo === "listo" ? modelo.datos : null;
@@ -79,6 +85,7 @@ export function useEdicion(escenario: Escenario): Edicion {
     problemas,
     desglose,
     desgloseBase: escenario.desglose,
+    iniciar: () => setActivo(true),
     mover: (claseId, m) => {
       if (!datos) return;
       setHistorial((h) => [...h, moverClase(datos, h[h.length - 1], claseId, m)]);
