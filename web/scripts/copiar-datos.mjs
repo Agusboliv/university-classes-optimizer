@@ -24,4 +24,11 @@ function copiar(origen, destino, extension) {
 
 const escenarios = copiar(join(datos, "escenarios"), join(web, "public", "escenarios"), ".json");
 const csv = copiar(datos, join(web, "public", "data"), ".csv");
-console.log(`copiar-datos: ${escenarios.length} escenario(s), ${csv.length} CSV`);
+
+// Soluciones en CSV (ej. referencia.csv, misma corrida que referencia.json) -> public/data/
+// Se agregan después de los 5 CSV de entrada (copiar() vació la carpeta antes).
+const soluciones = readdirSync(join(datos, "escenarios")).filter((n) => n.endsWith(".csv"));
+for (const nombre of soluciones) {
+  copyFileSync(join(datos, "escenarios", nombre), join(web, "public", "data", nombre));
+}
+console.log(`copiar-datos: ${escenarios.length} escenario(s), ${csv.length} CSV de entrada, ${soluciones.length} solución(es) en CSV`);

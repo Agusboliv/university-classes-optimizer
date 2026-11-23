@@ -36,8 +36,9 @@ y sin subir CSV. Rama `fase2-web`. Los archivos se agregan de forma explícita
 ## Datos en el navegador
 
 `scripts/copiar-datos.mjs` (en `predev` y `prebuild`) copia
-`../data/escenarios/*.json` a `public/escenarios/` y, desde el tramo 4,
-`../data/*.csv` a `public/datos/`. La página los lee con `fetch`. Para probar el
+`../data/escenarios/*.json` a `public/escenarios/`, `../data/*.csv` a
+`public/data/` y, desde el tramo 6, `../data/escenarios/*.csv` (solución en CSV)
+también a `public/data/`. La página los lee con `fetch`. Para probar el
 build se sirve `out/` con `npx serve out` (abriendo `index.html` desde el disco
 el `fetch` falla).
 
@@ -67,6 +68,8 @@ el `fetch` falla).
   contraste sea ≥ 4.5:1.
 - `/panel`: resumen, desglose, re-ponderar, grilla semanal y (más adelante)
   editor.
+- `/analisis`: capacidad ociosa, presión horaria y calidad del encaje de la
+  solución base (ver tramo 6).
 - `/datos`: una pestaña por CSV con los mismos nombres, columnas, orden y
   formato. Búsqueda, orden y paginación.
 - Navegación compartida con View Transitions al cambiar de ruta.
@@ -116,7 +119,15 @@ el `fetch` falla).
 - **Validar**: las cantidades de filas coinciden con los CSV (200 aulas, 1003
   clases, 15 franjas, 287 profesores, 1378 filas de disponibilidad).
 
-### Tramo 5 (opcional): editor
+### Tramo 5 (opcional, HECHO): editor
+Hecho en `web/src/lib/modelo.ts` (port de `preparar_datos` y `verificacion.py`),
+`components/panel/use-edicion.ts`, `editor-clase.tsx` y `cambios.tsx`. Los CSV
+se leen de `public/data/` (no `public/datos/`). Diferencia con lo planeado: el
+peor caso de B5 no se puede recalcular en TS (las aulas candidatas de Python salen
+de un sort no estable); el evaluador toma los peores casos del `desglose` del
+JSON. B1–B4 y B6 sí coinciden con el recálculo.
+
+Plan original:
 1. Copiar los CSV sintéticos a `public/datos/` y parsearlos (sin comillas ni
    comas internas; si no alcanza, `papaparse`).
 2. `src/lib/modelo.ts`: port de `preparar_datos` (lo necesario) y de
@@ -129,6 +140,33 @@ el `fetch` falla).
   `[]`, los máximos coinciden con CLAUDE.md (50563, 16080, 1922, 421, 587, 800),
   `evaluarBlandas` da los puntos del `desglose` del JSON (Python) y mover una
   clase al aula y horario de otra da un problema D4.
+
+### Tramo 6: /analisis (HECHO)
+Para quien organiza las clases: cuánta capacidad sobra, cuándo hay presión y
+dónde se podría reorganizar.
+- **Fuente**: `data/escenarios/referencia.csv`, misma corrida que
+  `referencia.json` (exportada con `generar_escenario --desde-json … --csv`,
+  sin volver a resolver), más los 5 CSV de entrada. `copiar-datos.mjs` la lleva a
+  `public/data/`. Si el CSV no trae Materia, Profesor, Cohorte o Fin, se derivan
+  de `clases.csv`. Refleja la solución base, no las ediciones del editor.
+- **Cálculo**: funciones puras en `web/src/lib/analisis.ts`. B1–B6 salen del
+  evaluador de `modelo.ts` (no se reimplementan) y se muestra si coinciden con
+  el desglose del JSON.
+- **Definiciones** (en notas junto a cada gráfico): aula libre un día = sin
+  ninguna clase ese día, dentro de las franjas; laboratorio libre = lo mismo
+  para es_laboratorio = 1; docente sin clases = disponible (holgura real) o no
+  disponible ese día; aula ocupada en una hora = tiene clase en algún momento de
+  esa hora.
+- **Gráficos** (ECharts en Canvas, LUN–VIE): a) aulas sin clases, b) laboratorios
+  sin clases, c) docentes sin clases apilado disponibles/no disponibles; d) mapa
+  de calor día × hora (% ocupadas o aulas libres, escala de 0 al máximo
+  observado); e) asientos vacíos por día (B1) + top 10 clases; f) huecos por día
+  (B2) + top cohortes; g) docentes por días de trabajo (B4) y cuántos superan
+  360 min seguidos (B3); h) laboratorios usados sin necesitarlos (B5).
+- **Tests** (`analisis.test.ts`): dataset diminuto (3 aulas con 1 laboratorio,
+  3 docentes, 5 clases) con conteos conocidos para a)–d); con los archivos
+  reales, 1003 clases, misma corrida que el JSON, B1–B6 iguales al desglose y
+  parciales por día que suman el total.
 
 ## Riesgos
 

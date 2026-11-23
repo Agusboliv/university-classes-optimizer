@@ -1,6 +1,7 @@
-"""CLI: resuelve un caso y guarda el escenario en JSON.
+"""CLI: resuelve un caso y guarda el escenario en JSON (y, con --csv, la solución en CSV).
 
-    python -m solver.generar_escenario --data ../data --tiempo 120
+    python -m solver.generar_escenario --data ../data --tiempo 120 --csv
+    python -m solver.generar_escenario --data ../data --desde-json ../data/escenarios/referencia.json --csv
 """
 
 from __future__ import annotations
@@ -11,9 +12,31 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from solver.datos import cargar_csvs, preparar_datos, validar
+import pandas as pd
+
+from solver.datos import Datos, cargar_csvs, preparar_datos, validar
 from solver.modelo import Resultado, resolver
 from solver.verificacion import evaluar_blandas, verificar_solucion
+
+# Columnas del CSV de solución (las mismas que arma modelo._extraer_solucion)
+COLUMNAS_CSV = {"clase": "Clase", "materia": "Materia", "profesor": "Profesor", "cohorte": "Cohorte",
+                "aula": "Aula", "dia": "Día", "inicio": "Inicio", "fin": "Fin"}
+
+
+def escribir_csv(solucion: pd.DataFrame, ruta: Path) -> None:
+    solucion[list(COLUMNAS_CSV.values())].to_csv(ruta, index=False, encoding="utf-8")
+    print(f"Solución en CSV guardada en {ruta}")
+
+
+def exportar_desde_json(datos: Datos, ruta_json: Path, salida: Path | None) -> int:
+    """Escribe el CSV de un escenario ya generado (misma corrida, sin volver a resolver)."""
+    escenario = json.loads(ruta_json.read_text(encoding="utf-8"))
+    solucion = pd.DataFrame(escenario["asignaciones"]).rename(columns=COLUMNAS_CSV)
+    if problemas := verificar_solucion(datos, solucion):
+        print(f"El escenario no pasa D1-D7 ({len(problemas)} problemas): no se exporta.")
+        return 1
+    escribir_csv(solucion, (salida or ruta_json.parent) / f"{ruta_json.stem}.csv")
+    return 0
 
 
 def armar_escenario(resultado: Resultado, desglose: list[dict[str, Any]], problemas: list[str],
@@ -43,7 +66,13 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--salida", type=Path, default=None, help="carpeta de salida (por defecto <data>/escenarios)")
     p.add_argument("--forzar", action="store_true",
                    help="guarda el escenario aunque la solución no pase la verificación D1-D7 (para depurar)")
+    p.add_argument("--csv", action="store_true",
+                   help="guarda también <nombre>.csv con la solución (Clase, Materia, Profesor, Cohorte, Aula, Día, Inicio, Fin)")
+    p.add_argument("--desde-json", type=Path, default=None,
+                   help="no resuelve: exporta a CSV las asignaciones de un escenario ya generado (misma corrida)")
     args = p.parse_args(argv)
+    if args.desde_json and not args.csv:
+        p.error("--desde-json solo exporta el CSV: agregá --csv")
 
     dfs = cargar_csvs(args.data)
     errores, advertencias = validar(dfs)
@@ -55,6 +84,8 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     datos = preparar_datos(dfs)
+    if args.desde_json:
+        return exportar_desde_json(datos, args.desde_json, args.salida)
     print(f"Resolviendo {len(datos.clases)} clases ({args.tiempo:.0f} s, {args.workers} workers)...")
     resultado = resolver(datos, args.tiempo, args.workers, args.semilla)
     print(f"Estado: {resultado.estado} en {resultado.tiempo_s:.1f} s")
@@ -74,6 +105,8 @@ def main(argv: list[str] | None = None) -> int:
     salida = (args.salida or args.data / "escenarios") / f"{args.nombre}.json"
     salida.parent.mkdir(parents=True, exist_ok=True)
     salida.write_text(json.dumps(escenario, ensure_ascii=False, indent=1), encoding="utf-8")
+    if args.csv:
+        escribir_csv(resultado.solucion, salida.with_suffix(".csv"))
 
     print(f"Verificación D1-D7: {'OK' if not problemas else f'{len(problemas)} problemas'}")
     for b in desglose:

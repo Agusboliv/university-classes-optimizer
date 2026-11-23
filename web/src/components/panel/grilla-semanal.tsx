@@ -32,6 +32,8 @@ interface GrillaSemanalProps {
   vista: Vista;
   colores: ReadonlyMap<string, number | null>;
   seleccion: string | null;
+  /** Clases movidas a mano (borde punteado). */
+  movidas?: ReadonlySet<string>;
   resaltado: Resaltado | null;
   onSeleccionar: (clase: Asignacion) => void;
   onPrevisualizar: (clase: Asignacion | null) => void;
@@ -39,7 +41,7 @@ interface GrillaSemanalProps {
 
 /** Semana de una cohorte, profesor o aula: columnas por día, bloques posicionados por minuto. */
 export function GrillaSemanal(props: GrillaSemanalProps) {
-  const { clases, dias, rango, vista, colores, seleccion, resaltado, onSeleccionar, onPrevisualizar } = props;
+  const { clases, dias, rango, vista, colores, seleccion, movidas, resaltado, onSeleccionar, onPrevisualizar } = props;
   const horas = (rango.fin - rango.inicio) / 60;
   const [campoA, campoB] = camposSecundarios(vista);
   const alto = horas * ALTO_HORA_PX;
@@ -107,6 +109,7 @@ export function GrillaSemanal(props: GrillaSemanalProps) {
                           "flex size-full flex-col overflow-hidden rounded-md border-l-[3px] px-1.5 py-1 text-left text-in-tabla",
                           "transition-opacity duration-150 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-ring",
                           atenuado && "opacity-25",
+                          movidas?.has(c.clase) && !elegido && "outline-1 outline-offset-1 outline-dashed outline-tinta-2",
                           elegido && "outline-2 outline-offset-1 outline-acento",
                         )}
                       >

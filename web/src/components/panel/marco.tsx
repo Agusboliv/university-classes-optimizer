@@ -24,7 +24,8 @@ export function Marco({ etiqueta, extra, className, estatico = false, children }
       <div className="mt-4">{children}</div>
     </>
   );
-  const clases = cn("h-full rounded-lg border bg-card p-5", className);
+  // min-w-0: dentro de una grilla, deja que el panel se angoste y que tablas y gráficos anchos se desplacen
+  const clases = cn("h-full min-w-0 rounded-lg border bg-card p-5", className);
   if (estatico) return <section className={clases}>{contenido}</section>;
   return <PanelInteractivo className={clases}>{contenido}</PanelInteractivo>;
 }

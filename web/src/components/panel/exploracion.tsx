@@ -5,11 +5,13 @@ import { startTransition, useEffect, useMemo, useState, ViewTransition } from "r
 
 import { BuscadorEntidad } from "@/components/panel/buscador-entidad";
 import { DetalleClase } from "@/components/panel/detalle-clase";
+import { EditorClase } from "@/components/panel/editor-clase";
 import { GrillaSemanal, type Resaltado } from "@/components/panel/grilla-semanal";
 import { Marco } from "@/components/panel/marco";
 import { ControlResaltado } from "@/components/panel/resaltado";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import type { Asignacion } from "@/lib/escenario";
+import type { Datos, Movimiento } from "@/lib/modelo";
 import { numero } from "@/lib/formato";
 import {
   clasesDe, coloresPorMateria, diasDe, entidades, esVista, NOMBRE_CAMPO, rangoHorario, resumenDe, VISTAS,
@@ -36,12 +38,27 @@ function seleccionInicial(asignaciones: readonly Asignacion[]): { seleccion: Sel
   return { seleccion: { vista, entidad: lista[0] }, aviso };
 }
 
-/** Grilla semanal con exploración: ver por, buscador, detalle de la clase y resaltado. */
-export function Exploracion({ asignaciones }: { asignaciones: readonly Asignacion[] }) {
+interface EdicionGrilla {
+  /** null mientras se cargan los CSV. */
+  readonly datos: Datos | null;
+  readonly movidas: ReadonlySet<string>;
+  readonly onMover: (claseId: string, m: Movimiento) => void;
+}
+
+interface ExploracionProps {
+  asignaciones: readonly Asignacion[];
+  edicion?: EdicionGrilla;
+}
+
+/** Grilla semanal con exploración: ver por, buscador, detalle de la clase, resaltado y (opcional) editor. */
+export function Exploracion({ asignaciones, edicion }: ExploracionProps) {
   const [inicio] = useState(() => seleccionInicial(asignaciones));
   const [actual, setActual] = useState<Seleccion>(inicio.seleccion);
   const [aviso, setAviso] = useState<string | null>(inicio.aviso);
-  const [elegida, setElegida] = useState<Asignacion | null>(null);
+  // Se guarda el id (no el objeto) para seguir a la clase cuando se la mueve
+  const [elegidaId, setElegida] = useState<string | null>(null);
+  const porId = useMemo(() => new Map(asignaciones.map((a) => [a.clase, a])), [asignaciones]);
+  const elegida = elegidaId ? (porId.get(elegidaId) ?? null) : null;
   const [previa, setPrevia] = useState<Asignacion | null>(null);
   const [campo, setCampo] = useState<Campo>("materia");
   const [resaltado, setResaltado] = useState<Resaltado | null>(null);
@@ -145,8 +162,9 @@ export function Exploracion({ asignaciones }: { asignaciones: readonly Asignacio
             vista={actual.vista}
             colores={colores}
             seleccion={elegida?.clase ?? null}
+            movidas={edicion?.movidas}
             resaltado={resaltadoPrevio ?? resaltado}
-            onSeleccionar={(c) => setElegida((e) => (e?.clase === c.clase ? null : c))}
+            onSeleccionar={(c) => setElegida((e) => (e === c.clase ? null : c.clase))}
             onPrevisualizar={setPrevia}
           />
         </ViewTransition>
@@ -156,6 +174,20 @@ export function Exploracion({ asignaciones }: { asignaciones: readonly Asignacio
           vista={actual.vista}
           entidad={actual.entidad}
           resumen={resumen}
+          editor={
+            elegida && edicion ? (
+              edicion.datos ? (
+                <EditorClase
+                  key={`${elegida.clase}-${elegida.dia}-${elegida.inicio}-${elegida.aula}`}
+                  clase={elegida}
+                  datos={edicion.datos}
+                  onAplicar={(m) => edicion.onMover(elegida.clase, m)}
+                />
+              ) : (
+                <p className="mt-4 border-t pt-4 text-tinta-2">Cargando los CSV para poder mover la clase…</p>
+              )
+            ) : null
+          }
           onIrA={irA}
           onCerrar={() => setElegida(null)}
         />

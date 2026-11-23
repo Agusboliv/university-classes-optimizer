@@ -5,48 +5,10 @@ import type { EChartsType } from "echarts/core";
 import { useTheme } from "next-themes";
 import { useEffect, useRef, useState } from "react";
 
+import { cargarEcharts, leerColores, movimientoReducido, type Colores } from "@/lib/echarts";
 import { ETIQUETAS } from "@/lib/escenario";
 import { numero, porcentaje, puntos } from "@/lib/formato";
 import type { TerminoReponderado } from "@/lib/ponderacion";
-
-type Echarts = typeof import("echarts/core");
-
-let cargaEcharts: Promise<Echarts> | null = null;
-
-/** Carga solo las piezas de ECharts que se usan (Canvas, barras, puntos, tooltip, leyenda). */
-function cargarEcharts(): Promise<Echarts> {
-  cargaEcharts ??= Promise.all([
-    import("echarts/core"),
-    import("echarts/charts"),
-    import("echarts/components"),
-    import("echarts/renderers"),
-  ]).then(([core, charts, componentes, renderers]) => {
-    core.use([
-      charts.BarChart, charts.ScatterChart, componentes.GridComponent, componentes.TooltipComponent,
-      componentes.LegendComponent, componentes.AriaComponent, renderers.CanvasRenderer,
-    ]);
-    return core;
-  });
-  return cargaEcharts;
-}
-
-interface Colores {
-  acento: string;
-  tinta: string;
-  tinta2: string;
-  borde: string;
-  superficie: string;
-  fuente: string;
-}
-
-function leerColores(): Colores {
-  const estilo = getComputedStyle(document.documentElement);
-  const v = (n: string) => estilo.getPropertyValue(n).trim();
-  return {
-    acento: v("--acento"), tinta: v("--tinta"), tinta2: v("--tinta-2"), borde: v("--borde"),
-    superficie: v("--superficie"), fuente: getComputedStyle(document.body).fontFamily,
-  };
-}
 
 function textoTooltip(f: TerminoReponderado, cambiado: boolean): string {
   const { id, valor, maximo, puntos: original } = f.termino;
@@ -159,8 +121,7 @@ export function GraficoDesglose({ filas, cambiado }: GraficoDesgloseProps) {
 
   useEffect(() => {
     if (!listo || !grafico.current) return;
-    const reducido = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    grafico.current.setOption(opciones(filas, cambiado, leerColores(), reducido), { replaceMerge: ["series"] });
+    grafico.current.setOption(opciones(filas, cambiado, leerColores(), movimientoReducido()), { replaceMerge: ["series"] });
   }, [listo, filas, cambiado, resolvedTheme]);
 
   return (

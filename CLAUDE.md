@@ -37,6 +37,9 @@ Caso sintético de referencia: 1003 clases, 200 aulas, 287 docentes, 134 cohorte
 - `disponibilidad_profesores.csv`: profesor_id, dia, hora_desde, hora_hasta
 - Salida `solucion_horarios.csv`: Clase, Aula, Día, Inicio (mínimo; puede traer
   más columnas)
+- `data/escenarios/referencia.csv`: la solución de `referencia.json` en CSV
+  (Clase, Materia, Profesor, Cohorte, Aula, Día, Inicio, Fin), misma corrida.
+  Se genera sin volver a resolver con `--desde-json … --csv`. La usa `/analisis`.
 - Horas en HH:MM, múltiplos de `SLOT_DURATION` = 30 min. Binarias son 0/1.
 - Escenario `data/escenarios/<nombre>.json` (lo leen los tipos TS de la Fase 2):
   - `resultado`: estado, objetivo, cota_inferior, tiempo_s, tiempo_limite_s, workers
@@ -134,6 +137,19 @@ Tokens en `web/src/app/globals.css`; se ajustan solo ahí. Plan: `docs/plan-fase
     de papel ≥ 55% que deja título y subtítulo ≥ 4.5:1.
   - `/panel`: resumen, desglose B1–B6, re-ponderar pesos, grilla semanal con
     exploración y (opcional) editor.
+  - `/analisis`: para quien organiza las clases. Calcula todo en el navegador
+    (`web/src/lib/analisis.ts`) sobre `referencia.csv` y los 5 CSV, con la
+    solución base (sin las ediciones del editor). Tres bloques, LUN a VIE:
+    capacidad ociosa (aulas, laboratorios y docentes sin clases), presión
+    horaria (mapa de calor día × hora: % de aulas ocupadas o aulas libres) y
+    calidad del encaje (B1 asientos vacíos, B2 huecos, B4/B3 días y rachas,
+    B5 laboratorios). B1–B6 salen del evaluador de `web/src/lib/modelo.ts` y
+    deben coincidir con el desglose del JSON. Definiciones:
+    - Aula libre un día: sin ninguna clase ese día, dentro de las franjas.
+    - Laboratorio libre: lo mismo, solo para aulas con es_laboratorio = 1.
+    - Docente sin clases un día: "disponible" (tiene disponibilidad ese día,
+      holgura real) o "no disponible" (no tiene disponibilidad ese día).
+    - Aula ocupada en una hora: tiene clase en algún momento de esa hora.
   - `/datos`: explorador de los 5 CSV con los mismos nombres, columnas, orden y
     formato.
 
@@ -151,8 +167,10 @@ Tokens en `web/src/app/globals.css`; se ajustan solo ahí. Plan: `docs/plan-fase
 - `cd solver && python -m pytest` (unos 10 s)
 - `cd solver && python -m solver.generar_escenario --data ../data --tiempo 120`
   (opciones: `--workers`, `--semilla`, `--nombre`, `--salida`, `--forzar` para
-  guardar aunque falle D1–D7). En la consola de Windows usar
-  `PYTHONIOENCODING=utf-8`.
+  guardar aunque falle D1–D7, `--csv` para guardar también `<nombre>.csv`).
+  En la consola de Windows usar `PYTHONIOENCODING=utf-8`.
+- `cd solver && python -m solver.generar_escenario --data ../data --desde-json ../data/escenarios/referencia.json --csv`
+  (no resuelve: exporta a CSV un escenario ya generado, verificado contra D1–D7)
 - `cd web && npm run dev`
 - `cd web && npm run test`
 - (Fase 3) `cd solver && uvicorn main:app --reload`
@@ -166,7 +184,15 @@ Tokens en `web/src/app/globals.css`; se ajustan solo ahí. Plan: `docs/plan-fase
   API. `cacheComponents` y `partialPrefetching` no funcionan con
   `output: "export"` (usan PPR).
 - `web/public/escenarios/` y `web/public/data/` son copias que genera
-  `scripts/copiar-datos.mjs` (en `predev`/`prebuild`); no se editan ni se versionan.
+  `scripts/copiar-datos.mjs` (en `predev`/`prebuild`; también lleva
+  `data/escenarios/*.csv` a `public/data/`); no se editan ni se versionan.
+- `web/src/lib/modelo.ts` es un port de `verificacion.py`: si cambia una fórmula
+  en Python, cambiarla en los dos (los tests comparan contra el JSON). Para
+  normalizar B1–B6 usar `maximosDe(desglose)` del escenario: el peor caso de B5
+  no se puede recalcular en TS porque en Python las 10 aulas candidatas salen de
+  `sort_values` (quicksort, no estable) y, con empates de capacidad, a veces entra
+  un laboratorio. Usar `kind="stable"` en Python lo haría determinista, pero
+  cambia la referencia.
 
 ## Filosofía
 Esto es un POC. Preferir lo simple: pocos archivos, poca abstracción,

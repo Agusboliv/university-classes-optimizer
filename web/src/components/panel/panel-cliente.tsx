@@ -5,11 +5,13 @@ import { useEffect, useMemo, useState } from "react";
 
 import { Entrada } from "@/components/entrada";
 import { Barra } from "@/components/esqueleto";
+import { Cambios } from "@/components/panel/cambios";
 import { Desglose } from "@/components/panel/desglose";
 import { Exploracion } from "@/components/panel/exploracion";
 import { Marco } from "@/components/panel/marco";
 import { Pesos } from "@/components/panel/pesos";
 import { Resumen } from "@/components/panel/resumen";
+import { useEdicion } from "@/components/panel/use-edicion";
 import { cargarEscenario, objetivoReal, type Escenario, type IdBlanda } from "@/lib/escenario";
 import { mismosPesos, pesosDe, repartirPesos, reponderar } from "@/lib/ponderacion";
 
@@ -51,9 +53,10 @@ function PanelListo({ escenario }: { escenario: Escenario }) {
   const total = filas.reduce((s, f) => s + f.puntos, 0);
   const totalOriginal = objetivoReal(escenario.desglose);
   const cambiarPeso = (id: IdBlanda, valor: number) => setPesos((actual) => repartirPesos(actual, id, valor));
+  const edicion = useEdicion(escenario);
 
   return (
-    <div className="grid gap-4 lg:grid-cols-3">
+    <div className="grid gap-4 lg:grid-cols-3 [&>*]:min-w-0">
       <Entrada orden={1} className="lg:col-span-3">
         <Resumen escenario={escenario} />
       </Entrada>
@@ -71,7 +74,17 @@ function PanelListo({ escenario }: { escenario: Escenario }) {
         />
       </Entrada>
       <Entrada orden={4} className="lg:col-span-3">
-        <Exploracion asignaciones={escenario.asignaciones} />
+        <Exploracion
+          asignaciones={edicion.actuales}
+          edicion={{
+            datos: edicion.modelo.tipo === "listo" ? edicion.modelo.datos : null,
+            movidas: edicion.movidas,
+            onMover: edicion.mover,
+          }}
+        />
+      </Entrada>
+      <Entrada orden={5} className="lg:col-span-3">
+        <Cambios edicion={edicion} />
       </Entrada>
     </div>
   );

@@ -5,39 +5,21 @@ import { startTransition, useEffect, useRef, useState, ViewTransition, type Keyb
 
 import { TablaCsvVista } from "@/components/datos/tabla-csv";
 import { Barra } from "@/components/esqueleto";
-import { parsearCsv, type TablaCsv } from "@/lib/csv";
+import { cargarCsvs, type ArchivoCargado } from "@/lib/csv";
 import { ARCHIVOS, type ArchivoCsv } from "@/lib/esquema";
 import { numero } from "@/lib/formato";
 import { cn } from "@/lib/utils";
 
-interface Archivo {
-  readonly tabla: TablaCsv;
-  readonly texto: string;
-}
-
 type EstadoCarga =
   | { tipo: "cargando" }
   | { tipo: "error"; mensaje: string }
-  | { tipo: "listo"; archivos: Readonly<Record<ArchivoCsv, Archivo>> };
-
-/** Lee los 5 CSV (copiados a public/data por scripts/copiar-datos.mjs). Son chicos: se parsean acá. */
-async function cargarArchivos(signal: AbortSignal): Promise<Record<ArchivoCsv, Archivo>> {
-  const pares = await Promise.all(
-    ARCHIVOS.map(async (nombre) => {
-      const respuesta = await fetch(`/data/${nombre}`, { signal });
-      if (!respuesta.ok) throw new Error(`no se pudo leer ${nombre} (HTTP ${respuesta.status})`);
-      const texto = await respuesta.text();
-      return [nombre, { tabla: parsearCsv(texto), texto }] as const;
-    }),
-  );
-  return Object.fromEntries(pares) as Record<ArchivoCsv, Archivo>;
-}
+  | { tipo: "listo"; archivos: Readonly<Record<ArchivoCsv, ArchivoCargado>> };
 
 function useArchivos(): EstadoCarga {
   const [estado, setEstado] = useState<EstadoCarga>({ tipo: "cargando" });
   useEffect(() => {
     const control = new AbortController();
-    cargarArchivos(control.signal)
+    cargarCsvs(control.signal)
       .then((archivos) => setEstado({ tipo: "listo", archivos }))
       .catch((error: unknown) => {
         if (control.signal.aborted) return;

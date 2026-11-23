@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, X } from "lucide-react";
+import type { ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
 import type { Asignacion } from "@/lib/escenario";
@@ -13,15 +14,17 @@ interface DetalleClaseProps {
   vista: Vista;
   entidad: string;
   resumen: ResumenEntidad;
+  /** Editor para mover la clase (solo se muestra con la clase fijada). */
+  editor?: ReactNode;
   onIrA: (vista: Vista, id: string) => void;
   onCerrar: () => void;
 }
 
 /** Detalle de la clase en hover (vista previa) o fijada con clic; si no hay, resumen de la entidad. */
-export function DetalleClase({ clase, fijada, vista, entidad, resumen, onIrA, onCerrar }: DetalleClaseProps) {
+export function DetalleClase({ clase, fijada, vista, entidad, resumen, editor, onIrA, onCerrar }: DetalleClaseProps) {
   if (!clase) {
     return (
-      <aside aria-live="polite" className="self-start rounded-mdbg-secondary p-4 text-in-ui-sm">
+      <aside aria-live="polite" className="self-start rounded-md bg-secondary p-4 text-in-ui-sm">
         <p className="etiqueta-panel">{NOMBRE_CAMPO[vista]}</p>
         <p className="mt-1 text-in-ui font-semibold">{entidad}</p>
         <dl className="mt-4 grid grid-cols-3 gap-2">
@@ -43,7 +46,7 @@ export function DetalleClase({ clase, fijada, vista, entidad, resumen, onIrA, on
 
   const duracion = minutos(clase.fin) - minutos(clase.inicio);
   return (
-    <aside aria-live="polite" className="self-start rounded-mdborder p-4 text-in-ui-sm">
+    <aside aria-live="polite" className="self-start rounded-md border p-4 text-in-ui-sm">
       <div className="flex items-start justify-between gap-2">
         <p className="etiqueta-panel">{fijada ? "Clase seleccionada" : "Vista previa"} · {clase.clase}</p>
         {fijada && (
@@ -79,6 +82,7 @@ export function DetalleClase({ clase, fijada, vista, entidad, resumen, onIrA, on
           </div>
         ))}
       </dl>
+      {fijada && editor}
     </aside>
   );
 }
