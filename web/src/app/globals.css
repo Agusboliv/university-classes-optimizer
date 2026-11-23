@@ -241,6 +241,13 @@
     var(--dur-entrada) var(--curva-salida) var(--dur-salida) both vt-aparecer,
     var(--dur-desplazamiento) var(--curva-salida) var(--dur-salida) both vt-subir;
 }
+/* Cambio de semana en la grilla: crossfade (mismo lugar, otro contenido) */
+::view-transition-old(.grilla-sale) {
+  animation: var(--dur-salida) ease-in both vt-aparecer reverse;
+}
+::view-transition-new(.grilla-entra) {
+  animation: var(--dur-entrada) var(--curva-salida) both vt-aparecer;
+}
 ::view-transition-group(navegacion) {
   animation: none;
   z-index: 100;

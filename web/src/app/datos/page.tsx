@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
+import { ExploradorDatos } from "@/components/datos/explorador-datos";
 import { Entrada } from "@/components/entrada";
 import { EncabezadoPantalla } from "@/components/esqueleto";
-import { EsqueletoDatos } from "@/components/esqueleto-datos";
 import { TransicionPagina } from "@/components/transicion-pagina";
 
 export const metadata: Metadata = { title: "Datos · Mil clases, un solo horario" };
@@ -14,11 +14,11 @@ export default function PaginaDatos() {
         <Entrada>
           <EncabezadoPantalla
             titulo="Datos de entrada"
-            apoyo="Las cinco tablas que recibe el modelo, tal como están en los CSV: mismos nombres, columnas y formato."
+            apoyo="Las cinco tablas que recibe el modelo, tal como están en los CSV: mismos nombres, columnas y formato. Tocá un docente, un aula o una cohorte para ver su semana."
           />
         </Entrada>
         <Entrada orden={1} className="mt-12">
-          <EsqueletoDatos />
+          <ExploradorDatos />
         </Entrada>
       </main>
     </TransicionPagina>

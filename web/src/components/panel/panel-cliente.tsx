@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Entrada } from "@/components/entrada";
 import { Barra } from "@/components/esqueleto";
 import { Desglose } from "@/components/panel/desglose";
+import { Exploracion } from "@/components/panel/exploracion";
 import { Marco } from "@/components/panel/marco";
 import { Pesos } from "@/components/panel/pesos";
 import { Resumen } from "@/components/panel/resumen";
@@ -30,14 +31,6 @@ function useEscenario(nombre: string): EstadoCarga {
     return () => control.abort();
   }, [nombre]);
   return estado;
-}
-
-function GrillaPendiente() {
-  return (
-    <Marco etiqueta="Grilla semanal">
-      <Barra className="h-72 w-full" />
-    </Marco>
-  );
 }
 
 function PanelCargando() {
@@ -78,7 +71,7 @@ function PanelListo({ escenario }: { escenario: Escenario }) {
         />
       </Entrada>
       <Entrada orden={4} className="lg:col-span-3">
-        <GrillaPendiente />
+        <Exploracion asignaciones={escenario.asignaciones} />
       </Entrada>
     </div>
   );

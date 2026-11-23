@@ -65,7 +65,14 @@ function opciones(filas: readonly TerminoReponderado[], cambiado: boolean, c: Co
     animation: !reducido,
     animationDurationUpdate: 300,
     animationEasingUpdate: "cubicOut",
-    aria: { enabled: true },
+    aria: {
+      enabled: true,
+      label: {
+        description: `Puntos por penalización: ${filas
+          .map((f) => `${f.termino.id} ${ETIQUETAS[f.termino.id].nombre} ${puntos(f.puntos)}`)
+          .join("; ")}.`,
+      },
+    },
     textStyle: { fontFamily: c.fuente, color: c.tinta2 },
     grid: { left: 0, right: 56, top: cambiado ? 32 : 4, bottom: 0, outerBoundsMode: "same", outerBoundsContain: "axisLabel" },
     legend: {
